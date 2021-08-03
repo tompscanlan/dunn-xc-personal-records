@@ -1,0 +1,333 @@
+index,bibnumber,name,year,school,time,points
+1,1514,"Hardin, Abdu",7,Highland Hil,9:54.28,1
+2,618,"Patel, Adam",8,North Oldham,9:58.91,2
+3,1107,"Ellis, Dylan",8,Northeast Striders,10:10.70,
+4,601,"Hindorff, Tristan",8,North Oldham,10:20.93,3
+5,1315,"Wancket, Kaden",6,St. Agnes,10:29.10,4
+6,628,"Whitlow, Luke",6,North Oldham,10:34.78,5
+7,1165,"Frederick, Morgan",8,St. Patrick School,10:38.24,6
+8,1507,"Edwards, Ethan",8,Highland Hil,10:39.62,7
+9,119,"Mathews, Noah",7,Beaumont Mid,10:40.08,8
+10,617,"Neal, Grant",8,North Oldham,10:40.67,9
+11,2124,"Gilvin, Garrison",5,Our Lady of Lourdes,10:42.49,10
+12,2154,"Sierpina, Roman",7,Sacred Heart,10:44.67,11
+13,760,"Thomas, Finn",8,St. Aloysius,10:46.23,12
+14,1019,"Cull, Caden",7,Jefferson Co,10:47.70,13
+15,624,"Smith, Jasper",6,North Oldham,10:50.43,14
+16,919,"Tipton, Trey",7,Whitefield Academy,10:53.57,
+17,42,"Hardin, Jacob",8,Barret Tradi,10:55.78,15
+18,1039,"Blanton, Brody",7,Lake Cumberl,10:59.62,16
+19,121,"Naehr, Will",7,Beaumont Mid,11:00.03,17
+20,1700,"Chandler, Sam",7,Noe Middle School,11:00.68,18
+21,144,"Young, Alex",8,Beaumont Mid,11:01.99,19
+22,1548,"Gwaltney, Cameron",6,Louisville T,11:02.17,20
+23,251,"Taylor, Ayden",5,Christian Ac,11:03.14,21
+24,420,"Clark, Isaac",7,Kammerer Mid,11:04.30,22
+25,2181,"Campbell, Trip",8,M Track Club,11:05.44,
+26,706,"Anderson, Cruz",5,Scribner Mid,11:08.00,23
+27,625,"Townsend, Charley",6,North Oldham,11:13.86,24
+28,1293,"Terkhorn, Brodie",8,Southern Ind,11:22.86,25
+29,1512,"Graf, Emerson",8,Highland Hil,11:23.61,26
+30,1310,"O'Bryan, Sean",8,St. Agnes,11:31.08,27
+31,1519,"Nifong, Noah",7,Highland Hil,11:31.62,28
+32,1706,"Yaden, Sullivan",6,Noe Middle School,11:33.23,29
+33,612,"Masters, Broedey",8,North Oldham,11:34.44,30
+34,1505,"Connor, Nolan",7,Highland Hil,11:37.24,31
+35,1109,"Paul, Alex",8,Northeast Striders,11:37.56,
+36,39,"Adams, Connor",8,Barret Tradi,11:38.06,32
+37,102,"Estepp, Steven",7,Beaumont Mid,11:39.13,33
+38,1670,"Goodwin, Whitman",6,Highland Mid,11:39.22,
+39,1286,"Kelly, Drew",7,Southern Ind,11:39.86,34
+40,101,"Crawford, Tyler",8,Beaumont Mid,11:41.88,35
+41,9,"Shearer, Logan",8,Anchorage Pu,11:46.73,36
+42,1045,"Liddle, Jacob",7,Lake Cumberl,11:48.16,37
+43,597,"Dunlap, Ian",6,North Oldham,11:49.86,
+44,106,"Hayes, Nate",7,Beaumont Mid,11:50.71,38
+45,1696,"Trowell, D'Anico",6,Louisville T,11:52.14,39
+46,247,"Herbig, Samuel",7,Christian Ac,11:52.63,40
+47,592,"Buel, Lance",7,North Oldham,11:55.28,
+48,600,"Gray, Davis",8,North Oldham,11:58.57,
+49,43,"Henderson, Tedi",8,Barret Tradi,11:59.60,41
+50,620,"Ransdell, Jack",6,North Oldham,11:59.77,
+51,1284,"Gray, Steven",7,Southern Ind,12:00.08,42
+52,2136,"Storey, Gabe",8,Our Lady of Lourdes,12:00.43,43
+53,1517,"Mingus, Riley",8,Highland Hil,12:02.23,44
+54,19,"Ungar, Jackson",7,Ascension El,12:03.75,45
+55,1504,"Cirincione, Luca",7,Highland Hil,12:04.05,46
+56,738,"Koller, Henry",6,South Oldham,12:05.80,47
+57,819,"Lemmenes, Grant",7,St. Mary Aca,12:06.16,
+58,1683,"Holt, Charlie",5,Holy Trinity,12:06.78,48
+59,1497,"Bartholomai, Adam",8,Highland Hil,12:07.06,
+60,1515,"Hess, Tyler",8,Highland Hil,12:07.18,
+61,602,"Hudson, Colt",7,North Oldham,12:07.42,
+62,712,"Watson, Max",5,Scribner Mid,12:11.87,49
+63,1022,"Gardner, Heuston",6,Jefferson Co,12:13.07,50
+64,596,"Dugan, Charlie",7,North Oldham,12:13.46,
+65,745,"Mshindi, Rick",6,South Oldham,12:13.71,51
+66,1316,"Zoglman, Nick",8,St. Agnes,12:15.29,52
+67,40,"Coomes, Michael",8,Barret Tradi,12:16.63,53
+68,2139,"Alphenaar, Dylan",8,Sacred Heart,12:17.92,54
+69,1038,"Rosenbalm, Oakley",7,Kammerer Mid,12:18.16,55
+70,1146,"Howard, Gaines",5,St. Michael,12:18.36,56
+71,1498,"Bostock, Grant",8,Highland Hil,12:18.54,
+72,1303,"George, James",6,St. Agnes,12:19.11,57
+73,1522,"Proctor, Leyton",7,Highland Hil,12:19.59,
+74,8,"Pudlo, Henry",6,Anchorage Pu,12:20.23,58
+75,627,"Wendling, Jacob",8,North Oldham,12:20.38,
+76,1133,"Nava, Luis",7,St. Edward,12:20.98,59
+77,423,"Hafendorfer, Charl",7,Kammerer Mid,12:21.80,60
+78,16,"Smothers, Dashel",7,Ascension El,12:22.20,61
+79,1302,"Deck, Joseph",8,St. Agnes,12:22.81,62
+80,1026,"Holmes, Ryan",6,Jefferson Co,12:23.33,63
+81,249,"Kratt, Joshua",8,Christian Ac,12:23.52,64
+82,616,"Murphy, Grant",6,North Oldham,12:24.86,
+83,424,"Holevas, Nicholas",7,Kammerer Mid,12:24.93,65
+84,1704,"Stevens, Nolan",7,Noe Middle School,12:27.06,66
+85,2059,"Rousseau, Jack",7,Anchorage Pu,12:27.74,67
+86,138,"Todd, Trey",8,Beaumont Mid,12:27.74,68
+87,709,"Lord, Carter",6,Scribner Mid,12:28.21,69
+88,593,"Copeland, Jobe",8,North Oldham,12:28.95,
+89,1510,"Field, Grady",6,Highland Hil,12:29.07,
+90,2173,"Vonderhaar, Alex",5,St. Patrick School,12:29.11,70
+91,614,"McAllister, Blake",7,North Oldham,12:29.43,
+92,2133,"Schreck, Henry",8,Our Lady of Lourdes,12:30.10,71
+93,731,"Durham, Tyler",7,South Oldham,12:30.77,72
+94,1526,"Thomas, Ben",7,Highland Hil,12:31.20,
+95,1166,"Gladieux, Kyle",8,St. Patrick School,12:31.66,73
+96,2131,"Morrison, Trevor",6,Our Lady of Lourdes,12:31.87,74
+97,1288,"Lopez, Jeremy",8,Southern Ind,12:35.41,75
+98,111,"Imamura, Haruto",8,Beaumont Mid,12:36.33,
+99,1034,"Smith, Xavier",8,Jefferson Co,12:38.21,76
+100,1301,"Brown, Graham",7,St. Agnes,12:38.84,77
+101,1701,"Cummings, Cooper",7,Noe Middle School,12:39.37,78
+102,711,"Spurgeon, Will",5,Scribner Mid,12:39.58,79
+103,1489,"Jones, J'Quan",7,Hazelwood Mi,12:40.02,80
+104,1506,"Coomer, Eli",5,Highland Hil,12:40.57,
+105,1127,"Dinsmore, Brady",6,St. Edward,12:42.30,81
+106,419,"Clark, Eli",6,Kammerer Mid,12:42.44,82
+107,108,"Hill, Chace",8,Beaumont Mid,12:43.41,
+108,426,"Quirk, Liam",6,Kammerer Mid,12:43.83,83
+109,46,"Pollett, Jack",7,Barret Tradi,12:44.41,84
+110,1164,"Frederick, Jack",6,St. Patrick School,12:48.30,85
+111,598,"Geiser, Jack",6,North Oldham,12:49.38,
+112,591,"Brodsky, Connor",6,North Oldham,12:50.42,
+113,15,"Schweickhardt, Sam",6,Ascension El,12:51.04,86
+114,1430,"Frazier, Eli",6,Christian Ac,12:51.65,87
+115,44,"Johnson, Cole",8,Barret Tradi,12:52.50,88
+116,2137,"Storey, Noah",8,Our Lady of Lourdes,12:54.02,89
+117,1327,"Norton, Thomas",5,St. Stephen Martyr,12:54.68,90
+118,1134,"Scott, Blake",5,St. Edward,12:54.87,91
+119,621,"Richards, Cannon",8,North Oldham,12:55.90,
+120,2002,"Fleming, Zach",8,Scribner Mid,12:56.37,92
+121,1280,"Chisman, Wyatt",6,Southern Ind,12:56.81,93
+122,248,"Kratt, Andrew",6,Christian Ac,12:57.87,94
+123,45,"Olson, Noah",7,Barret Tradi,12:59.20,95
+124,1285,"Jorden, Liam",6,Southern Ind,12:59.59,96
+125,1298,"Bidwell, James",8,St. Agnes,13:00.26,97
+126,1314,"Sherman, Cam",7,St. Agnes,13:01.28,
+127,599,"Godbey, Sam",8,North Oldham,13:01.81,
+128,1129,"Heitkamper, Braden",5,St. Edward,13:02.65,98
+129,1047,"Martin, Cole",7,Lake Cumberl,13:02.74,99
+130,1153,"Sills, Brayden",7,St. Michael,13:02.90,100
+131,1705,"Taylor, Jackson",6,Noe Middle School,13:03.73,101
+132,2083,"McDonald, Aaron",8,Louisville T,13:04.15,102
+133,1204,"Richardson, Lincol",6,Barret Tradi,13:04.94,
+134,1688,"Rice, Kellan",8,Holy Trinity,13:05.47,103
+135,2144,"Elliott, Thomas",7,Sacred Heart,13:05.91,104
+136,764,"Hagan, Jacob",6,St. Bernard,13:06.15,105
+137,1306,"Kaufman, John Rile",8,St. Agnes,13:10.05,
+138,1326,"Naber, Josh",7,St. Stephen Martyr,13:10.10,106
+139,1549,"Rogers, Grant",6,Louisville T,13:12.59,107
+140,1485,"Amsler, Isaia",8,Hazelwood Mi,13:14.00,108
+141,407,"Ross, Austin",6,Johnson Trad,13:14.89,109
+142,1319,"Cebe, Ben",5,St. Stephen Martyr,13:15.54,110
+143,1277,"Billingsley, Thurg",6,Southern Ind,13:16.25,111
+144,1110,"Raymond, Hunter",8,Northeast Striders,13:16.97,
+145,1015,"Smith, Luke",6,Hebron Middl,13:20.98,
+146,1148,"Long, Zack",8,St. Michael,13:23.23,112
+147,1311,"Pape, James",6,St. Agnes,13:25.21,
+148,751,"Swinney, Logan",8,South Oldham,13:25.76,113
+149,831,"Klein, Evan",6,St. Raphael,13:26.89,114
+150,606,"Killian, Camden",6,North Oldham,13:27.46,
+151,250,"Stephens, Luke",7,Christian Ac,13:28.43,115
+152,1429,"Fitzgibbon, Ethan",6,Christian Ac,13:29.05,116
+153,832,"Spears, Haydon",6,St. Raphael,13:29.25,117
+154,630,"Wiseman, Peyton",7,North Oldham,13:29.72,
+155,1145,"Howard, Cade",8,St. Michael,13:31.17,118
+156,1203,"Pregliasco, Sam",8,Barret Tradi,13:31.19,
+157,1685,"Holt, James",5,Holy Trinity,13:31.63,119
+158,2074,"Kirchner, Carter",5,Holy Spirit,13:32.72,120
+159,356,"Turner, Phillip",5,Gallatin Cou,13:33.49,
+160,629,"Wiseman, Cooper",6,North Oldham,13:34.81,
+161,770,"Willman, Hayden",8,St. Bernard,13:36.09,121
+162,1176,"Powers, David",7,St. Patrick School,13:36.10,122
+163,2044,"Schmuckie, Gavin",8,St. Martha,13:36.61,
+164,47,"Stewert, William",7,Barret Tradi,13:36.84,
+165,2135,"Shelby, Luke",7,Our Lady of Lourdes,13:37.04,123
+166,408,"Saling, Jaedon",8,Johnson Trad,13:39.02,124
+167,14,"Oeswein, Joseph",8,Ascension El,13:41.78,125
+168,2197,"Ice, Sam",6,Jefferson Co,13:44.53,126
+169,2126,"Haws, John",5,Our Lady of Lourdes,13:46.04,127
+170,1690,"Paxton, Cook",5,Jefferson Co,13:46.56,128
+171,1012,"Russelburg, Jude",7,Eastside Mid,13:48.51,
+172,2129,"Kendall, William",8,Our Lady of Lourdes,13:48.76,
+173,768,"Varner, Lennon",7,St. Bernard,13:50.41,129
+174,734,"Hutchcraft, Lucas",6,South Oldham,13:51.89,130
+175,887,"Stannard, Robert",7,Washington County,13:51.99,131
+176,2119,"Allgeier, Caleb",6,Our Lady of Lourdes,13:52.58,
+177,246,"Gibson, Gavin",6,Christian Ac,13:53.50,
+178,594,"Downs, Henry",8,North Oldham,13:54.50,
+179,1672,"Meers, Noah",6,Highland Mid,13:54.87,
+180,827,"Zwissler, Connor",6,St. Mary of,13:55.87,
+181,746,"Powell, Nate",7,South Oldham,13:56.30,132
+182,1048,"Martin, Rodney",7,Lake Cumberl,13:57.10,133
+183,253,"Wieringa, Jack",7,Christian Ac,13:58.75,
+184,729,"Brown, Aidan",7,South Oldham,13:59.10,134
+185,1143,"Bryant, John",7,St. Michael,13:59.93,135
+186,1290,"Mcguire, Braden",8,Southern Ind,14:00.01,
+187,1013,"Swift, Drew",7,Eastside Mid,14:00.29,
+188,1282,"Ellorimo, Lincoln",6,Southern Ind,14:02.00,
+189,1332,"Wolff, Nick",5,St. Stephen Martyr,14:02.45,136
+190,1493,"Shears, Hank",8,Hazelwood Mi,14:03.39,137
+191,1111,"Rhea, Ethan",5,Notre Dame A,14:03.84,
+192,1009,"Cornell, Clive",7,Eastside Mid,14:04.22,
+193,1059,"Sullivan, Brady",6,Louisville T,14:04.82,138
+194,421,"Duncan, Cayden",8,Kammerer Mid,14:05.74,139
+195,6,"Hundley, Austin",6,Anchorage Pu,14:06.56,140
+196,1169,"Highley, Reid",8,St. Patrick School,14:07.11,141
+197,742,"McGonnell, Thomas",6,South Oldham,14:08.17,
+198,735,"James, Jake",7,South Oldham,14:09.27,
+199,418,"Alfaro-Rosas, Omar",7,Kammerer Mid,14:09.30,
+200,747,"Rairick, Caeden",7,South Oldham,14:09.40,
+201,589,"Bearance, Jack",6,North Oldham,14:09.60,
+202,404,"Garcia, Anthony",8,Johnson Trad,14:10.32,142
+203,1289,"Mauk, Lucas",6,Southern Ind,14:10.73,
+204,401,"Allen, Xavier",6,Johnson Trad,14:11.05,143
+205,613,"Materna, Bryson",8,North Oldham,14:11.34,
+206,427,"Rothrock, Xander",7,Kammerer Mid,14:11.82,
+207,730,"Buckman, Brock",6,South Oldham,14:13.13,
+208,1175,"Mammorella, Benny",8,St. Patrick School,14:15.36,144
+209,1687,"Neff, Sam",8,Holy Trinity,14:15.39,145
+210,818,"Bobzien, Carson",6,St. Mary Aca,14:16.42,
+211,1051,"Todd, RJ",8,Lake Cumberl,14:16.80,146
+212,1494,"Slone, Kaden",7,Hazelwood Mi,14:16.96,147
+213,1292,"Sears, Mark",8,Southern Ind,14:17.18,
+214,1875,"Bakaric, Kyeler",6,St. Raphael,14:18.69,148
+215,736,"Kessinger, Colin",6,South Oldham,14:19.13,
+216,1123,"Taylor, Rylan",6,South Oldham,14:19.38,
+217,765,"Howard, Braxton",7,St. Bernard,14:21.32,149
+218,107,"Haynes, Jackson",7,Beaumont Mid,14:23.10,
+219,4,"Delaney, Hayden",6,Anchorage Pu,14:23.76,150
+220,1174,"Mahoney, Wade",8,St. Patrick School,14:26.39,
+221,608,"Knopf, Josiah",6,North Oldham,14:27.97,
+222,750,"Schock, Ryan",6,South Oldham,14:28.41,
+223,767,"Pendleton, Jackson",7,St. Bernard,14:30.05,151
+224,366,"Powell, Avery",7,Highland Mid,14:30.26,
+225,1162,"Dalton, Tucker",6,St. Patrick School,14:30.67,
+226,12,"Gohmann, Sam",6,Ascension El,14:31.19,152
+227,1877,"Edelen, Brendan",6,St. Raphael,14:31.57,153
+228,732,"Graves, Karter",6,South Oldham,14:32.33,
+229,733,"Hoffman, Beau",8,South Oldham,14:32.72,
+230,355,"Cayton, Dj",8,Gallatin Cou,14:33.70,
+231,110,"Hunt, Chris",8,Beaumont Mid,14:34.17,
+232,245,"Dale, Elijah",6,Christian Ac,14:35.26,
+233,3,"Byrne, Paxton",6,Anchorage Pu,14:37.32,154
+234,1328,"O'Connell, Jackson",6,St. Stephen Martyr,14:37.34,155
+235,1486,"Blair, Wyatt",6,Hazelwood Mi,14:37.98,156
+236,1180,"Wilder, Sam",6,St. Patrick School,14:38.26,
+237,766,"Magers, Callen",6,St. Bernard,14:39.45,157
+238,759,"Pinotti, Matthew",6,St. Aloysius,14:42.96,158
+239,1331,"Whitmore, Noah",5,St. Stephen Martyr,14:43.49,159
+240,406,"Mattingly, Matthew",7,Johnson Trad,14:44.84,160
+241,824,"Frossard, Noah",6,St. Mary of,14:45.42,
+242,710,"Marcum, Bryce",5,Scribner Mid,14:46.33,161
+243,918,"Thomasson, Reese",6,Whitefield Academy,14:46.38,
+244,2042,"Lawrence, Matthew",8,St. Martha,14:47.46,
+245,403,"Devore, William",6,Johnson Trad,14:51.76,162
+246,244,"Brown, Ryan",5,Christian Ac,14:52.72,
+247,771,"Winsted, Elijah",7,St. Bernard,14:53.60,163
+248,1140,"Bohn, Jacob",7,St. Michael,14:53.66,164
+249,116,"Kelsey, Carter",8,Beaumont Mid,14:53.99,
+250,2147,"Hall, John",6,Sacred Heart,14:54.69,165
+251,590,"Bobay, Conlan",8,North Oldham,14:55.00,
+252,1482,"Humphrey, Walker",6,Eastside Mid,14:55.53,
+253,749,"Same, Kaiden",8,South Oldham,14:57.45,
+254,2149,"Jones, William",5,Sacred Heart,14:57.69,166
+255,1487,"Fleenor, Sage",7,Hazelwood Mi,14:58.86,167
+256,820,"Lundy, Brendan",8,St. Mary Aca,14:59.37,
+257,2156,"Zderski, Bryce",5,Sacred Heart,15:00.63,168
+258,1324,"Lotz, Ryan",7,St. Stephen Martyr,15:00.67,169
+259,917,"Minton, Aidan",6,Whitefield Academy,15:01.62,
+260,1699,"Carothers, Andrew",7,Noe Middle School,15:02.81,170
+261,2200,"Wacker, Lachlan",6,Southern Ind,15:04.05,
+262,1320,"Cramer, Cameron",4,St. Stephen Martyr,15:06.34,
+263,632,"Wood, Tyler",6,North Oldham,15:07.23,
+264,633,"Young, Ben",8,North Oldham,15:08.33,
+265,91,"Arnold, Myles",6,Beaumont Mid,15:09.27,
+266,2143,"Catlett, Grant",5,Sacred Heart,15:09.29,171
+267,1490,"Keller, Landon",5,Hazelwood Mi,15:09.73,172
+268,1139,"Bohn, Caleb",5,St. Michael,15:10.39,173
+269,1680,"Carothers, Ryan",7,Holy Trinity,15:11.57,174
+270,619,"Payne, Brevin",7,North Oldham,15:12.21,
+271,405,"Kaiser, Trevor",6,Johnson Trad,15:14.87,175
+272,743,"McGonnell, Trey",7,South Oldham,15:16.28,
+273,610,"Lancaster, Tucker",8,North Oldham,15:17.45,
+274,757,"Brown, Benson",5,St. Aloysius,15:18.82,176
+275,2082,"Woeste, Charles",6,Holy Spirit,15:19.06,177
+276,833,"Zoeller, Owen",6,St. Raphael,15:21.04,178
+277,1016,"Stickling, Otto",7,Hebron Middl,15:22.66,
+278,402,"Caudill, Maddox",6,Johnson Trad,15:25.80,
+279,884,"Huntsberger, Dalto",7,Washington County,15:25.92,179
+280,1278,"Brown, Jake",8,Southern Ind,15:27.34,
+281,105,"Glenn, Caleb",7,Beaumont Mid,15:38.35,
+282,886,"Piasecki, Jacob",6,Washington County,15:46.12,180
+283,707,"Baker-Simmons, Jac",5,Scribner Mid,15:47.21,181
+284,1158,"Adkins, Ayden",6,St. Patrick School,15:47.26,
+285,2146,"Griffin, Max",5,Sacred Heart,15:49.39,
+286,2061,"Wallace, Liam",6,Anchorage Pu,15:53.08,182
+287,18,"Ungar, Cole",7,Ascension El,15:53.15,183
+288,123,"Natour, Freddie",6,Beaumont Mid,15:53.63,
+289,1276,"Basham, Adam",6,Southern Ind,15:53.96,
+290,2132,"Ridgeway, Alexande",5,Our Lady of Lourdes,15:54.69,
+291,7,"Mayes, Eli",6,Anchorage Pu,15:56.27,
+292,99,"Castro, Zavier",7,Beaumont Mid,15:57.09,
+293,1876,"Cissell, Boston",6,St. Raphael,15:57.88,184
+294,2005,"Lewis, Adam",5,St. Edward,15:58.21,185
+295,609,"Lampton, Noah",6,North Oldham,15:59.31,
+296,89,"Amstutz, William",6,Beaumont Mid,15:59.52,
+297,1330,"Walsh, Rajaii",5,St. Stephen Martyr,16:03.79,
+298,1161,"Culligan, Finn",7,St. Patrick School,16:09.71,
+299,739,"Larson, Josh",7,South Oldham,16:13.15,
+300,622,"Robinett, Jackson",8,North Oldham,16:22.83,
+301,2120,"Brown, Zach",8,Our Lady of Lourdes,16:24.27,
+302,2076,"Martin, William",8,Holy Spirit,16:29.38,186
+303,756,"Bourke, Wyatt",5,St. Aloysius,16:31.93,187
+304,741,"Martin, Austin",6,South Oldham,16:34.09,
+305,744,"Meredith, Terry",7,South Oldham,16:36.73,
+306,626,"Turpen, Josh",8,North Oldham,16:40.89,
+307,2070,"Chisholm, Evan",6,Holy Spirit,16:46.52,188
+308,758,"Doyle, Benjamin",7,St. Aloysius,16:47.92,189
+309,1150,"Payne, Dakota",8,St. Michael,16:49.73,
+310,2040,"Bishop, Brandon",7,St. Martha,16:55.90,
+311,595,"Drake, Elijah",7,North Oldham,17:00.45,
+312,1669,"Goodwin, Preston",6,Highland Mid,17:07.79,
+313,357,"Webster, Austin",7,Gallatin Cou,17:09.57,
+314,409,"Shaw, Ethan",6,Johnson Trad,17:13.27,
+315,2057,"Reardon, Micah",0,Anchorage Pu,17:31.18,
+316,1689,"Stewart, Jack",7,Holy Trinity,17:48.89,190
+317,883,"Campbell, Noah",6,Washington County,17:57.39,191
+318,754,"Yann, Cooper",6,South Oldham,18:12.49,
+319,2078,"Smith, Philip",5,Holy Spirit,18:17.80,192
+320,17,"Steurer, Parker",7,Ascension El,18:40.58,193
+321,11,"Cochran, Jack",6,Ascension El,18:51.23,
+322,2053,"Cheser, Brandon",6,Washington County,18:56.90,194
+323,761,"Wolf, Robert",5,St. Aloysius,19:09.35,195
+324,2054,"Mudd, Jolon",7,Washington County,19:48.52,196
+325,631,"Wolford, Liam",8,North Oldham,19:59.46,
+326,109,"Holmes, Warren",7,Beaumont Mid,20:06.81,
+327,604,"Kane, James",7,North Oldham,20:08.14,
+328,114,"Johnson, Blake",6,Beaumont Mid,21:24.10,
+329,2150,"Lasecki, John",5,Sacred Heart,22:09.15,
+330,2067,"Blincoe, Ethan",8,Holy Spirit,22:27.07,197
+331,124,"Natour, Sam",6,Beaumont Mid,22:32.14,
+332,96,"Brown, Zach",7,Beaumont Mid,22:45.39,
