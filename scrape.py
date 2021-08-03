@@ -9,6 +9,18 @@ import sys
 csv_columns = ['index','bibnumber','name', 'year', 'school', 'time', 'points']
 runner_regexp = re.compile(r"^\s*(?P<index>\d+)\s+#(?P<bibnumber>\d+)\s+(?P<name>[\w\s.',-]+)\s+(?P<year>\d+)\s+(?P<school>[\w\s.',-]+)\s+(?P<time>\d+:\d+.\d+)\s+(?P<points>\d*)\s+")
 
+def read_csv(file):
+    runners = []
+    try:
+        with open(file, 'r') as csvfile:
+            reader = csv.DictReader(csvfile, fieldnames=csv_columns)
+            for row in reader:
+                runners.append(row)
+    except csv.Error as e:
+        sys.exit('file {}, line {}: {}'.format(file, reader.line_num, e))
+
+    return runners
+
 def write_csv(file, runners: [dict]):
     try:
         with open(file, 'w') as csvfile:

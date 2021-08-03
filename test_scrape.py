@@ -524,3 +524,7 @@ def test_2019_tiger_run():
     assert len(runners) == 332
 
     scrape.write_csv("341354-tiger-run-2019.csv", runners)
+
+def test_reader():
+    runners = scrape.read_csv("341354-tiger-run-2019.csv")
+    assert len(runners) == 332+1
