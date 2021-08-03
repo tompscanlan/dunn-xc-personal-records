@@ -1,9 +1,13 @@
+#!/usr/bin/env python
+
 import requests
 from bs4 import BeautifulSoup
 import re
 import csv
+import sys
 
 csv_columns = ['index','bibnumber','name', 'year', 'school', 'time', 'points']
+runner_regexp = re.compile(r"^\s*(?P<index>\d+)\s+#(?P<bibnumber>\d+)\s+(?P<name>[\w\s.',-]+)\s+(?P<year>\d+)\s+(?P<school>[\w\s.',-]+)\s+(?P<time>\d+:\d+.\d+)\s+(?P<points>\d*)\s+")
 
 def write_csv(file, runners: [dict]):
     try:
@@ -27,9 +31,8 @@ def get_runners(s: str) -> [dict]:
     runners: [dict] = []
     lines = re.split("\n|\r\n", s)
 
-    runner_line = re.compile("^\s*(?P<index>\d+)\s+#(?P<bibnumber>\d+)\s+(?P<name>[\w\s.',-]+)\s+(?P<year>\d+)\s+(?P<school>[\w\s.',-]+)\s+(?P<time>\d+:\d+.\d+)\s+(?P<points>\d*)\s+")
     for line in lines:
-        match = runner_line.match(line)
+        match = runner_regexp.match(line)
         if (match != None):
             details = match.groupdict()
             details['name'] = details['name'].rstrip()
@@ -40,5 +43,12 @@ def get_runners(s: str) -> [dict]:
 
     return runners
 
-url = "https://ky.milesplit.com/meets/364782-ktccca-meet-of-champions-2019/results/676374/raw"
-raw_results = get_raw_results(url)
+if __name__ == "__main__":
+    if (len(sys.argv) < 2):
+        print("must pass a url like 'https://ky.milesplit.com/meets/364782-ktccca-meet-of-champions-2019/results/676374/raw'")
+        exit(1)
+
+    url = sys.argv[1]
+    raw_results = get_raw_results(url)
+    runners = get_runners(raw_results)
+    write_csv("results.csv", runners)
