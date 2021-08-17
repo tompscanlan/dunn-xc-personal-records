@@ -5,15 +5,18 @@ from bs4 import BeautifulSoup
 import re
 import csv
 import sys
-import sqlite3
+import pandas as pd
 
 DB_FILE = 'DXC-milesplit-data.db'
 KM_PER_MILE = 1.609344
 
-csv_columns = ['index','bibnumber','name', 'year', 'school', 'time', 'points']
-runner_regexp = re.compile(r"^\s*(?P<index>\d+)\s+(?:#(?P<bibnumber>\d+)\s+)?(?P<name>[\w\s.',-]+)\s+(?P<year>\d*)\s+(?P<school>[\w\s.',-]+)\s+(?P<time>\d+:\d+.\d+)\s+(?P<points>\d*)\s+")
+csv_columns = ['index', 'bibnumber', 'name', 'year', 'school', 'time', 'points']
+# debug regex https://regex101.com/r/IcycJm/1
+runner_regexp = re.compile(r"(^\d+\s(?P<name_pdf>[\w\s()'-.]+?)\s(?P<year_pdf>\d+)\s(?P<team_pdf>[\w.\s]+?)\s(?P<time_pdf>\d+:\d+.\d+)|^\s*(?P<index>\d+)[\s#]*(?P<bibnumber>\d+)?\s*(?P<name>[\w\s,'-.]+?(?<!\s))\s+(?P<year>\d+)?\s+(?P<school>[\w\s.',-]+?(?<!\s))?\s+(?P<time>\d+:\d+.\d+)\s+(?P<points>\d*)?\s*$)")
+# debug regex: https://regex101.com/r/SZVw8g/1
+# runner_regexp = re.compile(r"^\s*(?P<index>\d+)[\s#]*(?P<bibnumber>\d+)?\s*(?P<name>[\w\s,'-.]+?(?<!\s))\s+(?P<year>\d+)?\s+(?P<school>[\w\s.',-]+?(?<!\s))?\s+(?P<time>\d+:\d+.\d+)\s+(?P<points>\d*)?\s*$")
 event_name_regexp = re.compile(r"^(?P<eventname>Event.*$)")
-
+runner_regexp_pdf = re.compile(r"^\s*(?P<index>\d+)[\s#]*(?P<bibnumber>\d+)?\s*(?P<name>[\w\s,'-.]+?(?<!\s))\s+(?P<year>\d+)?\s+(?P<school>[\w\s.',-]+?(?<!\s))?\s+(?P<time>\d+:\d+.\d+)\s+(?P<points>\d*)?\s*$")
 
 def read_csv(file):
     runners = []
@@ -72,7 +75,7 @@ def get_meet_details(page) -> dict:
 
 def parse_url(url) -> str:
     page = requests.get(url)
-    return page.content
+    return page.text
 
 
 def get_raw_results(page):
@@ -89,17 +92,15 @@ def get_runners(s: str) -> [dict]:
         match = runner_regexp.match(line)
         if match is not None:
             details = match.groupdict()
-            details['name'] = details['name'].rstrip()
-            details['school'] = details['school'].rstrip()
             runners.append(details)
         # for debugging failed matches
         # else:
-        #     print("no match for: ", line)
+        #     print(line)
     return runners
 
 
 def get_event_name(s: str) -> str:
-    soup = BeautifulSoup(page, "html.parser")
+    soup = BeautifulSoup(s, "html.parser")
     results = soup.find(id="meetResultsBody")
 
     lines = re.split("\n|\r\n", s)
@@ -109,18 +110,10 @@ def get_event_name(s: str) -> str:
         if match is not None:
             details = match.groupdict()
             if details['eventname'] is not None:
-                return details['eventname'].rstrip()
+                details['eventname'].rstrip()
+                return details
 
-def prep_db(connection):
-    with connection:
-        connection.execute(
-            """
-            CREATE TABLE MEETS (
-                id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-                name TEXT,
-            )
-            """
-        )
+
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("must pass a url like "
@@ -128,11 +121,20 @@ if __name__ == "__main__":
         exit(1)
 
     url = sys.argv[1]
+
+    url = 'https://ky.milesplit.com/meets/364782-ktccca-meet-of-champions-2019/results/676374/raw'
     page = parse_url(url)
     raw_results = get_raw_results(page)
     runners = get_runners(raw_results)
-    write_csv("results.csv", runners)
+    event_name = get_event_name(raw_results)
+    meet_details = get_meet_details(page)
 
-    connection = sqlite3.connect(DB_FILE)
-    prep_db(connection)
+    for r in runners:
+        r.update(meet_details)
+        r.update(event_name)
 
+    df = pd.DataFrame(data=runners)
+    # df.set_index('index')
+    df['date'] = pd.to_datetime(df['date'])
+
+    df.to_csv("./data/" + meet_details['meet_name'] + '-' + event_name['eventname'] + '.csv')
