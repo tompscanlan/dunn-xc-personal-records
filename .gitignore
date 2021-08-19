@@ -2,3 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
+.idea/
+.pytest_cache
+.ipynb_checkpoints
+.Rproj.user
