@@ -1,299 +1,65 @@
 ,name,team,year,best_mile_time
-23,Lilly Kolb,LPAS,4.0,0 days 00:05:59.020000
-273,Michael Chapman,LPAS,5.0,0 days 00:06:24.430000
-248,Celia Maudlin,Bloom,5.0,0 days 00:06:26.720000
-187,Eloise Roth,LPAS,4.0,0 days 00:06:34.440000
-221,Eli O'Dell,Field,4.0,0 days 00:06:43.400000
-274,Emory Tremayne,St. Matthews,5.0,0 days 00:06:47.820000
-222,Miles Becker,Hite,4.0,0 days 00:06:53.210000
-188,Ayla Duncan,Tully,4.0,0 days 00:06:54.930000
-223,Cambell Jones,LPAS,4.0,0 days 00:06:57.930000
-275,Jonah Roach,Bloom,5.0,0 days 00:06:58.880000
-123,Hadley McKee,Tully,3.0,0 days 00:07:00.370000
-224,Carson Gardner,LPAS,4.0,0 days 00:07:07.370000
-27,Henry Roth,LPAS,1.0,0 days 00:07:12.780000
-152,Cruz Simpson,St. Matthews,3.0,0 days 00:07:13.520000
 89,Jackson Rhodes,Dunn,2.0,0 days 00:07:14.770000
 276,James Harston,Dunn,5.0,0 days 00:07:16.200000
-249,Emery Haskins,Tully,5.0,0 days 00:07:18.190000
-277,Henry Metzger,Field,5.0,0 days 00:07:19.920000
-250,Egan Hofmann,Tully,5.0,0 days 00:07:20.750000
-278,Alessio Berrisford,Bloom,5.0,0 days 00:07:21.490000
-225,Jason Feaster,Field,4.0,0 days 00:07:22.620000
-153,Colin Gasaway,Hite,3.0,0 days 00:07:24.520000
 226,Abram Hall,Dunn,4.0,0 days 00:07:24.960000
-154,William Johnson,LPAS,3.0,0 days 00:07:26.220000
 155,Madden Clem,Dunn,3.0,0 days 00:07:26.950000
 90,Lincoln Miller,Dunn,2.0,0 days 00:07:29.510000
-28,Miles Brown,Tully,1.0,0 days 00:07:30
-279,Murphy Smith,Hite,5.0,0 days 00:07:33.550000
-251,Rachel York,Tully,5.0,0 days 00:07:34.350000
 227,Kaleab Breetz,Dunn,4.0,0 days 00:07:34.810000
-29,Alex Davis,Field,1.0,0 days 00:07:36
-228,Julian Thomas,Field,4.0,0 days 00:07:37.580000
-156,Rockland Miller,Hite,3.0,0 days 00:07:40.410000
-280,Joseph Acevedo,Tully,5.0,0 days 00:07:44.410000
-91,Luke Lile,Bloom,2.0,0 days 00:07:44.560000
 30,Alex Morgan,Dunn,1.0,0 days 00:07:44.640000
-157,Henry Learn,Bloom,3.0,0 days 00:07:45.890000
-31,Justise Harris,Tully,1.0,0 days 00:07:45.960000
-281,Nathaniel Smith,Tully,5.0,0 days 00:07:46.150000
-158,Ben Novak,Hite,3.0,0 days 00:07:47.590000
-282,Elliott Thieneman,Tully,5.0,0 days 00:07:47.860000
-252,Noelle Hughes-Seitz,St. Matthews,5.0,0 days 00:07:48.100000
 159,Collier Harston,Dunn,3.0,0 days 00:07:50.830000
-160,Finn Malin,Field,3.0,0 days 00:07:51.130000
-283,Emory Tremayne,St. Matthews,5.0,0 days 00:07:52.200000
-229,Jayden Sanders,LPAS,4.0,0 days 00:07:52.560000
 161,Ashby Hallum,Dunn,3.0,0 days 00:07:52.580000
-284,Ryan Sanders,Hite,5.0,0 days 00:07:52.740000
-32,Kona Works,Tully,1.0,0 days 00:07:53.680000
-162,Elijah Nelson,St. Matthews,3.0,0 days 00:07:54.560000
-285,Elom Emge,Field,5.0,0 days 00:07:55.020000
-230,Gavin Minor,Hite,4.0,0 days 00:07:55.600000
-92,Luke Harper,Hite,2.0,0 days 00:07:55.860000
-253,Ellie Croghan,Tully,5.0,0 days 00:07:55.960000
-231,Hayden Mclntosh,Bloom,4.0,0 days 00:07:56
-232,Hatchett Kempf,LPAS,4.0,0 days 00:07:56.990000
 233,Rutledge Harris,Dunn,4.0,0 days 00:07:57.540000
-254,Lily Batliner,TigerSharks,5.0,0 days 00:07:58.080000
-93,Roark Milenthal,St. Matthews,2.0,0 days 00:07:59.070000
-33,Valentine Kordus,Field,1.0,0 days 00:08:00.960000
-0,Sadie Becker,Hite,1.0,0 days 00:08:03.540000
-94,Charlie Newton,Hite,2.0,0 days 00:08:03.950000
-163,Julien Jimenez,Tully,3.0,0 days 00:08:04.160000
-286,Hayes Mortenson,Hite,5.0,0 days 00:08:04.210000
-189,Lillian Carrico,Tully,4.0,0 days 00:08:04.700000
-190,Sophia Harper,Hite,4.0,0 days 00:08:04.940000
-124,Violet Haskins,Tully,3.0,0 days 00:08:05.340000
-234,Owen Tindall,Hite,4.0,0 days 00:08:05.350000
-287,Kieran Byrne,Bloom,5.0,0 days 00:08:05.520000
 288,Jonathan Bellows,Dunn,5.0,0 days 00:08:09.760000
 164,Rory DeMasie,Dunn,3.0,0 days 00:08:09.840000
 65,Georgia Dierking,Dunn,2.0,0 days 00:08:10.520000
-95,Luke Tindall,Hite,2.0,0 days 00:08:11.410000
-255,Moira Karr,Bloom,5.0,0 days 00:08:11.460000
 191,Ellie Miller,Dunn,4.0,0 days 00:08:12.170000
-125,Evelyn Roach,Bloom,3.0,0 days 00:08:12.660000
-96,Gavin Murdoch,Tully,2.0,0 days 00:08:14.030000
-126,Scarlett Huff,Hite,3.0,0 days 00:08:14.370000
-165,Henry Bilotta,Bloom,3.0,0 days 00:08:14.700000
-235,Harper Eichenberger,Field,4.0,0 days 00:08:15.210000
-127,Kalina Works,Tully,3.0,0 days 00:08:15.260000
-166,Crew Smith,Field,3.0,0 days 00:08:15.500000
-34,Noah Luna,Tully,1.0,0 days 00:08:16.560000
-97,Ronan Byrne,Bloom,2.0,0 days 00:08:17.550000
-289,Henley Whitham,Tully,5.0,0 days 00:08:17.790000
 1,Piper Clark,Dunn,1.0,0 days 00:08:17.820000
-256,Alexis Jimenez,Tully,5.0,0 days 00:08:19.040000
-35,Rory Lockwood,St. Matthews,0.0,0 days 00:08:19.060000
-98,Frederick Eldon,Field,2.0,0 days 00:08:19.070000
-2,Iris Romanick,Tully,1.0,0 days 00:08:19.100000
-167,Jack Stratman,Field,3.0,0 days 00:08:19.160000
-66,Milly Abbott,Bloom,2.0,0 days 00:08:20.810000
-3,Greenley Simpson,St. Matthews,0.0,0 days 00:08:21.420000
-99,Jack Cochran,St. Matthews,2.0,0 days 00:08:22.010000
-36,Jackson Lawson,St. Matthews,0.0,0 days 00:08:23.240000
 4,Hawi Breetz,Dunn,1.0,0 days 00:08:23.700000
-37,Charlie Malin,Field,1.0,0 days 00:08:23.760000
-168,Derrick Vrishin Megal,Tully,3.0,0 days 00:08:24.070000
-38,Jacob Ethridge,Tully,1.0,0 days 00:08:24.120000
-5,Carly Bailey,St. Matthews,1.0,0 days 00:08:24.240000
-169,Owen Smith,Hite,3.0,0 days 00:08:25.460000
-128,Reece Rankin,TigerSharks,3.0,0 days 00:08:26.600000
-39,Oliver Peoples,Tully,1.0,0 days 00:08:27.540000
 100,Brennan Phillips,Dunn,2.0,0 days 00:08:27.940000
-290,Hunter Wolf,Hite,5.0,0 days 00:08:28.580000
-257,Cora Humphrey,Field,5.0,0 days 00:08:28.950000
 192,Harper Weismiller,Dunn,4.0,0 days 00:08:29.140000
-129,Sinahi Crespo,Tully,3.0,0 days 00:08:31.270000
-193,Bella O'Dell,Field,4.0,0 days 00:08:31.570000
-40,Xavier Tibbs,Tully,1.0,0 days 00:08:33.880000
 101,Ty Frederiksen,Dunn,2.0,0 days 00:08:34.250000
-194,Elizabeth Newton,Hite,4.0,0 days 00:08:35.180000
 41,Ben Jackson,Dunn,1.0,0 days 00:08:35.520000
-236,Walter Wagoner,LPAS,4.0,0 days 00:08:35.640000
-130,Bronte Rothgerber,Field,3.0,0 days 00:08:36.200000
 195,Anna Grace Stephan,Dunn,4.0,0 days 00:08:37.460000
 42,Atlas Whitehead,Dunn,0.0,0 days 00:08:37.900000
-131,Lyla Stevens,LPAS,3.0,0 days 00:08:38.100000
 170,Sam Little,Dunn,2.0,0 days 00:08:38.350000
-132,Candace Carmichael,LPAS,3.0,0 days 00:08:38.380000
-196,Lily Page,Bloom,4.0,0 days 00:08:38.540000
-43,Edward Elder,Field,1.0,0 days 00:08:38.700000
 6,Lillian Duggan,Dunn,1.0,0 days 00:08:39
 171,Declan Peek,Dunn,3.0,0 days 00:08:39.060000
 133,Reb Turner,Dunn,3.0,0 days 00:08:39.210000
-67,Layla McClure,Field,2.0,0 days 00:08:39.390000
-102,Ezra Stewart,Hite,2.0,0 days 00:08:39.810000
 44,Kenneth Turner,Dunn,1.0,0 days 00:08:40.780000
 45,LIncoln Rhodes,Dunn,0.0,0 days 00:08:42.420000
-237,Sam Wilson,LPAS,4.0,0 days 00:08:43.460000
 46,Sebastiano Bianconcin,Dunn,1.0,0 days 00:08:43.980000
 172,Sebastian Benns,Dunn,3.0,0 days 00:08:44.110000
 197,Maggie Godthab,Dunn,4.0,0 days 00:08:44.540000
-238,Beren Jennings,Field,4.0,0 days 00:08:45.330000
-198,Gabriela Villagran,Tully,4.0,0 days 00:08:45.790000
 7,Elizabeth Bellows,Dunn,1.0,0 days 00:08:45.840000
 8,Avery Michels,Dunn,1.0,0 days 00:08:46.820000
-68,Evelyn Waits,Tully,2.0,0 days 00:08:47.080000
-239,Bill Weedman,Field,4.0,0 days 00:08:48.210000
-134,Henley Daines,Field,3.0,0 days 00:08:48.910000
-135,Solveig Graywaters,LPAS,3.0,0 days 00:08:51.650000
-240,Nicholas Dettlinger,Tully,4.0,0 days 00:08:52.950000
-136,Juliana Dawkins,LPAS,3.0,0 days 00:08:53.020000
-103,Charles Shemwell,LPAS,2.0,0 days 00:08:53.280000
 173,Greyson Reed,Dunn,3.0,0 days 00:08:55.250000
 137,Orla Dunne Gillies,Dunn,3.0,0 days 00:08:55.480000
-291,Carson Winkler,Bloom,5.0,0 days 00:08:56.130000
 199,Lucy Speiden,Dunn,4.0,0 days 00:08:56.280000
 104,Knox Harrison,Dunn,2.0,0 days 00:09:01.200000
 9,Ridley Mclemore,Dunn,1.0,0 days 00:09:01.440000
-200,Willow Bugg,Field,4.0,0 days 00:09:03.380000
-105,Henry Weedman,Field,2.0,0 days 00:09:04.170000
-10,Elsie Petrie,LPAS,1.0,0 days 00:09:04.260000
 106,Talon Rosenstein,Dunn,2.0,0 days 00:09:04.740000
-138,Ella Tremayne,St. Matthews,3.0,0 days 00:09:05.380000
-201,Anna Spradling,Tully,4.0,0 days 00:09:06.220000
 202,Evelyn Hughes,Dunn,4.0,0 days 00:09:08.150000
 174,Joe Colliver,Dunn,2.0,0 days 00:09:08.350000
-292,Anson Laughlin,LPAS,4.0,0 days 00:09:09.140000
 175,Clark Weisenbarger,Dunn,3.0,0 days 00:09:09.470000
-107,Tyler Gray,Hite,2.0,0 days 00:09:09.910000
-203,Maya Paris,LPAS,4.0,0 days 00:09:10.140000
-241,Calvin McClave,Tully,4.0,0 days 00:09:10.830000
-108,Leo Hyman,Bloom,2.0,0 days 00:09:12.430000
-204,Wiley Parker,Field,4.0,0 days 00:09:12.890000
-47,Jaxon Jones,Tully,1.0,0 days 00:09:14.600000
-11,Nora Stevens,LPAS,0.0,0 days 00:09:14.980000
-205,Tyani Cruz,LPAS,4.0,0 days 00:09:15.370000
 69,Vaeda Whitehead,Dunn,2.0,0 days 00:09:15.560000
-109,Maddox Trentham,Field,2.0,0 days 00:09:16.150000
-139,Calla Karr,Bloom,3.0,0 days 00:09:18.040000
 258,Lily Jett,Dunn,5.0,0 days 00:09:20.150000
-259,Leah Yang,Hite,5.0,0 days 00:09:20.780000
-293,Silas Sinclair,Bloom,5.0,0 days 00:09:21.460000
-12,Piper Miller,LPAS,1.0,0 days 00:09:21.660000
-260,Arianna Martin,LPAS,5.0,0 days 00:09:22.030000
-176,Haydon Singleton,Tully,3.0,0 days 00:09:23.770000
-177,Charlie Matheis,Tully,3.0,0 days 00:09:24.500000
-48,Clark Ghrist,Field,1.0,0 days 00:09:25.620000
-242,Benjamin Petrie,Tully,4.0,0 days 00:09:26.410000
-49,Joseph Delap,Field,1.0,0 days 00:09:27.160000
-178,Barret Gillooly,LPAS,3.0,0 days 00:09:27.380000
-206,Zella Bauerla,Field,4.0,0 days 00:09:27.630000
-207,Harper Galloday,St. Matthews,4.0,0 days 00:09:28.510000
-110,Harrison Singer,Field,2.0,0 days 00:09:29.320000
-208,Vivienne Hawthorne,Hite,4.0,0 days 00:09:29.600000
-13,Layla Hughes-Beatty,LPAS,0.0,0 days 00:09:29.940000
 14,Maya Coon,Dunn,0.0,0 days 00:09:30.380000
-50,Cain Crespo,Tully,1.0,0 days 00:09:30.780000
 179,Grayson Folks,Dunn,3.0,0 days 00:09:33.140000
-70,Olivia Nelson,St. Matthews,2.0,0 days 00:09:33.600000
-51,George Holm,Bloom,1.0,0 days 00:09:35.940000
-243,Blake Metcalf,Hite,4.0,0 days 00:09:36.040000
-52,Daniel Avery,Tully,1.0,0 days 00:09:38
-180,Will Duvall,LPAS,3.0,0 days 00:09:39.380000
-140,Isabella Hetzel,Tully,3.0,0 days 00:09:42.710000
-71,Olivia Spradling,Tully,2.0,0 days 00:09:45.870000
-72,Eloise Bush,Tully,2.0,0 days 00:09:48.170000
-53,Ali Alfayyadh,Tully,1.0,0 days 00:09:48.920000
-73,Kailey Curtsinger,Tully,2.0,0 days 00:09:49.890000
 15,Josie Strain,Dunn,1.0,0 days 00:09:50.600000
-54,Casey Rayner,St. Matthews,0.0,0 days 00:09:51.920000
 141,Aubrey Smith,Dunn,3.0,0 days 00:09:52.750000
-244,Elijah Coombs,Hite,4.0,0 days 00:09:53.790000
-245,Aj Hirsch,Hite,4.0,0 days 00:09:55.260000
 16,Elliott Leonardo,Dunn,1.0,0 days 00:09:56.420000
-111,Andrew Coty,Tully,2.0,0 days 00:09:57.760000
-261,Alexandra Coty,Tully,5.0,0 days 00:09:58.190000
-74,Meredith Wells,Field,2.0,0 days 00:09:59.630000
-246,Logan Booth,Tully,4.0,0 days 00:10:00.680000
-142,Abigail Klump,St. Matthews,3.0,0 days 00:10:01.410000
 209,Annie Weckman,Dunn,4.0,0 days 00:10:04.700000
-262,Ryanne Dresel,Tully,5.0,0 days 00:10:05.720000
-294,Khaled Mused,St. Matthews,5.0,0 days 00:10:06.110000
-143,Eva Bridenback,St. Matthews,3.0,0 days 00:10:07.030000
-75,Poppy Lockwood,St. Matthews,2.0,0 days 00:10:08.100000
 76,Sophia Price,Dunn,2.0,0 days 00:10:08.490000
-181,Abel Fields,St. Matthews,3.0,0 days 00:10:10.050000
-112,Ford Hitt,Field,2.0,0 days 00:10:13.580000
-77,Mary Ella Bohn,St. Matthews,2.0,0 days 00:10:13.790000
-78,Caroline Covington,Field,2.0,0 days 00:10:16.910000
-210,Silvia Holm,Bloom,4.0,0 days 00:10:17.650000
-55,Jackson Smith,Field,1.0,0 days 00:10:18.540000
-144,Tillie Tuttle,Bloom,3.0,0 days 00:10:18.980000
 182,Nathaniel Breetz,Dunn,3.0,0 days 00:10:19.840000
-263,Ellison Allen,Hite,5.0,0 days 00:10:24.870000
-79,Molly Donaghy,Tully,2.0,0 days 00:10:25.050000
-56,RJ Eaton,Tully,1.0,0 days 00:10:29.160000
-295,Nicholas Bohannon,Field,5.0,0 days 00:10:31.080000
-211,Lorelei Miller,LPAS,4.0,0 days 00:10:32.600000
-212,Hazel French,Bloom,4.0,0 days 00:10:33.680000
-17,Chauncey Malloy,Field,1.0,0 days 00:10:34
-247,Shelby Larkin,Tully,4.0,0 days 00:10:34.470000
-213,Prisila Rosales,LPAS,0.0,0 days 00:10:35.510000
-214,Claire Macobin,St. Matthews,4.0,0 days 00:10:37.650000
-145,Emily Ross,LPAS,3.0,0 days 00:10:38.540000
-183,Caleb Owens,Hite,3.0,0 days 00:10:42.440000
 18,Willa Jones,Dunn,1.0,0 days 00:10:43.020000
-264,Abby Amos,Field,5.0,0 days 00:10:43.650000
-146,Ophelia Olenick,LPAS,3.0,0 days 00:10:45.330000
-215,Olive Fields,LPAS,4.0,0 days 00:10:48.630000
-147,Abilene Willis,Tully,3.0,0 days 00:10:50.410000
-265,Addison Meredith,Tully,5.0,0 days 00:10:50.630000
-216,Sophia Embry,LPAS,4.0,0 days 00:10:50.690000
-19,Madeline Perdue,LPAS,1.0,0 days 00:10:51.960000
 113,Graham Godthaab,Dunn,2.0,0 days 00:10:53.560000
-114,Elijah Mudd,Bloom,2.0,0 days 00:10:54.850000
-148,Bella Luna,Tully,3.0,0 days 00:10:55.220000
 184,Carter Smith,Dunn,2.0,0 days 00:10:57.610000
-20,Lorelei Allen,Hite,1.0,0 days 00:10:57.860000
-217,Veronica Lish,LPAS,4.0,0 days 00:11:00.110000
-115,Leo Louden,Bloom,2.0,0 days 00:11:05.080000
-80,Penelope Murphy,Tully,2.0,0 days 00:11:05.690000
-81,Brooklyn Winburn,Bloom,2.0,0 days 00:11:06.310000
-57,Steven Wooley,LPAS,1.0,0 days 00:11:08.480000
-116,Parker McIntosh,Bloom,2.0,0 days 00:11:08.730000
-266,Natalie Kilcoyne,Tully,5.0,0 days 00:11:11.330000
-149,Louisa Snowden,LPAS,3.0,0 days 00:11:11.670000
-21,Prisila Rosales,LPAS,0.0,0 days 00:11:13.440000
-267,Adelaide Parker,Bloom,5.0,0 days 00:11:17.360000
-58,Cobi Shemwell,LPAS,0.0,0 days 00:11:17.880000
-82,Makenzie Mahoney,St. Matthews,2.0,0 days 00:11:18.010000
 117,John Mark Durso,Dunn,2.0,0 days 00:11:18.860000
-83,Oliver Peoples,Tully,1.0,0 days 00:11:20.910000
-59,Paul (Trey) Rueff,Tully,1.0,0 days 00:11:23.720000
-185,Charles Richardson,Field,3.0,0 days 00:11:24.780000
-150,Zoe Petrie,LPAS,3.0,0 days 00:11:27.960000
-84,Delta Johnson,Bloom,2.0,0 days 00:11:30.170000
-118,Max Roettger,Hite,2.0,0 days 00:11:33.960000
-85,Katie Kilcoyne,Tully,2.0,0 days 00:11:33.980000
-296,Zachary Anderson,Tully,5.0,0 days 00:11:43.790000
-22,Celia Laughlin,LPAS,1.0,0 days 00:11:51.940000
-60,Henry Cochran,St. Matthews,0.0,0 days 00:11:53.840000
 218,Olivia Mattes,Dunn,4.0,0 days 00:11:55.710000
 268,Josephine Mattes,Dunn,5.0,0 days 00:12:02.110000
-24,Anna Fields,St. Matthews,0.0,0 days 00:12:02.980000
 151,Abigayle Breetz,Dunn,3.0,0 days 00:12:03.660000
-119,Grayson Sallee,Field,2.0,0 days 00:12:10.690000
-269,Camilla Powell,Bloom,5.0,0 days 00:12:17.660000
-61,Aziel Gaines,Field,1.0,0 days 00:12:22.640000
 86,Charlee Hayden,Dunn,2.0,0 days 00:12:27.310000
-62,George Wagoner,LPAS,1.0,0 days 00:12:28.280000
-25,Alani Shemwell,LPAS,0.0,0 days 00:12:33.780000
 270,Genova Rodriquez,Dunn,5.0,0 days 00:12:39.550000
-186,Hudson Artman,LPAS,3.0,0 days 00:13:05.500000
-120,Henry Badgett,LPAS,2.0,0 days 00:13:14.880000
 87,Nyla Rodriquez,Dunn,2.0,0 days 00:13:15.800000
-63,Samuel S.,St. Matthews,0.0,0 days 00:13:15.800000
-26,Bella Eaton,LPAS,0.0,0 days 00:13:18.080000
 219,Clover Scanlan,Dunn,4.0,0 days 00:13:28.920000
-121,Oak Olvam,Bloom,2.0,0 days 00:13:31.800000
-297,Saylor Artman,LPAS,5.0,0 days 00:13:38.550000
-271,Marixsa Rosales,LPAS,5.0,0 days 00:14:01.460000
-122,Cooper Chlon,Hite,2.0,0 days 00:14:36.170000
-88,Ruthie Cate Todvine,St. Matthews,2.0,0 days 00:14:54.650000
 64,Luke Stewart,Dunn,0.0,0 days 00:15:00.020000
-220,Vrisha Llohar,LPAS,4.0,0 days 00:16:07.730000
-272,Marianna Bennett,St. Matthews,5.0,0 days 00:17:30.850000
