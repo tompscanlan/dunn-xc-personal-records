@@ -55,15 +55,15 @@
     <link rel="img_src" href="https://assets.sp.milesplit.com/images/milesplit-favicon.png" />
 
     <!-- Styling -->
-    <link href="https://css.sp.milesplit.com/drivefaze/reset.css?build=20210813072047" rel="stylesheet" />
+    <link href="https://css.sp.milesplit.com/drivefaze/reset.css?build=20210903170046" rel="stylesheet" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <link href="//fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" />
     <link href="//fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet" />
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link href="https://css.sp.milesplit.com/drivefaze/default.css?build=20210813072047" rel="stylesheet" />
-    <link href="https://css.sp.milesplit.com/drivefaze/sites/ky.css?build=20210813072047" rel="stylesheet" />
+    <link href="https://css.sp.milesplit.com/drivefaze/default.css?build=20210903170046" rel="stylesheet" />
+    <link href="https://css.sp.milesplit.com/drivefaze/sites/ky.css?build=20210903170046" rel="stylesheet" />
 
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -106,14 +106,14 @@
     
     <!-- Framework -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://js.sp.milesplit.com/drivefaze/prereq.js?build=20210813072047"></script>
-    <script src="https://js.sp.milesplit.com/drivefaze/core.js?build=20210813072047"></script>
-    <script src="https://js.sp.milesplit.com/drivefaze/api.js?build=20210813072047"></script>
-    <script src="https://js.sp.milesplit.com/3rdparty/twbs/3.3.7/bootstrap.min.js?build=20210813072047"></script>
+    <script src="https://js.sp.milesplit.com/drivefaze/prereq.js?build=20210903170046"></script>
+    <script src="https://js.sp.milesplit.com/drivefaze/core.js?build=20210903170046"></script>
+    <script src="https://js.sp.milesplit.com/drivefaze/api.js?build=20210903170046"></script>
+    <script src="https://js.sp.milesplit.com/3rdparty/twbs/3.3.7/bootstrap.min.js?build=20210903170046"></script>
 
     <!-- PlatformJS Browser and Device Detection & Segment -->
-    <script src="https://js.sp.milesplit.com/3rdparty/platform.js?build=20210813072047"></script>
-    <script src="https://js.sp.milesplit.com/drivefaze/segment.js?build=20210813072047"></script>
+    <script src="https://js.sp.milesplit.com/3rdparty/platform.js?build=20210903170046"></script>
+    <script src="https://js.sp.milesplit.com/drivefaze/segment.js?build=20210903170046"></script>
 
     <script src="/js/drivefaze/cointoss.js"></script>
 
@@ -152,14 +152,14 @@
         // Defer loading
         $(function(){
             Prereq
-                .require({ 'layout'     : 'https://js.sp.milesplit.com/drivefaze/layout.js?build=20210813072047' })
-                //.require({ 'api'        : 'https://js.sp.milesplit.com/drivefaze/api.js?build=20210813072047' })
-                //.require({ 'twbs'       : 'https://js.sp.milesplit.com/3rdparty/twbs/3.3.7/bootstrap.min.js?build=20210813072047' })
+                .require({ 'layout'     : 'https://js.sp.milesplit.com/drivefaze/layout.js?build=20210903170046' })
+                //.require({ 'api'        : 'https://js.sp.milesplit.com/drivefaze/api.js?build=20210903170046' })
+                //.require({ 'twbs'       : 'https://js.sp.milesplit.com/3rdparty/twbs/3.3.7/bootstrap.min.js?build=20210903170046' })
                 .require({ 'twitter'    : '//platform.twitter.com/widgets.js' });
             // Touch devices
             if (!!('ontouchstart' in window)) {
                 Prereq.require(
-                    'https://js.sp.milesplit.com/3rdparty/doubletaptogo/d2g.js?build=20210813072047',
+                    'https://js.sp.milesplit.com/3rdparty/doubletaptogo/d2g.js?build=20210903170046',
                     function() {
                         $('#navbar li:has(ul)').doubleTapToGo();
                     }
@@ -193,7 +193,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@milesplit">
 
-    <script src="https://js.sp.milesplit.com/drivefaze/pro/paywall.js?build=20210813072047"></script>
+    <script src="https://js.sp.milesplit.com/drivefaze/pro/paywall.js?build=20210903170046"></script>
 
     
     
@@ -207,7 +207,7 @@
             userToken:'',
             userID: '',
             appName: 'MileSplit',
-            appHash: 'f2c790c96b3ec3e98d5e48d3b6a83b7e',
+            appHash: 'c6446265e24e017a611b88444c61e2e6',
             siteId: '18',
             accounts: JSON.parse('{\"domain\":\"https:\\/\\/accounts.milesplit.com\",\"apiDomain\":\"https:\\/\\/api30.milesplit.com\",\"signup\":\"\\/signup\",\"join\":\"\\/join\",\"login\":\"\\/login\",\"loginSuper\":\"\\/login\\/super\",\"forgot\":\"\\/login\\/forgot\",\"logout\":\"\\/logout\",\"register\":\"\\/register\",\"account\":\"\\/account\\/information\",\"editAccount\":\"\\/settings\\/edit\",\"subscription\":\"\\/account\\/subscriptions\"}')
         });
@@ -264,6 +264,9 @@
                 </div>
                 <div class="menu">
                     <ul>
+                                                <li class="upgrade-pill">
+                            <a class="btn btn-primary btn-md" href="/join">Upgrade</a>
+                        </li>
                                                 <li class="results">
                             <a href="/results">Results</a>
                             <ul>
@@ -372,6 +375,15 @@
                 </div>
             </nav>
 
+                        <nav id="navbarUpgradePill">
+                <div class="button">
+                    <center>
+                        <a href="/join">
+                            <button class="btn btn-primary btn-block btn-md">Upgrade</button>
+                        </a>
+                    </center>
+                </div>
+            </nav>
             
             <nav id="social">
                 <div class="button">
@@ -395,7 +407,7 @@
                 </div>
                 <div class="menu">
                     <form role="search" method="POST" action="/search">
-                        <input type="hidden" name="searchToken" value="486231d4d4f66043b45969d51bb82df0">
+                        <input type="hidden" name="searchToken" value="2914dcc1a9fb0e99859cf3472d161c69">
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <label for="ddCategory" class="hidden">Category</label>
@@ -467,9 +479,9 @@
             
 
     
-<script src="https://js.sp.milesplit.com/drivefaze/meets/meets.js?build=20210813072047"></script>
-<link href="https://css.sp.milesplit.com/drivefaze/dropdown.css?build=20210813072047" rel="stylesheet" />
-<link href="https://css.sp.milesplit.com/drivefaze/meets/default.css?build=20210813072047" rel="stylesheet" />
+<script src="https://js.sp.milesplit.com/drivefaze/meets/meets.js?build=20210903170046"></script>
+<link href="https://css.sp.milesplit.com/drivefaze/dropdown.css?build=20210903170046" rel="stylesheet" />
+<link href="https://css.sp.milesplit.com/drivefaze/meets/default.css?build=20210903170046" rel="stylesheet" />
 
 <header class="meet">
 
@@ -1001,7 +1013,7 @@ Rank Team                      Total    1    2    3    4    5   *6   *7   *8   *
                 <a href="https://www.flosports.tv/terms-of-service/">Terms of Use</a>
             </p>
             <p class="speed" data-cacheKey="meets:361881:/meets/361881-madisonville-classic-2019/results/660850/raw:::ky" data-environment="Production">
-                Generated by 10.1.2.184                from cache (3240)                in 19 milliseconds
+                Generated by 10.1.2.18                from cache (3113)                in 32 milliseconds
             </p>
         </div>
     </footer>
@@ -1042,7 +1054,7 @@ Rank Team                      Total    1    2    3    4    5   *6   *7   *8   *
 </script>
 
 
-<script src="https://js.sp.milesplit.com/drivefaze/common-ms05.js?build=20210813072047"></script>
+<script src="https://js.sp.milesplit.com/drivefaze/common-ms05.js?build=20210903170046"></script>
 
 <script type="text/javascript">
     segmentNavTopLevelCategories    = $('#navbar .menu > ul > li > a');
@@ -1068,7 +1080,7 @@ Rank Team                      Total    1    2    3    4    5   *6   *7   *8   *
 
 <script type="text/javascript">
     new Drivefaze.Cointoss('mspt_3577_logged_out_upgrade_pill_v2', {
-        variationId: "0",
+        variationId: "1",
         toggleVariation: false
     });
 </script>

@@ -2,86 +2,57 @@ import scrape
 import pandas as pd
 import numpy as np
 
+SEASON_DATA = "2021_season_data"
+RACE_DATA = "%s/race_0" % SEASON_DATA
+DATA_BESTTIMES = "%s/besttimes" % SEASON_DATA
 
-def sample_and_change_time(df: pd.DataFrame, n:int, seconds: int):
-    sample = df.sample(n=n)
-
-    # add seconds to our sample
-    sample['delta'] = sample['delta'].apply(
-        lambda x: x + pd.to_timedelta(pd.offsets.Second(seconds))
-    )
-
-    # update textual time with the new time
-    sample['time'] = sample['delta'].apply(
-        lambda x: f'{x.components.minutes:d}:{x.components.seconds:02d}.{x.components.milliseconds/10:02.0f}' if not pd.isnull(x) else ''
-    )
-
-    df.update(sample)
-
-
-file = "original/Reservoir Park Invitational 08-14-2021.txt"
-textfile = open(file, 'r')
-raw_results = textfile.read()
-
-runners = scrape.get_runners(raw_results)
-
-df = pd.DataFrame(data=runners)
-times = df['time_pdf']
-splittimes = times.str.split(r"[:.]", expand=True).astype(float)
-delta = pd.to_timedelta(splittimes[0], unit='m') + pd.to_timedelta(splittimes[1], unit='s') + pd.to_timedelta(splittimes[2]*10, unit='ms')
-df['delta'] = delta
-df = df.drop(['index', 'bibnumber', 'name', 'year', 'school', 'time', 'points'], axis=1)
-df = df.rename(columns={'name_pdf': "name", "year_pdf": "year", "team_pdf": "team", "time_pdf": "time"})
-df['year'] = pd.to_numeric(df['year'])
-
-halfmile = df[ (df['delta'] < pd.to_timedelta(10, unit='m')) &  (df['year'] < 2)]
-
-df['miles'] = 1
-halfmile['miles'] = 0.5
-df.update(halfmile)
-
-# loses data types
-df.to_csv("2021_season_data/race_0.csv", index=False)
-# preserves data types
-df.to_pickle("2021_season_data/race_0.p")
-
-df['mile_pace'] = df['delta'] * 1/df['miles']
-df['best_mile_time'] = df['mile_pace']
-best = df[['name', 'team', 'year', 'best_mile_time']]
-best = best.sort_values(by='best_mile_time')
-best.to_csv("2021_season_data/besttimes.csv")
-best.to_pickle("2021_season_data/besttimes.p")
-
-# test next race
-r0 = pd.read_pickle("2021_season_data/race_0.p")
-r1 = pd.read_pickle("2021_season_data/race_0.p")
-
-sample_and_change_time(r1,5, -10)
-sample_and_change_time(r1,5, 20)
-
-#pd.concat([r0,r1]).drop_duplicates(keep=False)
-
-r0 = r0[r0['team'].astype('str').str.contains('Dunn')]
-r1 = r1[r1['team'].astype('str').str.contains('Dunn')]
-
-# r1[r1['team'].isin(['Dunn'])]
+URL = ''
+HTML_FILE = "./test_resources/reservior-park-invitational-2021.html"
 
 pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', None)
 pd.set_option('display.width', 200)
 
-sorted = df.sort_values(by='delta')
-sorted = sorted[sorted['team'].astype('str').str.contains('Dunn')]
-sorted[['name', 'year', 'time']]
+page = scrape.get_race_from_url_or_html_file(URL, HTML_FILE)
+raw_results = scrape.get_raw_results(page)
+runners = scrape.get_runners(raw_results)
 
-both = pd.merge(left=r0, right=r1, left_on='name', right_on='name')
-prs = both[both['delta_x'] > both['delta_y']]
-prs['improvement'] = prs['delta_x'] - prs['delta_y']
+df = pd.DataFrame(data=runners)
+df['name'] = df['name'].str.lower()
+df = df.set_index(keys=['name'])
+df = df.sort_index()
 
-prs = prs.sort_values(by='improvement')
-prs[['name', 'delta_x', 'delta_y', 'improvement']]
+df = df.drop(['index', 'bibnumber', 'points'], axis=1)
+df = df[df['school'].astype('str').str.contains('Dunn')]
 
-record = prs[['name','delta_y']]
-record.rename(columns={'delta_y': 'besttime'})
-record.to_csv('besttimes.csv')
-record.to_pickle('besttimes.p')
+# fix missed runner error:
+df.loc['declan peek','time'] = '8:39.06'
+
+# what year are these folks?
+df['year'] = pd.to_numeric(df['year']).astype('int')
+print("folks with a grade less than 1: is this a problem?")
+print(df[df['year'] < 1])
+
+df = scrape.race_time_to_timedelta(df, 'time', 'delta')
+
+# everyone ran a mile
+df['miles'] = 1
+# except those under year 2 ran a half mile
+halfmile = df.copy()
+halfmile = halfmile[ (halfmile['delta'] < pd.to_timedelta(10, unit='m')) &  (halfmile['year'] < 2)]
+halfmile['miles'] = 0.5
+df.update(halfmile)
+
+df['mile_pace'] = df['delta'] / df['miles']
+df.sort_values(by='mile_pace', inplace=True)
+best = df.copy()
+best = best.drop(columns=['year', 'school', 'time', 'delta'])
+best
+best.to_csv("%s.csv" % DATA_BESTTIMES)
+best.to_pickle("%s.p" % DATA_BESTTIMES)
+
+df.sort_index(inplace=True)
+# loses data types
+df.to_csv("%s.csv" % RACE_DATA)
+# preserves data types
+df.to_pickle("%s.p" % RACE_DATA)
