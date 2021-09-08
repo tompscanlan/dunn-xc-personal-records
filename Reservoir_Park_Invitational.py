@@ -1,6 +1,5 @@
 import scrape
 import pandas as pd
-import numpy as np
 
 SEASON_DATA = "2021_season_data"
 RACE_DATA = "%s/race_0" % SEASON_DATA
@@ -26,7 +25,7 @@ df = df.drop(['index', 'bibnumber', 'points'], axis=1)
 df = df[df['school'].astype('str').str.contains('Dunn')]
 
 # fix missed runner error:
-df.loc['declan peek','time'] = '8:39.06'
+df.loc['declan peek', 'time'] = '8:39.06'
 
 # what year are these folks?
 df['year'] = pd.to_numeric(df['year']).astype('int')
@@ -46,11 +45,12 @@ df.update(halfmile)
 df['mile_pace'] = df['delta'] / df['miles']
 df.sort_values(by='mile_pace', inplace=True)
 best = df.copy()
-best = best.drop(columns=['year', 'school', 'time', 'delta'])
-best
+best = best.drop(columns=['school', 'time', 'delta'])
+print(best)
 best.to_csv("%s.csv" % DATA_BESTTIMES)
 best.to_pickle("%s.p" % DATA_BESTTIMES)
 
+df = df.drop(columns=['school', 'time', 'delta'])
 df.sort_index(inplace=True)
 # loses data types
 df.to_csv("%s.csv" % RACE_DATA)

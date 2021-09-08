@@ -1,13 +1,13 @@
-name,miles_prior,mile_pace_prior,miles,mile_pace,improvement
-collier harston,1.0,0 days 00:07:50.830000,1.0,0 days 00:07:49.060000,0 days 00:00:01.770000
-greyson reed,1.0,0 days 00:08:55.250000,1.0,0 days 00:08:52.040000,0 days 00:00:03.210000
-joe colliver,1.0,0 days 00:09:08.350000,1.0,0 days 00:08:58.760000,0 days 00:00:09.590000
-sebastian benns,1.0,0 days 00:08:44.110000,1.0,0 days 00:08:29.010000,0 days 00:00:15.100000
-genova rodriquez,1.0,0 days 00:12:39.550000,1.0,0 days 00:12:22.800000,0 days 00:00:16.750000
-john mark durso,1.0,0 days 00:11:18.860000,1.0,0 days 00:10:54.910000,0 days 00:00:23.950000
-rutledge harris,1.0,0 days 00:07:57.540000,1.0,0 days 00:07:30.530000,0 days 00:00:27.010000
-rory demasie,1.0,0 days 00:08:09.840000,1.0,0 days 00:07:38.870000,0 days 00:00:30.970000
-lucy speiden,1.0,0 days 00:08:56.280000,1.0,0 days 00:08:24.570000,0 days 00:00:31.710000
-olivia mattes,1.0,0 days 00:11:55.710000,1.0,0 days 00:11:00.530000,0 days 00:00:55.180000
-charlee hayden,1.0,0 days 00:12:27.310000,1.0,0 days 00:10:51.340000,0 days 00:01:35.970000
-graham godthaab,1.0,0 days 00:10:53.560000,1.0,0 days 00:08:23.990000,0 days 00:02:29.570000
+,name,miles_prior,mile_pace_prior,year,miles,mile_pace,improvement
+0,collier harston,1.0,0 days 00:07:50.830000,3,1.0,0 days 00:07:49.060000,0 days 00:00:01.770000
+1,greyson reed,1.0,0 days 00:08:55.250000,3,1.0,0 days 00:08:52.040000,0 days 00:00:03.210000
+2,joe colliver,1.0,0 days 00:09:08.350000,3,1.0,0 days 00:08:58.760000,0 days 00:00:09.590000
+3,sebastian benns,1.0,0 days 00:08:44.110000,3,1.0,0 days 00:08:29.010000,0 days 00:00:15.100000
+4,genova rodriquez,1.0,0 days 00:12:39.550000,5,1.0,0 days 00:12:22.800000,0 days 00:00:16.750000
+5,john mark durso,1.0,0 days 00:11:18.860000,2,1.0,0 days 00:10:54.910000,0 days 00:00:23.950000
+6,rutledge harris,1.0,0 days 00:07:57.540000,4,1.0,0 days 00:07:30.530000,0 days 00:00:27.010000
+7,rory demasie,1.0,0 days 00:08:09.840000,3,1.0,0 days 00:07:38.870000,0 days 00:00:30.970000
+8,lucy speiden,1.0,0 days 00:08:56.280000,4,1.0,0 days 00:08:24.570000,0 days 00:00:31.710000
+9,olivia mattes,1.0,0 days 00:11:55.710000,4,1.0,0 days 00:11:00.530000,0 days 00:00:55.180000
+10,charlee hayden,1.0,0 days 00:12:27.310000,2,1.0,0 days 00:10:51.340000,0 days 00:01:35.970000
+11,graham godthaab,1.0,0 days 00:10:53.560000,2,1.0,0 days 00:08:23.990000,0 days 00:02:29.570000

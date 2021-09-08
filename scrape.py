@@ -7,6 +7,23 @@ import csv
 import sys
 import pandas as pd
 import os.path
+import smtplib, ssl
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from pretty_html_table import build_table
+import dotenv
+import os
+
+dotenv.load_dotenv(verbose=True)
+# email setup
+port = 465  # For SSL
+password = os.environ.get('SENDER_PASSWORD')
+sender_email = os.environ.get('SENDER_EMAIL')
+receiver_email = os.environ.get('TO_EMAIL').split(",|,\s+")
+smtp_server = "smtp.gmail.com"
+print ("to {}, from {}, pass '{}'".format(receiver_email, sender_email, password))
+# Create a secure SSL context
+context = ssl.create_default_context()
 
 
 DB_FILE = 'DXC-milesplit-data.db'
@@ -14,7 +31,7 @@ KM_PER_MILE = 1.609344
 MILE_PER_KM = 1/KM_PER_MILE
 
 csv_columns = ['index', 'bibnumber', 'name', 'year', 'school', 'time', 'points']
-# debug regex https://regex101.com/r/0lGHc1/1
+# debug regex https://regex101.com/r/eq8UqK/1
 runner_regexp = re.compile(
     r"^\s*(?P<index>\d+)\s+"
     r"(((?P<athlete>[\w.\s',-]+(?<!\s))\s*(?P<yr>(?:\d+|SO|FR|JR|SR))\s+(?P<num>\d+)\s+(?P<team>[^\d]+(?<!\s))\s+(\d+)?\s+(?P<tm>\d+:\d+.\d+)([-\s\d.:]+)+$)"
@@ -23,11 +40,8 @@ runner_regexp = re.compile(
     r"|"
     r"((?P<name_pdf>[\w\s()'-.]+?)\s(?P<year_pdf>\d+)\s(?P<team_pdf>[\w.\s',-]+?(?<!\s))\s*(?P<time_pdf>\d+:\d+.\d+)))"
 )
-# runner_regexp = re.compile(r"(^\d+\s(?P<name_pdf>[\w\s()'-.]+?)\s(?P<year_pdf>\d+)\s(?P<team_pdf>[\w.\s]+?)\s(?P<time_pdf>\d+:\d+.\d+)|^\s*(?P<index>\d+)[\s#]*(?P<bibnumber>\d+)?\s*(?P<name>[\w\s,'-.]+?(?<!\s))\s+(?P<year>\d+)?\s+(?P<school>[\w\s.',-]+?(?<!\s))?\s+(?P<time>\d+:\d+.\d+)\s+(?P<points>\d*)?\s*$)")
-# debug regex: https://regex101.com/r/SZVw8g/1
-# runner_regexp = re.compile(r"^\s*(?P<index>\d+)[\s#]*(?P<bibnumber>\d+)?\s*(?P<name>[\w\s,'-.]+?(?<!\s))\s+(?P<year>\d+)?\s+(?P<school>[\w\s.',-]+?(?<!\s))?\s+(?P<time>\d+:\d+.\d+)\s+(?P<points>\d*)?\s*$")
 event_name_regexp = re.compile(r"^(?P<eventname>Event.*$)")
-runner_regexp_pdf = re.compile(r"^\s*(?P<index>\d+)[\s#]*(?P<bibnumber>\d+)?\s*(?P<name>[\w\s,'-.]+?(?<!\s))\s+(?P<year>\d+)?\s+(?P<school>[\w\s.',-]+?(?<!\s))?\s+(?P<time>\d+:\d+.\d+)\s+(?P<points>\d*)?\s*$")
+
 
 def read_csv(file):
     runners = []
@@ -164,11 +178,58 @@ def get_race_from_url_or_html_file(url: str, file: str):
     return page
 
 
-def race_time_to_timedelta(d: pd.DataFrame, timecol: str, deltacol: str) -> pd.DataFrame:
+def race_time_to_timedelta(d: pd.DataFrame, timecol: str, deltacol: str) -> (dict, pd.DataFrame):
     splittimes = d[timecol].str.split(r"[:.]", expand=True).astype(float)
     d[deltacol] = pd.to_timedelta(splittimes[0], unit='m') + pd.to_timedelta(splittimes[1], unit='s') + \
                   pd.to_timedelta(splittimes[2] * 10, unit='ms')
     return d
+
+def get_runners_dataframe(url: str, html_file: str) -> pd.DataFrame:
+    page = get_race_from_url_or_html_file(url, html_file)
+    details = get_meet_details(page)
+    results = get_raw_results(page)
+    runners = pd.DataFrame(data=get_runners(results))
+
+    # keep track of Dunn runners only
+    runners = runners[runners['school'].astype('str').str.contains('Dunn')]
+    runners['year'] = pd.to_numeric(runners['year']).astype('int')
+
+    # turn string times into a time delta for use in comparisons
+    runners = race_time_to_timedelta(runners, 'time', 'delta')
+
+    # if this race has names formatted as "last, first" change it to 'first last'
+    mixed_name = runners[runners['name'].str.match(r"\S+\s*,\s*\S+")]
+    names = mixed_name['name'].str.split(r"\s*,\s*")
+    mixed_name['name'] = [' '.join([i[1], i[0]]) for i in names]
+    runners.update(mixed_name['name'])
+
+    runners['name'] = runners['name'].str.lower()
+    runners = runners.set_index(keys=['name']).sort_index()
+
+    # drop unneeded cols
+    runners = runners.drop(columns=['index', 'bibnumber', 'points', 'school', 'time'])
+
+    return details, runners
+
+
+
+
+def send_pr_email(details, df):
+    msg = MIMEMultipart()
+    msg['From'] = sender_email
+    msg['To'] = ', '.join(receiver_email)
+    msg['Subject'] = f'PRs for {details["meet_name"]}'
+    body = ("""
+PRs for {} on {}:
+
+{}
+""".format(details['meet_name'], details['date'], build_table(
+        df[['name', 'year', 'mile_pace_prior', 'mile_pace', 'improvement']], 'red_light')
+           ))
+    msg.attach(MIMEText(body, "html"))
+    with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
+        server.login(sender_email, password)
+        server.send_message(msg)
 
 
 if __name__ == "__main__":
@@ -177,7 +238,6 @@ if __name__ == "__main__":
               "'https://ky.milesplit.com/meets/364782-ktccca-meet-of-champions-2019/results/676374/raw'")
         exit(1)
 
-    # url = 'https://ky.milesplit.com/meets/364782-ktccca-meet-of-champions-2019/results/676374/raw'
     url = sys.argv[1]
     page = parse_url(url)
     raw_results = get_raw_results(page)
@@ -190,7 +250,7 @@ if __name__ == "__main__":
         r.update(event_name)
 
     df = pd.DataFrame(data=runners)
-    # df.set_index('index')
     df['date'] = pd.to_datetime(df['date'])
+    df['year'] = pd.to_numeric(df['year']).astype('int')
 
-    df.to_csv("./data/" + meet_details['meet_name'] + '-' + event_name['eventname'] + '.csv')
+    df.to_csv("./data/" + meet_details['meet_name'] + '.csv', index=False)
