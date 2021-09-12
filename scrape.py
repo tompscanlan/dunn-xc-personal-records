@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import errno
 
 import requests
 from bs4 import BeautifulSoup
@@ -26,6 +27,11 @@ print ("to {}, from {}, pass '{}'".format(receiver_email, sender_email, password
 context = ssl.create_default_context()
 
 
+RACE_SEASON = 2021
+SEASON_PATH = "./{}_season_data".format(RACE_SEASON)
+BESTTIMES_FILE = "{}/besttimes".format(SEASON_PATH)
+HTML_CACHE = "./data/html"
+
 DB_FILE = 'DXC-milesplit-data.db'
 KM_PER_MILE = 1.609344
 MILE_PER_KM = 1/KM_PER_MILE
@@ -34,13 +40,26 @@ csv_columns = ['index', 'bibnumber', 'name', 'year', 'school', 'time', 'points']
 # debug regex https://regex101.com/r/eq8UqK/1
 runner_regexp = re.compile(
     r"^\s*(?P<index>\d+)\s+"
-    r"(((?P<athlete>[\w.\s',-]+(?<!\s))\s*(?P<yr>(?:\d+|SO|FR|JR|SR))\s+(?P<num>\d+)\s+(?P<team>[^\d]+(?<!\s))\s+(\d+)?\s+(?P<tm>\d+:\d+.\d+)([-\s\d.:]+)+$)"
+    r"(((?P<athlete>[\w.\s',-]+?(?<!\s))\s+(?P<yr>(?:\d+|SO|FR|JR|SR|--|(?:M)\d|(?:W)\d)(?=\s))\s+(?:(?P<num>\d+)\s+)?(?P<team>[^\d]+(?<!\s))\s+(\d+)?\s+(?P<tm>\d+:\d+.\d+)\s+(?:(?P<pts>\d+)\s+)?([-\s\d.:]+)$)"
     r"|"
     r"((#(?P<bibnumber>\d+))?\s*(?P<name>[\w\s,'-.]+?(?<!\s))\s+(?P<year>\d+)?\s+(?P<school>[\w\s.',-]+?(?<!\s))?\s+(?P<time>\d+:\d+.\d+)\s+(?P<points>\d*)?\s*$)"
     r"|"
     r"((?P<name_pdf>[\w\s()'-.]+?)\s(?P<year_pdf>\d+)\s(?P<team_pdf>[\w.\s',-]+?(?<!\s))\s*(?P<time_pdf>\d+:\d+.\d+)))"
 )
 event_name_regexp = re.compile(r"^(?P<eventname>Event.*$)")
+
+
+def pandas_set_big_print():
+    pd.set_option('display.max_columns', None)
+    pd.set_option('display.max_rows', None)
+    pd.set_option('display.width', 200)
+
+
+def load_best_times() -> pd.DataFrame:
+    # Load current best times for all known runners
+    best_times = pd.read_pickle("%s.p" % BESTTIMES_FILE)
+    best_times.sort_index(inplace=True)
+    return best_times
 
 
 def read_csv(file):
@@ -143,9 +162,12 @@ def get_runners(s: str) -> [dict]:
                 continue
 
             runners.append(details)
+            print(line)
+
         # for debugging failed matches
         # else:
         #     print(line)
+
     return runners
 
 
@@ -164,13 +186,24 @@ def get_event_name(s: str) -> str:
                 return details
 
 
-def get_race_from_url_or_html_file(url: str, file: str):
+def get_race_from_url_or_html_file(url: str, file: str) -> str:
     page = ""
+
+    # create dirs for the cache, if needed
+    if not os.path.exists(os.path.dirname(file)):
+        try:
+            os.makedirs(os.path.dirname(file))
+        except OSError as exc:  # Guard against race condition
+            if exc.errno != errno.EEXIST:
+                raise
+
+    # If the cache doesn't exist, pull the web page and cache it
     if not os.path.isfile(file):
         page = parse_url(url)
         with open(file, "w") as f:
             f.write(page)
 
+    # otherwise, reade from cache
     else:
         with open(file, "r") as f:
             page = f.read()
@@ -184,15 +217,16 @@ def race_time_to_timedelta(d: pd.DataFrame, timecol: str, deltacol: str) -> (dic
                   pd.to_timedelta(splittimes[2] * 10, unit='ms')
     return d
 
-def get_runners_dataframe(url: str, html_file: str) -> pd.DataFrame:
+def get_runners_dataframe(url: str, html_file: str) -> (dict, pd.DataFrame):
     page = get_race_from_url_or_html_file(url, html_file)
     details = get_meet_details(page)
     results = get_raw_results(page)
+    print(results)
     runners = pd.DataFrame(data=get_runners(results))
 
     # keep track of Dunn runners only
     runners = runners[runners['school'].astype('str').str.contains('Dunn')]
-    runners['year'] = pd.to_numeric(runners['year']).astype('int')
+    # runners['year'] = pd.to_numeric(runners['year']).astype('int')
 
     # turn string times into a time delta for use in comparisons
     runners = race_time_to_timedelta(runners, 'time', 'delta')

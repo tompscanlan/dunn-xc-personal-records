@@ -6,6 +6,15 @@ import pandas as pd
 
 scrapes = [
     {
+        "url": 'https://ky.milesplit.com/meets/420062-rumble-through-the-jungle-2021/results/761414/raw',
+        "path": "test_resources/420062-rumble-through-the-jungle-2021",
+        "meet_name": "Rumble Through the Jungle 2021",
+        "venue_name": 'Creasey Mahan Nature Preserve',
+        "date": "Sep 10, 2021                            Sep 11, 2021",
+        "event_name": None,
+        "runners": 867
+    },
+    {
         "url": 'https://ky.milesplit.com/meets/436421-bluegrass-cross-country-invitational-2021/results/759967/raw',
         "meet_name": "Bluegrass Cross Country Invitational 2021",
         "venue_name": 'Masterson Station UK',
@@ -41,33 +50,33 @@ scrapes = [
         "event_name": "Event 4  Boys 2000 Meter Run CC 4th & Under",
         "runners": 374
     },
-    {
-        "url": "https://ky.milesplit.com/meets/341354-tiger-run-2019/results/660303/raw",
-        'meet_name': 'Tiger Run 2019',
-        'venue_name': 'Louisville Champions Park',
-        'date': 'Aug 24, 2019',
-        "path": "test_resources/341354-tiger-run-2019",
-        "event_name": "Event 2  Boys 3k Run CC Middle Schoo Middle School",
-        "runners": 332
-    },
-    {
-        "url": "https://ky.milesplit.com/meets/361881-madisonville-classic-2019/results/660850/raw",
-        "meet_name": "Madisonville Classic 2019",
-        "venue_name": 'Madisonville North Hopkins High School',
-        "date": "Aug 24, 2019",
-        "path": "test_resources/361881-madisonville-classic-2019-660850",
-        "event_name": "Event 5  Boys 1600 Meter Run CC",
-        "runners": 77
-    },
-    {
-        "url": "https://ky.milesplit.com/meets/361881-madisonville-classic-2019/results/660851/raw",
-        'meet_name': 'Madisonville Classic 2019',
-        'venue_name': 'Madisonville North Hopkins High School',
-        'date': 'Aug 24, 2019',
-        "path": "test_resources/361881-madisonville-classic-2019-660851",
-        "event_name": "Event 6  Girls 1600 Meter Run CC",
-        "runners": 46  # actually 48 with two set to 'Unknown' names
-    },
+    # {
+    #     "url": "https://ky.milesplit.com/meets/341354-tiger-run-2019/results/660303/raw",
+    #     'meet_name': 'Tiger Run 2019',
+    #     'venue_name': 'Louisville Champions Park',
+    #     'date': 'Aug 24, 2019',
+    #     "path": "test_resources/341354-tiger-run-2019",
+    #     "event_name": "Event 2  Boys 3k Run CC Middle Schoo Middle School",
+    #     "runners": 332
+    # },
+    # {
+    #     "url": "https://ky.milesplit.com/meets/361881-madisonville-classic-2019/results/660850/raw",
+    #     "meet_name": "Madisonville Classic 2019",
+    #     "venue_name": 'Madisonville North Hopkins High School',
+    #     "date": "Aug 24, 2019",
+    #     "path": "test_resources/361881-madisonville-classic-2019-660850",
+    #     "event_name": "Event 5  Boys 1600 Meter Run CC",
+    #     "runners": 77
+    # },
+    # {
+    #     "url": "https://ky.milesplit.com/meets/361881-madisonville-classic-2019/results/660851/raw",
+    #     'meet_name': 'Madisonville Classic 2019',
+    #     'venue_name': 'Madisonville North Hopkins High School',
+    #     'date': 'Aug 24, 2019',
+    #     "path": "test_resources/361881-madisonville-classic-2019-660851",
+    #     "event_name": "Event 6  Girls 1600 Meter Run CC",
+    #     "runners": 46  # actually 48 with two set to 'Unknown' names
+    # },
 ]
 
 
@@ -84,7 +93,8 @@ def load_raw_from_html_file(path: str) -> str:
 def test_get_runners():
     for s in scrapes:
 
-        raw_html = load_raw_from_html_file(s["path"])
+        # raw_html = load_raw_from_html_file(s["path"])
+        raw_html = scrape.get_race_from_url_or_html_file(s['url'], s['path']+'.html')
         assert "html" in raw_html, "raw_html doesn't look like html"
 
         raw_results = scrape.get_raw_results(raw_html)
@@ -109,24 +119,13 @@ def test_get_runners():
             assert not str(r['school']).endswith(" "), "school should not end with space for runner " + r["name"]
 
 
-
 def test_runners_dataframe():
     for s in scrapes:
-        raw_html = load_raw_from_html_file(s["path"])
-        raw_results = scrape.get_raw_results(raw_html)
-        runners = scrape.get_runners(raw_results)
-
-        df = pd.DataFrame(data=runners)
+        (meet_details, df) = scrape.get_runners_dataframe(s['url'], s['path'] + '.html')
+        df = df.reset_index()
         assert None not in df['name']
-        assert None not in df['school']
-        assert None not in df['time']
         assert None not in df['year']
-
-        times = df['time']
-        splittimes = times.str.split(r"[:.]", expand=True).astype(float)
-        delta = pd.to_timedelta(splittimes[0], unit='m') + pd.to_timedelta(splittimes[1], unit='s') + pd.to_timedelta(splittimes[2]*10, unit='ms')
-        assert None not in delta
-
+        assert None not in df['delta']
 
 
 @pytest.mark.network
