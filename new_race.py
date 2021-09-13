@@ -65,6 +65,10 @@ prs.to_pickle("%s.p" % (RACE_DATA_FILE + "_prs"))  # preserves data types
 best_prs = prs.drop(columns=['improvement', 'miles_prior', 'mile_pace_prior'])
 new_best.update(best_prs)
 
+# make 9 and 6 groups of runners based on mile pace
+new_best['groups-of-8'] = pd.qcut(new_best['mile_pace'], q=9, labels=False)
+new_best['groups-of-12'] = pd.qcut(new_best['mile_pace'], q=6, labels=False)
+
 # Store latest best times
 new_best.to_csv("%s.csv" % scrape.BESTTIMES_FILE)
 new_best.to_pickle("%s.p" % scrape.BESTTIMES_FILE)
