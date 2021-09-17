@@ -24,6 +24,8 @@ meet_details, runners = scrape.get_runners_dataframe(race_url, HTML_FILE)
 # dm = km
 runners['miles'] = 2 * scrape.MILE_PER_KM
 runners['mile_pace'] = runners['delta'] / runners['miles']
+runners = runners.drop(columns='delta')
+
 
 # Store current race data
 runners.to_csv("%s.csv" % RACE_DATA_FILE)  # loses data types
@@ -56,7 +58,7 @@ prs = prs.rename(columns={'miles_runners': 'miles', 'miles_best': 'miles_prior',
 prs = prs.reset_index()
 prs.sort_values(by='improvement', inplace=True)
 
-scrape.send_pr_email(meet_details,prs)
+
 
 # Store PRs for this race
 prs.to_csv("%s.csv" % (RACE_DATA_FILE + "_prs"))  # loses data types
@@ -72,3 +74,8 @@ new_best['groups-of-12'] = pd.qcut(new_best['mile_pace'], q=6, labels=False)
 # Store latest best times
 new_best.to_csv("%s.csv" % scrape.BESTTIMES_FILE)
 new_best.to_pickle("%s.p" % scrape.BESTTIMES_FILE)
+
+new_best = new_best.reset_index()
+new_best.sort_values(by='mile_pace', inplace=True)
+
+scrape.send_pr_email(meet_details,prs, new_best)

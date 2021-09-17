@@ -61,7 +61,11 @@ prs['year'] = pd.to_numeric(prs['year']).astype('int')
 prs = prs.reset_index()
 prs.sort_values(by='improvement', inplace=True)
 
-scrape.send_pr_email(meet_details,prs)
+# scrape.send_pr_email(meet_details,prs)
+
+# make 9 and 6 groups of runners based on mile pace
+new_best['groups-of-8'] = pd.qcut(new_best['mile_pace'], q=9, labels=False)
+new_best['groups-of-12'] = pd.qcut(new_best['mile_pace'], q=6, labels=False)
 
 # Store PRs for this race
 prs.to_csv("%s.csv" % (RACE_DATA_FILE + "_prs"))  # loses data types

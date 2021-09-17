@@ -42,15 +42,20 @@ halfmile = halfmile[ (halfmile['delta'] < pd.to_timedelta(10, unit='m')) &  (hal
 halfmile['miles'] = 0.5
 df.update(halfmile)
 
+# remove less than mile runners
+df = df[ df['miles'] >= 1]
+
 df['mile_pace'] = df['delta'] / df['miles']
+df = df.drop(columns='delta')
+
 df.sort_values(by='mile_pace', inplace=True)
 best = df.copy()
-best = best.drop(columns=['school', 'time', 'delta'])
+best = best.drop(columns=['school', 'time'])
 print(best)
 best.to_csv("%s.csv" % DATA_BESTTIMES)
 best.to_pickle("%s.p" % DATA_BESTTIMES)
 
-df = df.drop(columns=['school', 'time', 'delta'])
+df = df.drop(columns=['school', 'time'])
 df.sort_index(inplace=True)
 # loses data types
 df.to_csv("%s.csv" % RACE_DATA)

@@ -152,6 +152,8 @@ def get_runners(s: str) -> [dict]:
             details = rename_key(details, 'team', 'school')
             details = rename_key(details, 'tm', 'time')
 
+            details = rename_key(details, 'pts', 'points')
+
             details = rename_key(details, 'name_pdf', 'name')
             details = rename_key(details, 'year_pdf', 'year')
             details = rename_key(details, 'team_pdf', 'school')
@@ -162,7 +164,7 @@ def get_runners(s: str) -> [dict]:
                 continue
 
             runners.append(details)
-            print(line)
+            # print(line)
 
         # for debugging failed matches
         # else:
@@ -221,7 +223,7 @@ def get_runners_dataframe(url: str, html_file: str) -> (dict, pd.DataFrame):
     page = get_race_from_url_or_html_file(url, html_file)
     details = get_meet_details(page)
     results = get_raw_results(page)
-    print(results)
+    # print(results)
     runners = pd.DataFrame(data=get_runners(results))
 
     # keep track of Dunn runners only
@@ -248,7 +250,7 @@ def get_runners_dataframe(url: str, html_file: str) -> (dict, pd.DataFrame):
 
 
 
-def send_pr_email(details, df):
+def send_pr_email(details, df, best):
     msg = MIMEMultipart()
     msg['From'] = sender_email
     msg['To'] = ', '.join(receiver_email)
@@ -257,8 +259,14 @@ def send_pr_email(details, df):
 PRs for {} on {}:
 
 {}
+
+---------
+Best overall mile times:
+{}
 """.format(details['meet_name'], details['date'], build_table(
-        df[['name', 'year', 'mile_pace_prior', 'mile_pace', 'improvement']], 'red_light')
+        df[['name', 'year', 'mile_pace_prior', 'mile_pace', 'improvement']], 'red_light'),
+           build_table(
+               best, 'red_light')
            ))
     msg.attach(MIMEText(body, "html"))
     with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:

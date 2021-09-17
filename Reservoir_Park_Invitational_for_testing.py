@@ -38,6 +38,7 @@ halfmile = df[ (df['delta'] < pd.to_timedelta(10, unit='m')) &  (df['year'] < 2)
 
 df['miles'] = 1
 halfmile['miles'] = 0.5
+
 df.update(halfmile)
 
 # loses data types

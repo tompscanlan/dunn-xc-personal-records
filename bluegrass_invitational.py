@@ -11,40 +11,44 @@ pd.set_option('display.max_rows', None)
 pd.set_option('display.width', 200)
 
 # Load current best times for all known runners
-best_times = pd.read_pickle("%s.p" % BESTTIMES_FILE)
-best_times.sort_index(inplace=True)
+best_times = scrape.load_best_times()
 
 # parse new race data into a list of runners/times
-page = scrape.get_race_from_url_or_html_file(URL, HTML_FILE)
-meet_details = scrape.get_meet_details(page)
-raw_results = scrape.get_raw_results(page)
-runners = scrape.get_runners(raw_results)
+# page = scrape.get_race_from_url_or_html_file(URL, HTML_FILE)
+# meet_details = scrape.get_meet_details(page)
+# raw_results = scrape.get_raw_results(page)
+
+# parse new race data from the web or a cache into a dataframe of runners and times
+meet_details, bluegrass = scrape.get_runners_dataframe(URL, HTML_FILE)
+
+# runners = scrape.get_runners(raw_results)
 
 
 # this race, only Dunn runners, as a dataframe
-bluegrass = pd.DataFrame(data=runners)
-bluegrass = bluegrass[bluegrass['school'].astype('str').str.contains('Dunn')]
-bluegrass['year'] = pd.to_numeric(bluegrass['year']).astype('int')
+# bluegrass = pd.DataFrame(data=runners)
+# bluegrass = bluegrass[bluegrass['school'].astype('str').str.contains('Dunn')]
+# bluegrass['year'] = pd.to_numeric(bluegrass['year']).astype('int')
 
 # turn string times into a time delta for use in comparisons
-bluegrass = scrape.race_time_to_timedelta(bluegrass, 'time', 'delta')
+# bluegrass = scrape.race_time_to_timedelta(bluegrass, 'time', 'delta')
 
 # Tully race everyone ran 1 mile
 # km/m = d
 # dm = km
 bluegrass['miles'] = 2 * scrape.MILE_PER_KM
 bluegrass['mile_pace'] = bluegrass['delta'] / bluegrass['miles']
+bluegrass = bluegrass.drop(columns='delta')
 
 # this race has names formatted as "last, first", while best has "first last".
 # compensate for that
-bluegrass[['lastname', 'firstname']] = bluegrass.name.str.split(r"\s*,\s*", expand=True)
-bluegrass['name'] = [' '.join(i) for i in zip(bluegrass["firstname"], bluegrass["lastname"])]
-bluegrass['name'] = bluegrass['name'].str.lower()
-bluegrass = bluegrass.set_index(keys=['name'])
-bluegrass= bluegrass.sort_index()
+# bluegrass[['lastname', 'firstname']] = bluegrass.name.str.split(r"\s*,\s*", expand=True)
+# bluegrass['name'] = [' '.join(i) for i in zip(bluegrass["firstname"], bluegrass["lastname"])]
+# bluegrass['name'] = bluegrass['name'].str.lower()
+# bluegrass = bluegrass.set_index(keys=['name'])
+# bluegrass= bluegrass.sort_index()
 
 # drop unneeded cols
-bluegrass = bluegrass.drop(columns=['index', 'bibnumber', 'points', 'lastname', 'firstname', 'school', 'time', 'delta'])
+# bluegrass = bluegrass.drop(columns=['index', 'bibnumber', 'points', 'lastname', 'firstname', 'school', 'time', 'delta'])
 
 # Store current race data
 bluegrass.to_csv("%s.csv" % RACE_DATA_FILE)  # loses data types
@@ -77,7 +81,7 @@ prs['year'] = pd.to_numeric(prs['year']).astype('int')
 prs = prs.reset_index()
 prs.sort_values(by='improvement', inplace=True)
 
-scrape.send_pr_email(meet_details,prs)
+# scrape.send_pr_email(meet_details,prs)
 
 # Store PRs for this race
 prs.to_csv("%s.csv" % (RACE_DATA_FILE + "_prs"))  # loses data types
@@ -85,6 +89,10 @@ prs.to_pickle("%s.p" % (RACE_DATA_FILE + "_prs"))  # preserves data types
 
 best_prs = prs.drop(columns=['improvement', 'miles_prior', 'mile_pace_prior'])
 new_best.update(best_prs)
+
+# make 9 and 6 groups of runners based on mile pace
+new_best['groups-of-8'] = pd.qcut(new_best['mile_pace'], q=9, labels=False)
+new_best['groups-of-12'] = pd.qcut(new_best['mile_pace'], q=6, labels=False)
 
 # Store latest best times
 new_best.to_csv("%s.csv" % BESTTIMES_FILE)
