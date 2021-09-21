@@ -8,7 +8,6 @@ from dotenv import load_dotenv
 from functools import lru_cache
 import requests_cache
 from bs4 import BeautifulSoup
-import timeit
 
 load_dotenv(verbose=True)  # take environment variables from .env.
 RACES = [
@@ -94,15 +93,11 @@ def rename_key(d: dict, frm: str, to: str) -> dict:
     return d
 
 
-def line_to_runner(line: str) -> dict:
-    return line
-
-
 def get_runners(s: str) -> [dict]:
     runners: [dict] = []
     lines = re.split("\n|\r\n", s)
 
-    for pattern in patterns:
+    for pattern in scrape.PATTERNS:
         for i, line in enumerate(lines):
             match = pattern.match(line)
             if match is not None:
@@ -137,7 +132,6 @@ def get_runners_dataframe(race: dict) -> (dict, pd.DataFrame):
     runners = runners[runners['school'].astype('str').str.contains('Dunn')]
     # runners['year'] = pd.to_numeric(runners['year']).astype('int')
 
-
     # if this race has names formatted as "last, first" change it to 'first last'
     mixed_name = runners[runners['athlete'].str.match(r"\S+\s*,\s*\S+")]
     athletes = mixed_name['athlete'].str.split(r"\s*,\s*")
@@ -161,62 +155,6 @@ def get_runners_dataframe(race: dict) -> (dict, pd.DataFrame):
     return runners
 
 
-# debug regex https://regex101.com/r/eq8UqK/1
-patternA = re.compile(r"""
-^\s*
-(?:\d+)
-\s+
-(?P<athlete>[\w.\s',-]+?(?<!\s))
-\s+
-(?P<year>(?:\d+|SO|FR|JR|SR|--|(?:M)\d|(?:W)\d)(?=\s))
-\s+
-(?:(?:\d+)\s+)?
-(?P<school>[^\d]+(?<!\s))\s+(\d+)?
-\s+
-(?P<time>\d+:\d+.\d+)
-\s+
-(?:(?:\d+)\s+)?
-([-\s\d.:]+)$
-""", re.VERBOSE)
-
-patternB = re.compile(r"""
-^\s*
-(?:\d+)
-\s+
-(?:#
-(?:\d+)
-)?
-\s*
-(?P<athlete>[\w\s,'-.]+?(?<!\s))
-\s+
-(?P<year>\d+)?
-\s+
-(?P<school>[\w\s.',-]+?(?<!\s))?
-\s+
-(?P<time>\d+:\d+.\d+)
-\s+
-(?:\d*)?
-\s*
-$
-""", re.VERBOSE)
-
-# for PDF format
-patternC = re.compile(r"""
-^\s*
-(?:\d+)
-\s+
-(?P<athlete>[\w\s()'-.]+?)
-\s
-(?P<year>\d+)
-\s
-(?P<school>[\w.\s',-]+?(?<!\s))
-\s*
-(?P<time>\d+:\d+.\d+)
-""", re.VERBOSE)
-
-patterns = [patternA, patternB, patternC]
-
-
 def pull_data(races: [dict]):
     for i, race in enumerate(races):
         print("Getting race #{} for {}".format(i, race['meet_name'], race['url']))
@@ -237,8 +175,6 @@ def pull_data(races: [dict]):
             assert len(x) == race['runners']
 
             df = get_runners_dataframe(race)
-
-
             df.to_csv(filename)  # loses data types
 
 

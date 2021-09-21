@@ -43,15 +43,62 @@ KM_PER_MILE = 1.609344
 MILE_PER_KM = 1/KM_PER_MILE
 
 csv_columns = ['index', 'bibnumber', 'name', 'year', 'school', 'time', 'points']
+
 # debug regex https://regex101.com/r/eq8UqK/1
-runner_regexp = re.compile(
-    r"^\s*(?P<index>\d+)\s+"
-    r"(((?P<athlete>[\w.\s',-]+?(?<!\s))\s+(?P<yr>(?:\d+|SO|FR|JR|SR|--|(?:M)\d|(?:W)\d)(?=\s))\s+(?:(?P<num>\d+)\s+)?(?P<team>[^\d]+(?<!\s))\s+(\d+)?\s+(?P<tm>\d+:\d+.\d+)\s+(?:(?P<pts>\d+)\s+)?([-\s\d.:]+)$)"
-    r"|"
-    r"((#(?P<bibnumber>\d+))?\s*(?P<name>[\w\s,'-.]+?(?<!\s))\s+(?P<year>\d+)?\s+(?P<school>[\w\s.',-]+?(?<!\s))?\s+(?P<time>\d+:\d+.\d+)\s+(?P<points>\d*)?\s*$)"
-    r"|"
-    r"((?P<name_pdf>[\w\s()'-.]+?)\s(?P<year_pdf>\d+)\s(?P<team_pdf>[\w.\s',-]+?(?<!\s))\s*(?P<time_pdf>\d+:\d+.\d+)))"
-)
+patternA = re.compile(r"""
+^\s*
+(?:\d+)
+\s+
+(?P<athlete>[\w.\s',-]+?(?<!\s))
+\s+
+(?P<year>(?:\d+|SO|FR|JR|SR|--|(?:M)\d|(?:W)\d)(?=\s))
+\s+
+(?:(?:\d+)\s+)?
+(?P<school>[^\d]+(?<!\s))\s+(\d+)?
+\s+
+(?P<time>\d+:\d+.\d+)
+\s+
+(?:(?:\d+)\s+)?
+([-\s\d.:]+)$
+""", re.VERBOSE)
+
+patternB = re.compile(r"""
+^\s*
+(?:\d+)
+\s+
+(?:#
+(?:\d+)
+)?
+\s*
+(?P<athlete>[\w\s,'-.]+?(?<!\s))
+\s+
+(?P<year>\d+)?
+\s+
+(?P<school>[\w\s.',-]+?(?<!\s))?
+\s+
+(?P<time>\d+:\d+.\d+)
+\s+
+(?:\d*)?
+\s*
+$
+""", re.VERBOSE)
+
+# for PDF format
+patternC = re.compile(r"""
+^\s*
+(?:\d+)
+\s+
+(?P<athlete>[\w\s()'-.]+?)
+\s
+(?P<year>\d+)
+\s
+(?P<school>[\w.\s',-]+?(?<!\s))
+\s*
+(?P<time>\d+:\d+.\d+)
+""", re.VERBOSE)
+
+PATTERNS = [patternA, patternB, patternC]
+
 event_name_regexp = re.compile(r"^(?P<eventname>Event.*$)")
 
 
@@ -66,42 +113,6 @@ def load_best_times() -> pd.DataFrame:
     best_times = pd.read_pickle("%s.p" % BESTTIMES_FILE)
     best_times.sort_index(inplace=True)
     return best_times
-
-
-def read_csv(file):
-    runners = []
-    try:
-        with open(file, 'r') as csvfile:
-            reader = csv.DictReader(csvfile, fieldnames=csv_columns)
-            for row in reader:
-                runners.append(row)
-    except csv.Error as e:
-        sys.exit('file {}, line {}: {}'.format(file, reader.line_num, e))
-
-    return runners
-
-
-def write_csv(file, runners: [dict]):
-    try:
-        with open(file, 'w') as csvfile:
-            writer = csv.DictWriter(csvfile, fieldnames=csv_columns)
-            writer.writeheader()
-            for data in runners:
-                writer.writerow(data)
-    except csv.Error as e:
-        sys.exit('file {}, line {}: {}'.format(file, writer.line_num, e))
-
-
-def write_raw(file: str, results: str):
-    try:
-        with open(file, 'w') as rawfile:
-            count = rawfile.write(results)
-            if count != len(results):
-                print("error writing")
-                exit(1)
-
-    except IOError:
-        print("I/O error")
 
 
 def get_meet_details(page) -> dict:
