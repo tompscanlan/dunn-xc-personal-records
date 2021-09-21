@@ -1,844 +1,8 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:>
-<head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-M962P37');</script>
-    <!-- End Google Tag Manager -->
-    <title>Rumble Through the Jungle 2021 - Elementary (Raw)</title>
-
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script>var _sf_startpt=(new Date()).getTime()</script>
-
-    <!-- Responsive -->
-    <meta name="application-name" content="KYTrackXC.com" />
-    <meta name="MobileOptimized" content="width" />
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="apple-touch-fullscreen" content="YES" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,minimal-ui" />
-    <meta name="format-detection" content="telephone=no;address=no;email=no" />
-
-    <!-- Schema.org -->
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "SportsEvent",
-            "name": "Rumble Through the Jungle",
-            "description": "MileSplits official Elementary raw results for the 2021 Rumble Through the Jungle, hosted by North Oldham in Goshen KY.",
-            "startDate": "2021-09-10",
-            "endDate": "2021-09-11",
-            "homeTeam": "North Oldham",
-            "sport": "Cross Country",
-            "location": {
-                "@type": "Place",
-                "name": "Creasey Mahan Nature Preserve",
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressLocality": "Goshen",
-                  "addressRegion": "KY"
-                }
-            },
-            "url": "https://ky.milesplit.com/meets/420062-rumble-through-the-jungle-2021/results/761414/raw"
-        }
-    </script>
-
-    <!-- Icons -->
-    <link href="https://assets.sp.milesplit.com/images/milesplit-favicon.png" rel="apple-touch-icon" />
-    <link href="https://assets.sp.milesplit.com/images/milesplit-favicon.png" rel="shortcut icon" />
-    <link rel="img_src" href="https://assets.sp.milesplit.com/images/milesplit-favicon.png" />
-
-    <!-- Styling -->
-    <link href="https://css.sp.milesplit.com/drivefaze/reset.css?build=20210911173452" rel="stylesheet" />
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-    <link href="//fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" />
-    <link href="//fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet" />
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link href="https://css.sp.milesplit.com/drivefaze/default.css?build=20210911173452" rel="stylesheet" />
-    <link href="https://css.sp.milesplit.com/drivefaze/sites/ky.css?build=20210911173452" rel="stylesheet" />
-
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        dataLayer.push ({
-            'siteId'  : '18',
-            'tld'     :  'com'
-        });
-    </script>
-
-        <!-- Segment -->
-    <script>
-        !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"siop.flosports.tv/siop.js/v1/"+t+"/siop.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="4.0.0";
-            analytics.load("aNJHVzqtABqlCj8RMdLp4YsCVZ51nbs3");
-            var rawSegmentIdentity = '';
-
-            var userIdentity = false;
-            if (rawSegmentIdentity){
-                userIdentity = JSON.parse(rawSegmentIdentity);
-            }
-
-            if (userIdentity) {
-                analytics.identify(
-                    '',
-                    userIdentity
-                );
-            }
-            // do page call
-            var args = JSON.parse('["Meet - Raw Results",{"browser":"iPhone","browser_version":"6.0","component":"App Component","device":"Mobile","device_brand":"iPhone","node_id":420062,"node_type":"Meet","page_category":"Meet","subpage_category":"Raw Results","paywall_present":0,"vertical":"MileSplit","site_id":15,"milesplit_site_id":"18","milesplit_site_code":"ky"}]');
-            if (args.length > 1) {
-                analytics.page(
-                    args[0],
-                    args[1]
-                );
-            }
-            else {
-                analytics.page();
-            }
-        }}();
-    </script>
-    
-    <!-- Framework -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://js.sp.milesplit.com/drivefaze/prereq.js?build=20210911173452"></script>
-    <script src="https://js.sp.milesplit.com/drivefaze/core.js?build=20210911173452"></script>
-    <script src="https://js.sp.milesplit.com/drivefaze/api.js?build=20210911173452"></script>
-    <script src="https://js.sp.milesplit.com/3rdparty/twbs/3.3.7/bootstrap.min.js?build=20210911173452"></script>
-
-    <!-- PlatformJS Browser and Device Detection & Segment -->
-    <script src="https://js.sp.milesplit.com/3rdparty/platform.js?build=20210911173452"></script>
-    <script src="https://js.sp.milesplit.com/drivefaze/segment.js?build=20210911173452"></script>
-
-    <script src="/js/drivefaze/cointoss.js"></script>
-
-    <script>
-        var ads = {
-            'ga': {
-                'send': {
-                    'hitType'         : 'event',
-                    'eventCategory'   : 'dfp',
-                    'eventAction'     : 'Initializing',
-                    'eventLabel'      : 'Hi',
-                    'eventValue'      : 'Hi',
-                    'hitCallBack'     : function() {
-                        _DF_.log('DFP Callback');
-                    }
-                }
-            },
-            'page': {
-                'subdomain' : 'ky',
-                'module'    : 'meets',
-                'moduleId'  : '420062',
-                'keywords'  : '',
-                'account'   : 'NA'
-            },
-            'rules': {
-                'id'                      : '',
-                'cached'                  : '',
-                'skin'                    : '',
-                    'interstitial'            : '',
-            'mobileInterstitial'      : '',
-            'leaderboard'             : ''
-            
-        }
-        }
-        window.adData = ads;
-        // Defer loading
-        $(function(){
-            Prereq
-                .require({ 'layout'     : 'https://js.sp.milesplit.com/drivefaze/layout.js?build=20210911173452' })
-                //.require({ 'api'        : 'https://js.sp.milesplit.com/drivefaze/api.js?build=20210911173452' })
-                //.require({ 'twbs'       : 'https://js.sp.milesplit.com/3rdparty/twbs/3.3.7/bootstrap.min.js?build=20210911173452' })
-                .require({ 'twitter'    : '//platform.twitter.com/widgets.js' });
-            // Touch devices
-            if (!!('ontouchstart' in window)) {
-                Prereq.require(
-                    'https://js.sp.milesplit.com/3rdparty/doubletaptogo/d2g.js?build=20210911173452',
-                    function() {
-                        $('#navbar li:has(ul)').doubleTapToGo();
-                    }
-                );
-            }
-        });
-    </script>
-
-    <!-- Verification -->
-    <meta name="inmobi-site-verification" content="d3ac33f46ed8e33a0b3afa297531f596" />
-
-    <!-- SEO -->
-    <link rel="canonical" href="https://ky.milesplit.com/meets/420062-rumble-through-the-jungle-2021/results/761414/raw" />
-                <meta name="description" content="MileSplits official Elementary raw results for the 2021 Rumble Through the Jungle, hosted by North Oldham in Goshen KY." />
-                <meta name="keywords" content="Rumble Through the Jungle,Goshen,KY,USA" />
-        
-    <!-- Social/Sharing -->
-    <link rel="publisher" href="//plus.google.com/106335681194473166154" />
-
-    <!-- Facebook/OpenGraph -->
-    <meta property="fb:admins" content="506280686,508214191" />
-    <meta property="fb:app_id" content="261198561567" />
-    <meta property="fb:page_id" content="104136371855" />
-    <meta property="og:site_name" content="KYTrackXC.com" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" name="twitter:title" content="Rumble Through the Jungle 2021 - Elementary (Raw)" />
-            <meta property="og:description" name="twitter:description" content="MileSplits official Elementary raw results for the 2021 Rumble Through the Jungle, hosted by North Oldham in Goshen KY." />
-                <meta property="og:image" name="twitter:image:src" content="https://assets.sp.milesplit.com/meet_logos/420062?v=1618152606" />
-                    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@milesplit">
-
-    <script src="https://js.sp.milesplit.com/drivefaze/pro/paywall.js?build=20210911173452"></script>
-
-        <!-- Timer Facebook Pixel Code -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '386540525412744');
-        fbq('track', 'PageView');
-    </script>
-    <noscript>
-        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=386540525412744&ev=PageView&noscript=1" />
-    </noscript>
-    <!-- End Facebook Pixel Code -->
-    
-    
-
-    <!-- Initialize site settings -->
-    <script type="text/javascript">
-        _DF_.init({
-            subDomain: 'ky',
-            rootDomain: 'milesplit.com',
-            userName: '',
-            userToken:'',
-            userID: '',
-            appName: 'MileSplit',
-            appHash: '04a189f9aa9b45eade1f64f89497299d',
-            siteId: '18',
-            accounts: JSON.parse('{\"domain\":\"https:\\/\\/accounts.milesplit.com\",\"apiDomain\":\"https:\\/\\/api30.milesplit.com\",\"signup\":\"\\/signup\",\"join\":\"\\/join\",\"login\":\"\\/login\",\"loginSuper\":\"\\/login\\/super\",\"forgot\":\"\\/login\\/forgot\",\"logout\":\"\\/logout\",\"register\":\"\\/register\",\"account\":\"\\/account\\/information\",\"editAccount\":\"\\/settings\\/edit\",\"subscription\":\"\\/account\\/subscriptions\"}')
-        });
-    </script>
-
-</head>
-<body class="drivefaze redesign2015 ky meets">
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M962P37"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-<!-- Facebook -->
-<script>
-    window.fbAsyncInit = function() {
-        FB.init({
-            appId            : '261198561567',
-            autoLogAppEvents : false,
-            xfbml            : true,
-            version          : 'v3.0'
-        });
-    };
-</script>
-<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
-<!-- End Facebook -->
-
-<!-- AJAX Loader -->
-<div id="loader">
-    <div class="loaderMsgContainer">
-        <div class="loaderMsg">
-            <span>
-                <i class="fa fa-spinner fa-spin"></i>
-                <span class="loaderText">Loading</span>
-            </span>
-        </div>
-    </div>
-</div>
-<!-- End AJAX Loader -->
-
-<div id="page">
-
-    <header role="banner" id="masthead">
-        <div>
-
-            <div id="logo">
-                <a class="header" href="/">
-                    <span class="title">KYTrackXC.com</span>
-                </a>
-            </div>
-
-            <nav role="navigation" id="navbar">
-                <div class="button">
-                    <i class="fa fa-bars"></i>
-                    <i class="fa fa-remove"></i>
-                </div>
-                <div class="menu">
-                    <ul>
-                                                <li class="results">
-                            <a href="/results">Results</a>
-                            <ul>
-                                <li class="resultLinkShoveLeft">
-                                    <a href="/results">Meet Results</a>
-                                </li>
-                                <li class="resultLinkShoveLeft">
-                                    <a href="http://milesplit.live/overall">Live Results</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="rankings">
-                            <a href="/rankings/leaders/high-school-boys/cross-country">Rankings</a>
-                            <ul>
-                                                                <li>
-                                    <a href="/rankings/flo50/?year=2021&category=track">MileSplit50</a>
-                                </li>
-                                                                <li>
-                                    <a href="/rankings/leaders/high-school-boys/cross-country">XC Lists</a>
-                                </li>
-                                <li>
-                                    <a href="/rankings/leaders/high-school-boys/indoor-track-and-field">Indoor Lists</a>
-                                </li>
-                                <li>
-                                    <a href="/rankings/leaders/high-school-boys/outdoor-track-and-field">Outdoor Lists</a>
-                                </li>
-                                <li>
-                                    <a href="/virtual-meets">Virtual Meets</a>
-                                </li>
-                                <li>
-                                    <a href="/teamscores">XC Team Scores</a>
-                                </li>
-                                <li>
-                                    <a href="/athletes/compare">Compare Athletes</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="calendar">
-                            <a href="/calendar">Calendar</a>
-                        </li>
-                        <li id="navAthletes" class="athletes">
-                            <a href="/athletes">Athletes</a>
-                        </li>
-                                                <li class="teams">
-                            <a href="/teams">Teams</a>
-                        </li>
-                                                <li class="coverage">
-                            <a href="#">Coverage</a>
-                            <ul>
-                                <li>
-                                    <a href="/photos">Photos</a>
-                                </li>
-                                <li>
-                                    <a href="/videos">Videos</a>
-                                </li>
-                                <li>
-                                    <a href="/articles">Articles Archive</a>
-                                </li>
-                                <li>
-                                    <a href="/signings">College Commitments</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="discussion">
-                            <a href="/training">Training</a>
-                        </li>
-                        <li class="registration">
-                            <a href="/meet-creation">Registration</a>
-                            <ul>
-                                <li>
-                                    <a href="/articles/213974">About</a>
-                                </li>
-                                <li>
-                                    <a href="/meet-creation">Setup Meet</a>
-                                </li>
-                                                                <li>
-                                    <a href="https://support.milesplit.com/">FAQ/Help</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="more">
-                            <a href="/more">More</a>
-                            <ul>
-                                <li>
-                                    <a href="https://www.boulderbibs.com/collections/milesplit" target="_blank" >Bibs</a>
-                                </li>
-                                                                <li>
-                                    <a href="/timing">Timing Companies</a>
-                                </li>
-                                                                <li>
-                                    <a href="/calc">Conversion Calculator</a>
-                                </li>
-                                <li>
-                                    <a href="http://racetab.milesplit.com">RaceTab</a>
-                                </li>
-                                <li class="network">
-                                    <a href="/network">MileSplit Network</a>
-                                </li>
-                                <li>
-                                <li>
-                                    <a href="/discussion/local">Discuss</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-
-            
-            <nav id="social">
-                <div class="button">
-                    <a href="#" class="facebook">
-                        <i class="fa fa-facebook-official"></i>
-                    </a>
-                    <a href="#" class="twitter">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                    <span>Follow Us</span>
-                </div>
-            </nav>
-
-            <nav id="search" role="search">
-                <div class="button">
-                    <a href="/search">
-                        <i class="fa fa-search"></i>
-                        <i class="fa fa-remove"></i>
-                        <span>Search</span>
-                    </a>
-                </div>
-                <div class="menu">
-                    <form role="search" method="POST" action="/search">
-                        <input type="hidden" name="searchToken" value="6dcd18c6de94b068dda9cb01778c8e01">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <label for="ddCategory" class="hidden">Category</label>
-                                <i class="fa fa-chevron-down"></i>
-                                <select name="category" id="ddCategory">
-                                    <option value="athlete">Athletes</option>
-                                    <option value="meet">Meets</option>
-                                    <option value="team">Teams</option>
-                                </select>
-                            </div>
-                            <label for="txtKeyword" class="hidden">Search For</label>
-                            <input type="search" id="txtKeyword" name="q" maxlength="128" required x-webkit-speech speech />
-                            <div class="input-group-append">
-                                <button type="submit" class="btn">
-                                    <strong>Search</strong>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </nav>
-
-            <nav id="account">
-                <div class="button">
-                    <a href="#account">
-                        <i class="fa fa-user"></i>
-                        <i class="fa fa-remove"></i>
-                                                <span>Login</span>
-                                            </a>
-                </div>
-                <div class="menu">
-                    
-                    <section>
-                        <header>
-                            <strong class="notLoggedIn">
-                                Not logged in
-                            </strong>
-                        </header>
-
-                        <ul>
-                            <li>
-                                <a href="/login?next=https%3A%2F%2Fky.milesplit.com%2Fmeets%2F420062-rumble-through-the-jungle-2021%2Fresults%2F761414%2Fraw&ref=navbar">
-                                    Login
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/register?next=https%3A%2F%2Fky.milesplit.com%2Fmeets%2F420062-rumble-through-the-jungle-2021%2Fresults%2F761414%2Fraw&ref=navbar">
-                                    Sign Up
-                                </a>
-                            </li>
-                        </ul>
-
-                    </section>
-
-                                    </div>
-            </nav>
-
-        </div>
-    </header>
-    <div id="skin"></div>
-    <div class="leaderboard">
-        <div id="leaderboard_atf"></div>
-        <div id="leaderboard_promo"></div>
-        <div id="pushdown"></div>
-    </div>
-    <main role="main">
-
-        <div id="subheader">
-            
-
-    
-<script src="https://js.sp.milesplit.com/drivefaze/meets/meets.js?build=20210911173452"></script>
-<link href="https://css.sp.milesplit.com/drivefaze/dropdown.css?build=20210911173452" rel="stylesheet" />
-<link href="https://css.sp.milesplit.com/drivefaze/meets/default.css?build=20210911173452" rel="stylesheet" />
-
-<header class="meet">
-
-        <figure class="logo">
-        <a href="https://ky.milesplit.com/meets/420062-rumble-through-the-jungle-2021/info">
-                        <img src="https://assets.sp.milesplit.com/meet_logos/420062?v=1618152606" />
-                    </a>
-            </figure>
-    
-        <h1 class="meetName">
-            Rumble Through the Jungle 2021        </h1>
 
 
-    <div class="basicInfo">
-        <div class="date">
-            <time>
-                Sep 10, 2021            </time>
-                        <time>
-                Sep 11, 2021            </time>
-                    </div>
-
-        <div class="venueName">
-            <a href="https://ky.milesplit.com/venues/3614/creasey-mahan-nature-preserve">Creasey Mahan Nature Preserve</a>
-        </div>
-
-        <div class="venueCity">
-            Goshen, KY        </div>
-
-    </div>
-
-    <div class="extendedInfo">
-
-                <div class="hostedBy">
-            <span>Hosted by</span>
-            <a href="//KY.milesplit.com/teams/3669">
-                North Oldham            </a>
-        </div>
-        
-                <div class="timingCompany">
-            <span>Timing/Results</span>
-            <a href="//KY.milesplit.com/timing/428">
-                DC Timing LLC            </a>
-        </div>
-        
-
-        
-        <div class="countdown">
-                                                </div>
-    </div>
-
-    <div class="registration">
-
-                    <div>
-                <a href="http://milesplit.live/meets/420062" class="button streaming">View Live Results</a>
-            </div>
-        
-        
-                    <div class="info">
-                                    <a href="/meets/420062/registration" class="button closed">
-                        Registration Closed - View Your Entries
-                    </a>
-                            </div>
-        
-        
 
 
-    </div>
 
-    <div class="dropdownMenus">
-
-        <div class="meetHistory">
-            <a href="#">Meet History</a>
-            <div class="dropdown">
-                                <div class="recordCategories">
-                    <strong>Records</strong>
-                    <ul class="categories">
-                        <li>
-                            <a href="#meet">Meet</a>
-                        </li>
-                        <li>
-                            <a href="#venue">Venue</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="meet records">
-                    <strong>Meet Records</strong>
-                    <ul>
-                        <li class="back">
-                            <a href="#back">Back</a>
-                        </li>
-                                                <li class="overall male meet">
-                            <a href="https://www.milesplit.com/rankings/leaders/senior-men/cross-country?year=all&meet=4793">
-                                Overall Men
-                            </a>
-                        </li>
-                        <li class="overall female meet">
-                            <a href="https://www.milesplit.com/rankings/leaders/senior-women/cross-country?year=all&meet=4793">
-                                Overall Women
-                            </a>
-                        </li>
-                                                                        <li class="hs male meet">
-                            <a href="https://www.milesplit.com/rankings/leaders/high-school-boys/cross-country?year=all&meet=4793">
-                                High School Boys
-                            </a>
-                        </li>
-                        <li class="hs female meet">
-                            <a href="https://www.milesplit.com/rankings/leaders/high-school-girls/cross-country?year=all&meet=4793">
-                                High School Girls
-                            </a>
-                        </li>
-                                                                        <li class="ms male meet">
-                            <a href="https://www.milesplit.com/rankings/leaders/middle-school-boys/cross-country?year=all&meet=4793">
-                                Middle Boys
-                            </a>
-                        </li>
-                        <li class="ms female meet">
-                            <a href="https://www.milesplit.com/rankings/leaders/middle-school-girls/cross-country?year=all&meet=4793">
-                                Middle Girls
-                            </a>
-                        </li>
-                                                                    </ul>
-                </div>
-                                <div class="venue records">
-                    <strong>Venue Records</strong>
-                    <ul>
-                                                <li class="back">
-                            <a href="#back">Back</a>
-                        </li>
-                                                                        <li class="overall male venue">
-                            <a href="https://www.milesplit.com/rankings/leaders/senior-men/cross-country?year=all&venue=3614">
-                                Overall Men
-                            </a>
-                        </li>
-                        <li class="overall female venue">
-                            <a href="https://www.milesplit.com/rankings/leaders/senior-women/cross-country?year=all&venue=3614">
-                                Overall Women
-                            </a>
-                        </li>
-                                                                        <li class="hs male venue">
-                            <a href="https://www.milesplit.com/rankings/leaders/high-school-boys/cross-country?year=all&venue=3614">
-                                High School Boys
-                            </a>
-                        </li>
-                        <li class="hs female venue">
-                            <a href="https://www.milesplit.com/rankings/leaders/high-school-girls/cross-country?year=all&venue=3614">
-                                High School Girls
-                            </a>
-                        </li>
-                                                                        <li class="ms male venue">
-                            <a href="https://www.milesplit.com/rankings/leaders/middle-school-boys/cross-country?year=all&venue=3614">
-                                Middle School Boys
-                            </a>
-                        </li>
-                        <li class="ms female venue">
-                            <a href="https://www.milesplit.com/rankings/leaders/middle-school-girls/cross-country?year=all&venue=3614}">
-                                Middle School Girls
-                            </a>
-                        </li>
-                                                                    </ul>
-                </div>
-                                <div class="pastMeets">
-                    <strong>Past Meets</strong>
-                                        <ul class="decades">
-                                                                                                <li>
-                            <a href="#2020">2020s</a>
-                        </li>
-                                                                                                                                                <li>
-                            <a href="#2010">2010s</a>
-                        </li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li>
-                            <a href="#2000">2000s</a>
-                        </li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </ul>
-                                        <ul class="meets">
-                                                <li class="back">
-                            <a href="#back">Back</a>
-                        </li>
-                                                                        <li data-decade="2020">
-                            <a href="https://ky.milesplit.com/meets/375220-rumble-through-the-jungle-2020">2020-09-11</a>
-                                                            <a href="https://ky.milesplit.com/meets/420062-rumble-through-the-jungle-2021/compare/375220">Compare</a>
-                                                    </li>
-                                                <li data-decade="2010">
-                            <a href="https://ky.milesplit.com/meets/345492-rumble-through-the-jungle-2019">2019-09-07</a>
-                                                            <a href="https://ky.milesplit.com/meets/420062-rumble-through-the-jungle-2021/compare/345492">Compare</a>
-                                                    </li>
-                                                <li data-decade="2010">
-                            <a href="https://ky.milesplit.com/meets/319156-rumble-through-the-jungle-2018">2018-09-08</a>
-                                                            <a href="https://ky.milesplit.com/meets/420062-rumble-through-the-jungle-2021/compare/319156">Compare</a>
-                                                    </li>
-                                                <li data-decade="2010">
-                            <a href="https://ky.milesplit.com/meets/279861-rumble-through-the-jungle-2017">2017-09-09</a>
-                                                            <a href="https://ky.milesplit.com/meets/420062-rumble-through-the-jungle-2021/compare/279861">Compare</a>
-                                                    </li>
-                                                <li data-decade="2010">
-                            <a href="https://ky.milesplit.com/meets/246105-rumble-through-the-jungle-2016">2016-09-10</a>
-                                                            <a href="https://ky.milesplit.com/meets/420062-rumble-through-the-jungle-2021/compare/246105">Compare</a>
-                                                    </li>
-                                                <li data-decade="2010">
-                            <a href="https://ky.milesplit.com/meets/212489-rumble-through-the-jungle-2015">2015-09-12</a>
-                                                            <a href="https://ky.milesplit.com/meets/420062-rumble-through-the-jungle-2021/compare/212489">Compare</a>
-                                                    </li>
-                                                <li data-decade="2010">
-                            <a href="https://ky.milesplit.com/meets/179338-rumble-through-the-jungle-2014">2014-09-13</a>
-                                                            <a href="https://ky.milesplit.com/meets/420062-rumble-through-the-jungle-2021/compare/179338">Compare</a>
-                                                    </li>
-                                                <li data-decade="2010">
-                            <a href="https://ky.milesplit.com/meets/146179-rumble-through-the-jungle-2013">2013-09-14</a>
-                                                            <a href="https://ky.milesplit.com/meets/420062-rumble-through-the-jungle-2021/compare/146179">Compare</a>
-                                                    </li>
-                                                <li data-decade="2010">
-                            <a href="https://ky.milesplit.com/meets/121744-rumble-through-the-jungle-2012">2012-09-08</a>
-                                                            <a href="https://ky.milesplit.com/meets/420062-rumble-through-the-jungle-2021/compare/121744">Compare</a>
-                                                    </li>
-                                                <li data-decade="2010">
-                            <a href="https://ky.milesplit.com/meets/96851-rumble-through-the-jungle-2011">2011-09-10</a>
-                                                            <a href="https://ky.milesplit.com/meets/420062-rumble-through-the-jungle-2021/compare/96851">Compare</a>
-                                                    </li>
-                                                <li data-decade="2010">
-                            <a href="https://ky.milesplit.com/meets/73983-rumble-through-the-jungle-2010">2010-09-11</a>
-                                                            <a href="https://ky.milesplit.com/meets/420062-rumble-through-the-jungle-2021/compare/73983">Compare</a>
-                                                    </li>
-                                                <li data-decade="2000">
-                            <a href="https://ky.milesplit.com/meets/54248-rumble-through-the-jungle-2009">2009-09-12</a>
-                                                            <a href="https://ky.milesplit.com/meets/420062-rumble-through-the-jungle-2021/compare/54248">Compare</a>
-                                                    </li>
-                                                <li data-decade="2000">
-                            <a href="https://ky.milesplit.com/meets/38727-rumble-in-the-jungle-2008">2008-09-13</a>
-                                                            <a href="https://ky.milesplit.com/meets/420062-rumble-through-the-jungle-2021/compare/38727">Compare</a>
-                                                    </li>
-                                                <li data-decade="2000">
-                            <a href="https://ky.milesplit.com/meets/25438-rumble-in-the-jungle-2007">2007-09-08</a>
-                                                            <a href="https://ky.milesplit.com/meets/420062-rumble-through-the-jungle-2021/compare/25438">Compare</a>
-                                                    </li>
-                                                <li data-decade="2000">
-                            <a href="https://ky.milesplit.com/meets/18331-rumble-in-the-jungle-2006">2006-09-09</a>
-                                                            <a href="https://ky.milesplit.com/meets/420062-rumble-through-the-jungle-2021/compare/18331">Compare</a>
-                                                    </li>
-                                                <li data-decade="2000">
-                            <a href="https://ky.milesplit.com/meets/12488-rumble-in-the-jungle-2005">2005-09-10</a>
-                                                            <a href="https://ky.milesplit.com/meets/420062-rumble-through-the-jungle-2021/compare/12488">Compare</a>
-                                                    </li>
-                                                <li data-decade="2000">
-                            <a href="https://ky.milesplit.com/meets/120112-rumble-through-the-jungle-2004">2004-09-11</a>
-                                                            <a href="https://ky.milesplit.com/meets/420062-rumble-through-the-jungle-2021/compare/120112">Compare</a>
-                                                    </li>
-                                            </ul>
-                </div>
-                            </div>
-        </div>
-
-        
-        
-    </div>
-
-    <nav class="meetHeaderNav">
-
-        <a href="https://ky.milesplit.com/meets/420062-rumble-through-the-jungle-2021/info">
-            Home
-        </a>
-
-        <a href="https://ky.milesplit.com/meets/420062-rumble-through-the-jungle-2021/results" class="selected">
-            Results
-        </a>
-
-        
-        
-        
-                    <a href="https://ky.milesplit.com/meets/420062-rumble-through-the-jungle-2021/teams">
-                Teams
-            </a>
-        
-        
-                    <a href="https://ky.milesplit.com/meets/420062-rumble-through-the-jungle-2021/entries">
-                Entries
-            </a>
-        
-        <div class="addthis_toolbox addthis_default_style addthis_24x24_style social">
-            <a class="addthis_button_facebook"></a>
-            <a class="addthis_button_twitter"></a>
-            <a class="addthis_button_pinterest_share"></a>
-            <a class="addthis_button_tumblr"></a>
-            <a class="addthis_button_google_plusone_share"></a>
-            <a class="addthis_button_compact"></a>
-        </div>
-
-        <script type="text/javascript">var addthis_config = {'data_track_addressbar':true,'data_ga_tracker':'UA-381648-1'};</script>
-        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51d30fae08c5dc5c"></script>
-    </nav>
-</header>
-
-<script type="text/javascript">
-    $(document).ready(function(){
-        var cur = new Date();
-        var close = new Date('2021-09-07 21:00:00');
-        var one_day = 1000 * 60 * 60 * 24;
-        var distance = close.getTime() - cur.getTime();
-        var daysLeft = distance/ one_day;
-        if(daysLeft > 1){
-            $('#countdownMain').text(`Registration Closes in ${ Math.floor(daysLeft) } days`)
-        } else {
-            $('#countdownMain').text('Time left to register');
-            var x = setInterval(function() {
-                var now = new Date();
-                var distance = close.getTime() - now.getTime();
-                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                $('#countdownClock').text(`${hours} Hours ${minutes} Minutes ${seconds} Seconds`)
-                if (distance < 0) {
-                    clearInterval(x);
-                    $('#countdownMain').text('')
-                    $('#countdownClock').text('')
-                }
-            }, 1000);
-        }
-    })
-</script>
-
-
-                    </div>
-
-        
-        <div id="content">
-            <div>
-                
-
-<article>
-
-    <header>
-        <h2>Elementary</h2>
-        <form id="frmMeetResultsDetailFilter" autocomplete="off">
-                                    <div class="field dropdown">
-                <label>More Results</label>
-                <div class="input">
-                    <i class="fa fa-chevron-down"></i>
-                    <select id="ddResultsPage">
-                        <option value="https://ky.milesplit.com/meets/420062-rumble-through-the-jungle-2021/results">All</option>
-                                                <option value="https://ky.milesplit.com/meets/420062-rumble-through-the-jungle-2021/results/761414/formatted" selected>
-                        Elementary                        </option>
-                                                <option value="https://ky.milesplit.com/meets/420062-rumble-through-the-jungle-2021/results/760846/formatted" >
-                        High School                        </option>
-                                            </select>
-                </div>
-            </div>
-                    </form>
-    </header>
-
-        <div id="meetResultsBody" >
-        <pre><HTML>
-<BODY>
-<P>
-<PRE>
  DC Timing LLC  - Contractor License                        HY-TEK's Meet Manager
                Rumble through the Jungle XC Elementary - 9/10/2021               
                                   Creasey-Mahan                                  
@@ -856,20 +20,20 @@ Event 1  Girls 2000 Meter Run CC Elem Championships
   6 Burkhead, Kylie            5 Highl                  8:11.74    3             
   7 Stickle, Caroline          5 Harmo                  8:15.79    4             
   8 Burkhead, Kelsea           5 Highl                  8:20.92    5             
-  9 Stanton, Jenna             5 Eastern                8:21.21    6             
- 10 Morris, Bailee             4 Eastern                8:23.57    7             
+  9 Stanton, Jenna             5 East Running Club                8:21.21    6             
+ 10 Morris, Bailee             4 East Running Club                8:23.57    7             
  11 Salvatore, Bella           5 Goshe                  8:24.74    8             
- 12 Hughes, Ellie              5 Eastern                8:27.13    9             
+ 12 Hughes, Ellie              5 East Running Club                8:27.13    9             
  13 Sensenbrenner, Lola        5 Goshe                  8:27.30   10             
  14 Sanders, Kate              4 Harmo                  8:30.75   11             
  15 Kingery, Lauren            5 Goshe                  8:31.03   12             
  16 Martinez Sedano, Ana Sop   5 Goshe                  8:33.11   13             
  17 Seely, Kinley              5 Goshe                  8:35.09   14             
- 18 Stanton, Amber             4 Eastern                8:39.79   15             
+ 18 Stanton, Amber             4 East Running Club                8:39.79   15             
  19 Hutchins, Emma             5 Harmo                  8:39.86   16             
  20 Dunlap, Josalyn            3 Harmo                  8:45.01   17             
  21 Pettingill, Lillian        3 Harmo                  8:45.32   18             
- 22 Mooney, Ella Claire        3 Eastern                8:47.89   19             
+ 22 Mooney, Ella Claire        3 East Running Club                8:47.89   19             
  23 Foy, Josephine             5 Goshe                  8:51.48   20             
  24 Johnson, Kadie             5 Goshe                  8:52.93   21             
  25 Kingery, Cara              5 Goshe                  8:53.48                  
@@ -884,23 +48,23 @@ Event 1  Girls 2000 Meter Run CC Elem Championships
  34 Woods, Elena               4 Wilde                  9:24.98   26             
  35 Karr, Moira                5 Bloom                  9:25.14   27             
  36 White, Charlotte           5 Highl                  9:25.85   28             
- 37 Davis, Meli                2 Eastern                9:26.34   29             
+ 37 Davis, Meli                2 East Running Club                9:26.34   29             
  38 Crosby, Millie             3 Bloom                  9:27.78   30             
  39 Tompkins, Cate             4 Harmo                  9:30.50                  
  40 Tincher, Amelia            2 Harmo                  9:31.64                  
  41 Meyer, Ella Jo             4 Wilde                  9:34.86   31             
  42 Hamilton, Evie             5 Cky H                  9:42.53                  
  43 Angermeier, Kate           5 Wilde                  9:45.16   32             
- 44 Early, Aida                4 Eastern                9:46.32   33             
+ 44 Early, Aida                4 East Running Club                9:46.32   33             
  45 Smith, Adeline             4 Portl                  9:46.91                  
  46 Moulder, Harper            3 Portl                  9:48.69                  
- 47 Roby, Adelina              5 Eastern                9:50.29                  
- 48 Ellis, Parker              2 Eastern                9:50.48                  
+ 47 Roby, Adelina              5 East Running Club                9:50.29                  
+ 48 Ellis, Parker              2 East Running Club                9:50.48                  
  49 Mendoza, Hannah           -- Bates                  9:51.00   34             
  50 Roach, Evelyn              3 Bloom                  9:55.74   35             
  51 Page, Lily                 4 Bloom                  9:57.91   36             
  52 Nolan, Isla                5 Highl                  9:58.20   37             
- 53 Couch, Ellie               5 Eastern               10:02.81                  
+ 53 Couch, Ellie               5 East Running Club               10:02.81                  
  54 Erb, Clare                 3 Cky H                 10:05.86                  
  55 Burkholder, Addison        4 Lowe                  10:07.13   38             
  56 Goff, Ashlynn              4 Wilde                 10:09.85   39             
@@ -939,7 +103,7 @@ Event 1  Girls 2000 Meter Run CC Elem Championships
 =================================================================================
 Rank Team                      Total    1    2    3    4    5   *6   *7   *8   *9
 =================================================================================
-   1 Eastern                      56    6    7    9   15   19   29   33          
+   1 East Running Club                      56    6    7    9   15   19   29   33          
       Total Time:    42:39.59                                                    
          Average:     8:31.92                                                    
    2 Goshe                        57    8   10   12   13   14   20   21          
@@ -966,14 +130,14 @@ Rank Team                      Total    1    2    3    4    5   *6   *7   *8   *
    9 Lowe                        244   38   41   51   55   59                    
       Total Time:    55:46.66                                                    
          Average:    11:09.34                                                    
-</PRE>
-</BODY>
-</HTML>
+
+
+
  
-<HTML>
-<BODY>
-<P>
-<PRE>
+
+
+
+
  DC Timing LLC  - Contractor License                        HY-TEK's Meet Manager
                Rumble through the Jungle XC Elementary - 9/10/2021               
                                   Creasey-Mahan                                  
@@ -1005,7 +169,7 @@ Event 2  Boys 2000 Meter Run CC Elem Championships
  20 Minter, Isiah              5 Chris                            18             
  21 Gardner, Carson            4 Linco                            19             
  22 Nelson, Silas              5 Chris                            20             
- 23 Miles, Sawyer              4 Eastern                          21             
+ 23 Miles, Sawyer              4 East Running Club                          21             
  24 Willison, Brady            5 Chris                            22             
  25 Harmon, Owen               5 Cky H                            23             
  26 Fletcher, Caleb            4 Highl                            24             
@@ -1029,19 +193,19 @@ Event 2  Boys 2000 Meter Run CC Elem Championships
  44 Moore, Mason               4 Highl                                           
  45 Sornat, Beauen             4 Harmo                                           
  46 Moulder, Andrew            5 Portl                            38             
- 47 Mooney, Luke               5 Eastern                          39             
+ 47 Mooney, Luke               5 East Running Club                          39             
  48 Johnson, William           3 Linco                            40             
- 49 Qualls, Preston            3 Eastern                          41             
+ 49 Qualls, Preston            3 East Running Club                          41             
  50 Philips, Isaac             4 Portl                            42             
  51 Conner, Lochlan            2 Harmo                                           
  52 Skees, Nolan               2 Harmo                                           
  53 Learn, Henry               3 Bloom                            43             
  54 Quinlan, Andrew            3 Bates                            44             
- 55 Walls, Nolan               2 Eastern                          45             
+ 55 Walls, Nolan               2 East Running Club                          45             
  56 Jones, Cambell             4 Linco                            46             
  57 Anderson, Boone            5 Lowe                             47             
- 58 Ennenbach, John Robert     3 Eastern                          48             
- 59 Jaggers, Channing          2 Eastern                          49             
+ 58 Ennenbach, John Robert     3 East Running Club                          48             
+ 59 Jaggers, Channing          2 East Running Club                          49             
  60 Massey, Landon             4 Linco                            50             
  61 Walls, Brayden             4 Bates                            51             
  62 Sanders, Jayden            4 Linco                            52             
@@ -1054,7 +218,7 @@ Event 2  Boys 2000 Meter Run CC Elem Championships
  69 Satterly, Joseph           2 Wilde                            58             
  70 Sanders, Jackson           3 Wilde                            59             
  71 Kristo, Marko              5 Lowe                             60             
- 72 Aldridge, Ryan             3 Eastern                          61             
+ 72 Aldridge, Ryan             3 East Running Club                          61             
  73 Love, Jackson              2 Wilde                            62             
  74 Young, Connor              2 Bates                            63             
  75 Gibson, Brayden            5 Chris                            64             
@@ -1086,20 +250,20 @@ Rank Team                      Total    1    2    3    4    5   *6   *7   *8   *
    4 Cky H                       121    2   13   23   26   57   67               
    5 Chris                       150   18   20   22   35   55   64               
    6 Bloom                       160    1   29   33   43   54                    
-   7 Eastern                     194   21   39   41   45   48   49   61          
+   7 East Running Club                     194   21   39   41   45   48   49   61          
    8 Linco                       207   19   40   46   50   52   69   70          
    9 Lowe                        221    5   47   53   56   60   74               
   10 Wilde                       242   31   32   58   59   62   68               
   11 Bates                       289   44   51   63   65   66   72   73          
   12 Portl                       302   38   42   71   75   76                    
-</PRE>
-</BODY>
-</HTML>
+
+
+
  
-<HTML>
-<BODY>
-<P>
-<PRE>
+
+
+
+
  DC Timing LLC  - Contractor License                        HY-TEK's Meet Manager
                Rumble through the Jungle XC Elementary - 9/10/2021               
                                   Creasey-Mahan                                  
@@ -1161,7 +325,7 @@ Event 3  Girls 2000 Meter Run CC Elementary Open
  50 Love, Emma                 4 Locus                 10:37.14   31             
  51 Lye, Sylvia                4 Harmo                 10:40.40                  
  52 Kast, Cydni                5 Carte                 10:41.33                  
- 53 McCullough, Annslee        5 Eastern               10:42.17                  
+ 53 McCullough, Annslee        5 East Running Club               10:42.17                  
  54 Percefull, Aubrey          5 Kenwo                 10:44.72   32             
  55 Fusner, Taylor             5 Locus                 10:45.66                  
  56 Rubro, Analis              5 Hite                  10:47.47   33             
@@ -1169,9 +333,9 @@ Event 3  Girls 2000 Meter Run CC Elementary Open
  58 Thompson, Zoey             5 Harmo                 10:50.79                  
  59 Sheppard, Audrey           5 Goshe                 10:52.61                  
  60 Hughes, Evelyn             4 Dunn                  10:55.68   34             
- 61 Middleton, Harper          5 Eastern               10:57.59                  
+ 61 Middleton, Harper          5 East Running Club               10:57.59                  
  62 Muench, Amelia             5 Goshe                 10:59.45                  
- 63 Jeffries, Ryan             4 Eastern               11:00.25                  
+ 63 Jeffries, Ryan             4 East Running Club               11:00.25                  
  64 Craig, Alexia              4 Carte                 11:06.09                  
  65 Kaur, Yashnoor             5 Great                 11:07.51   35             
  66 Jones, Juliet              5 Camde                 11:12.30                  
@@ -1216,7 +380,7 @@ Event 3  Girls 2000 Meter Run CC Elementary Open
 105 Wade, Harper               5 Shelb                 13:22.07                  
 106 Anderson, Leah             4 Bates                 13:25.15                  
 107 McCarty, Eva               4 Locus                 13:29.85                  
-108 Ball, Emmy                 4 Eastern               13:30.97                  
+108 Ball, Emmy                 4 East Running Club               13:30.97                  
 109 Goodall, McKenzie          4 Hite                  13:35.07                  
 110 Sharf, Reagan              5 Hite                  13:39.39                  
 111 Kuhn, Molly                4 Emine                 13:40.57   54             
@@ -1267,14 +431,14 @@ Rank Team                      Total    1    2    3    4    5   *6   *7   *8   *
    9 Lowe                        278   52   55   56   57   58   60               
       Total Time:  1:13:13.95                                                    
          Average:    14:38.79                                                    
-</PRE>
-</BODY>
-</HTML>
+
+
+
  
-<HTML>
-<BODY>
-<P>
-<PRE>
+
+
+
+
  DC Timing LLC  - Contractor License                        HY-TEK's Meet Manager
                Rumble through the Jungle XC Elementary - 9/10/2021               
                                   Creasey-Mahan                                  
@@ -1301,7 +465,7 @@ Event 4  Boys 2000 Meter Run CC Elementary Open
  15 Keck, Billy                4 New S                  8:52.21   12             
  16 Brooker, Luke              5 Dunn                   8:55.01   13             
  17 Fee, Andrew                3 Goshe                  8:56.57   14             
- 18 McCafferty, Conner         4 Eastern                8:57.97   15             
+ 18 McCafferty, Conner         4 East Running Club                8:57.97   15             
  19 State, Dylan               4 Camde                  8:59.52   16             
  20 Letendre, Jake             4 Camde                  8:59.82   17             
  21 Sayler, Griffin            5 Goshe                  8:59.92   18             
@@ -1326,7 +490,7 @@ Event 4  Boys 2000 Meter Run CC Elementary Open
  40 Mortenson, Hayes           5 Hite                   9:29.11   34             
  41 Fairbourn, JJ              3 Shelb                  9:32.24                  
  42 Boehm, Thatcher            5 New S                  9:33.38   35             
- 43 Reese, Brayden             5 Eastern                9:34.45   36             
+ 43 Reese, Brayden             5 East Running Club                9:34.45   36             
  44 Wright, Henderson          4 Harmo                  9:35.42   37             
  45 Riner, Ike                 5 New S                  9:39.91   38             
  46 Bellows, Jonathan          5 Dunn                   9:43.16   39             
@@ -1334,7 +498,7 @@ Event 4  Boys 2000 Meter Run CC Elementary Open
  48 Merwarth, Frankie          5 Hawth                  9:47.13                  
  49 Minor, Gavin               4 Hite                   9:48.00   41             
  50 Groft, Jackson             5 Carte                  9:48.12   42             
- 51 Jeffries, Colton           4 Eastern                9:51.72   43             
+ 51 Jeffries, Colton           4 East Running Club                9:51.72   43             
  52 Rader, Jett                5 Carte                  9:53.72   44             
  53 Murdock, Colton            5 Goshe                  9:54.21   45             
  54 Brown, Grayson             4 Kenwo                  9:54.71   46             
@@ -1344,7 +508,7 @@ Event 4  Boys 2000 Meter Run CC Elementary Open
  58 Parker, Sam                4 Locus                 10:00.07   48             
  59 McClelland, Colton         5 Harmo                 10:00.74   49             
  60 Emrich, Holden             4 Hawth                 10:00.91                  
- 61 Brown, Bryson              5 Eastern               10:00.93   50             
+ 61 Brown, Bryson              5 East Running Club               10:00.93   50             
  62 Moneypenny, Noah           4 Harmo                 10:13.68   51             
  63 Leksrisawat, Arbor         5 Harmo                 10:15.09   52             
  64 Kirtley, Kylan             4 Harmo                 10:17.16                  
@@ -1374,7 +538,7 @@ Event 4  Boys 2000 Meter Run CC Elementary Open
  88 Mueller, Everette          4 Hawth                 11:42.90                  
  89 Wardell, Will              4 Goshe                 11:44.86                  
  90 Kemper, Joseph             5 St. M                 11:50.25                  
- 91 Raymond, Asher             4 Eastern               11:52.88   62             
+ 91 Raymond, Asher             4 East Running Club               11:52.88   62             
  92 Ark, Benjamin              4 Lowe                  12:32.37                  
  93 Scholtz, Clayton           4 New S                 12:46.28   63             
  94 Gilky, Carter              5 Kenwo                 12:46.75   64             
@@ -1428,17 +592,17 @@ Rank Team                      Total    1    2    3    4    5   *6   *7   *8   *
    9 Kenwo                       203    1   32   46   60   64   65   67          
       Total Time:    51:21.92                                                    
          Average:    10:16.39                                                    
-  10 Eastern                     206   15   36   43   50   62                    
+  10 East Running Club                     206   15   36   43   50   62                    
       Total Time:    50:17.95                                                    
          Average:    10:03.59                                                    
-</PRE>
-</BODY>
-</HTML>
+
+
+
  
-<HTML>
-<BODY>
-<P>
-<PRE>
+
+
+
+
  DC Timing LLC  - Contractor License                        HY-TEK's Meet Manager
                Rumble through the Jungle XC Elementary - 9/10/2021               
                                   Creasey-Mahan                                  
@@ -1455,7 +619,7 @@ Event 5  Girls 2000 Meter Run CC 2-3 Grade Open
   5 Mathews, Kiera             3 Harmo                  9:35.05    4             
   6 King, Brielle              3 Camde                  9:41.56    5             
   7 Tredway, Maggie            2 Highl                  9:43.47    6             
-  8 Miles, Gracey              3 Eastern                9:53.01    7             
+  8 Miles, Gracey              3 East Running Club                9:53.01    7             
   9 Huff, Scarlett             3 Hite                   9:54.69                  
  10 Rulketter, Emme            3 New S                  9:55.10    8             
  11 Lilly, Vivian              3 Harmo                  9:55.25    9             
@@ -1477,7 +641,7 @@ Event 5  Girls 2000 Meter Run CC 2-3 Grade Open
  27 Hennessee, Willa           3 Goshe                 10:12.73   24             
  28 Young, Anna Bella          6 Chris                 10:14.07                  
  29 Hudson, Charlie            2 Goshe                 10:18.81                  
- 30 Bustetter, Molly           3 Eastern               10:21.86   25             
+ 30 Bustetter, Molly           3 East Running Club               10:21.86   25             
  31 Johnson, Emme              3 Harmo                 10:23.78   26             
  32 Fuller, Brooke             3 Harmo                 10:24.34   27             
  33 Williams, Maggie           2 Highl                 10:24.89   28             
@@ -1502,7 +666,7 @@ Event 5  Girls 2000 Meter Run CC 2-3 Grade Open
  52 Fishburn, Adeline          3 Goshe                 10:57.87                  
  53 Moss, Lucy                 2 Camde                 10:58.62   38             
  54 Dunne Gillies, Orla        3 Dunn                  10:58.77   39             
- 55 Meyer, Sidney              2 Eastern               11:00.87   40             
+ 55 Meyer, Sidney              2 East Running Club               11:00.87   40             
  56 Mena, Naelah               3 Hite                  11:11.03                  
  57 Mattingly, Amelia          3 New S                 11:12.41   41             
  58 Persinger, Clarke          2 Hite                  11:13.88                  
@@ -1524,7 +688,7 @@ Event 5  Girls 2000 Meter Run CC 2-3 Grade Open
  74 Midkiff, Isabella          3 Marne                 11:48.78                  
  75 Guffey, Lila               2 Goshe                 11:53.74                  
  76 Flinn, Lola                3 Highl                 11:55.20                  
- 77 Cunningham, Olivia         2 Eastern               11:55.31   47             
+ 77 Cunningham, Olivia         2 East Running Club               11:55.31   47             
  78 Logsdon, Presley           3 Linco                 11:57.88                  
  79 King, Madelynn             2 Camde                 12:02.68                  
  80 Buday, Abby                2 Locus                 12:15.37   48             
@@ -1538,7 +702,7 @@ Event 5  Girls 2000 Meter Run CC 2-3 Grade Open
  88 Collins, Quinn             3 Shelb                 12:32.22                  
  89 Ewing, Edy                 2 Hawth                 12:39.99                  
  90 Sensenbrenner, Cora        2 Goshe                 12:40.82                  
- 91 Lawson-Cambron, Willow     2 Eastern               12:42.23   51             
+ 91 Lawson-Cambron, Willow     2 East Running Club               12:42.23   51             
  92 Breetz, Abigayle           3 Dunn                  12:43.02   52             
  93 Hayden, Charlee            2 Dunn                  12:44.62   53             
  94 Barone, Arianna            3 Lowe                  12:44.63   54             
@@ -1561,7 +725,7 @@ Event 5  Girls 2000 Meter Run CC 2-3 Grade Open
 111 Burnette, Lucia            2 Hawth                 13:22.66                  
 112 Ford, Penelope             3 Highl                 13:30.57                  
 113 Bowden, Aubri              3 Bates                 13:37.44   64             
-114 Forrest, Emma              2 Eastern               13:44.96   65             
+114 Forrest, Emma              2 East Running Club               13:44.96   65             
 115 Bronger, Mary Jaine        2 Bates                 13:50.44   66             
 116 Tarbet, Emery              3 Goshe                 14:07.18                  
 117 Rodriguez, Sofia           3 Kenwo                 14:24.24                  
@@ -1599,7 +763,7 @@ Rank Team                      Total    1    2    3    4    5   *6   *7   *8   *
    5 Camde                       130    5   23   33   34   35   37   38          
       Total Time:    52:03.38                                                    
          Average:    10:24.68                                                    
-   6 Eastern                     170    7   25   40   47   51   65               
+   6 East Running Club                     170    7   25   40   47   51   65               
       Total Time:    55:53.28                                                    
          Average:    11:10.66                                                    
    7 New S                       177    8   22   41   45   61                    
@@ -1617,14 +781,14 @@ Rank Team                      Total    1    2    3    4    5   *6   *7   *8   *
   11 Bates                       296   57   58   59   60   62   64   66          
       Total Time:  1:05:12.67                                                    
          Average:    13:02.54                                                    
-</PRE>
-</BODY>
-</HTML>
+
+
+
  
-<HTML>
-<BODY>
-<P>
-<PRE>
+
+
+
+
  DC Timing LLC  - Contractor License                        HY-TEK's Meet Manager
                Rumble through the Jungle XC Elementary - 9/10/2021               
                                   Creasey-Mahan                                  
@@ -1700,7 +864,7 @@ Event 6  Boys 2000 Meter Run CC 2-3 Grade Open
  64 Benns, Sebastian           3 Dunn                  10:09.78                  
  65 Jara, Kristopher           3 Lowe                  10:10.12   48             
  66 Nelson, Elijah             3 St. M                 10:10.27   49             
- 67 Gocke, Silas               3 Eastern               10:11.35                  
+ 67 Gocke, Silas               3 East Running Club               10:11.35                  
  68 Harrison, Knox             2 Dunn                  10:13.12                  
  69 Horn, Robert               2 New S                 10:13.75                  
  70 Lott, Levi                 2 Cky H                 10:13.79                  
@@ -1749,7 +913,7 @@ Event 6  Boys 2000 Meter Run CC 2-3 Grade Open
 113 Peek, Declan               3 Dunn                  10:56.48                  
 114 Cameron, Braden            2 Goshe                 10:59.28                  
 115 Weisenbarger, Clark        3 Dunn                  11:02.92                  
-116 Duke, Caleb                2 Eastern               11:04.05                  
+116 Duke, Caleb                2 East Running Club               11:04.05                  
 117 Cecil, Truitt              3 Highl                 11:05.27                  
 118 Cornely, Sean              3 Great                 11:06.93   69             
 119 Kaelin, Patterson          3 Hawth                 11:07.12   70             
@@ -1768,7 +932,7 @@ Event 6  Boys 2000 Meter Run CC 2-3 Grade Open
 132 Folks, Grayson             3 Dunn                  11:38.16                  
 133 Breetz, Nathaniel          3 Dunn                  11:39.28                  
 134 Mudd, Elijah               2 Bloom                 11:39.33   78             
-135 Brown, Logan               3 Eastern               11:39.78                  
+135 Brown, Logan               3 East Running Club               11:39.78                  
 136 Sogar, Colsen              3 Goshe                 11:44.35                  
 137 Tindall, Drew              2 Camde                 11:45.24   79             
 138 Durso, John Mark           2 Dunn                  11:48.25                  
@@ -1859,14 +1023,14 @@ Rank Team                      Total    1    2    3    4    5   *6   *7   *8   *
   14 Great                       379   62   69   75   85   88                    
       Total Time:  1:03:06.07                                                    
          Average:    12:37.22                                                    
-</PRE>
-</BODY>
-</HTML>
+
+
+
  
-<HTML>
-<BODY>
-<P>
-<PRE>
+
+
+
+
  DC Timing LLC  - Contractor License                        HY-TEK's Meet Manager
                Rumble through the Jungle XC Elementary - 9/10/2021               
                                   Creasey-Mahan                                  
@@ -1882,10 +1046,10 @@ Results - Women 2000 Run
   3 Becker, Sadie             W1 Hite                  10:16.78                  
   4 Owens, Natalie            W1 Highl                 10:39.60    2             
   5 Streips, Nora             W1 Harmo                 10:40.38    3             
-  6 Raymond, Arya             W0 Eastern               10:42.56    4             
+  6 Raymond, Arya             W0 East Running Club               10:42.56    4             
   7 Streips, Maia             W1 Harmo                 10:47.50    5             
   8 Bailey, Carly             W1 St. M                 10:53.76                  
-  9 Reese, Maecee             W1 Eastern               10:58.16    6             
+  9 Reese, Maecee             W1 East Running Club               10:58.16    6             
  10 Simpson, Greenley         W0 St. M                 11:04.76                  
  11 Bellows, Elizabeth        W1 Dunn                  11:06.34    7             
  12 Clark, Piper              W1 Dunn                  11:11.43    8             
@@ -1906,10 +1070,10 @@ Results - Women 2000 Run
  27 Douglass, Mabel           W1 Hite                  11:48.88                  
  28 Fuller, Eleanor           W1 Harmo                 11:49.13   17             
  29 Michels, Avery            W1 Dunn                  11:54.27   18             
- 30 Jeffries, Harper          W0 Eastern               12:13.75   19             
+ 30 Jeffries, Harper          W0 East Running Club               12:13.75   19             
  31 Slowinski, Rowan          W1 Highl                 12:21.48   20             
  32 Anderson, Callie          W1 Lowe                  12:21.49   21             
- 33 Richardson, Emma          W1 Eastern               12:29.18   22             
+ 33 Richardson, Emma          W1 East Running Club               12:29.18   22             
  34 McKinley, Addisyn         W1 Carte                 12:35.59                  
  35 Barone, Isabella          W1 Lowe                  12:36.11   23             
  36 Massey, Sara              W1 Great                 12:40.73   24             
@@ -1924,7 +1088,7 @@ Results - Women 2000 Run
  45 Decker, Mariam            W1 Lowe                  13:28.66   28             
  46 McLemore, Ridley          W1 Dunn                  13:30.74   29             
  47 Agarwal, Sitara           W1 Highl                 13:32.77   30             
- 48 Jeffries, Raelee          W1 Eastern               13:46.10   31             
+ 48 Jeffries, Raelee          W1 East Running Club               13:46.10   31             
  49 Beard, Ava                W1 Great                 13:47.69   32             
  50 Jones, Willa              W1 Dunn                  13:50.10   33             
  51 Perdue, Madeline          W1 Linco                 13:52.13                  
@@ -1968,17 +1132,17 @@ Results - Men 2000 Run
  12 Fowler, Logan             M1 Lowe                  10:51.86    9             
  13 Doyle, Clive              M1 Bates                 10:52.29   10             
  14 Henderson, Joseph         M1 Lowe                  10:52.52   11             
- 15 Tullbane, Jackson         M1 Eastern               10:56.89   12             
+ 15 Tullbane, Jackson         M1 East Running Club               10:56.89   12             
  16 Gomsak, Oliver            M1 Camde                 11:00.87                  
- 17 Procter, Carson           M0 Eastern               11:03.03   13             
+ 17 Procter, Carson           M0 East Running Club               11:03.03   13             
  18 Creason, Korben           M1 Camde                 11:04.20                  
  19 Page, Kadison             M1 Harmo                 11:10.33   14             
  20 Clark, Colin              M1 Wilde                 11:10.83                  
  21 Ray, Davis                M1 Bates                 11:12.09   15             
  22 Henderson, Race           M1 Lowe                  11:13.86   16             
- 23 Richardson, Nathan        M0 Eastern               11:14.48   17             
+ 23 Richardson, Nathan        M0 East Running Club               11:14.48   17             
  24 Moore, Beckett            M0 Highl                 11:20.62   18             
- 25 Dicus, Nash               M1 Eastern               11:25.46   19             
+ 25 Dicus, Nash               M1 East Running Club               11:25.46   19             
  26 Lockwood, Rory            M0 St. M                 11:25.64                  
  27 Singer, Owen              M1 Lowe                  11:35.50   20             
  28 Harrison, Quentin         M0 Highl                 11:40.53   21             
@@ -1991,7 +1155,7 @@ Results - Men 2000 Run
  35 Lott, David               M1 Cky H                 12:24.83                  
  36 Caraballo, Damian Rosa    M1 Great                 12:26.64                  
  37 Bianconcini, Sebastiano   M1 Dunn                  12:27.53                  
- 38 Reese, Brodee             M0 Eastern               12:28.87   25             
+ 38 Reese, Brodee             M0 East Running Club               12:28.87   25             
  39 Perry, Beckett            M1 Lowe                  12:50.40   26             
  40 Breslin, Emory            M0 Great                 12:53.90                  
  41 Mattera, Cohen            M0 Locus                 12:55.27                  
@@ -2002,7 +1166,7 @@ Results - Men 2000 Run
  46 Kelty, Shep               M1 Wilde                 13:32.14                  
  47 Roberts, Evan             M1 Lowe                  13:34.13                  
  48 Kemper, Cole              M0 St. M                 13:42.80                  
- 49 Tullbane, Aiden           M0 Eastern               13:43.93   28             
+ 49 Tullbane, Aiden           M0 East Running Club               13:43.93   28             
  50 White, Noble              M0 Highl                 13:46.96                  
  51 Hamilton, Abram           M0 Highl                 13:48.46                  
  52 Whitehead, Atlas          M1 Dunn                  13:55.86                  
@@ -2015,11 +1179,11 @@ Results - Men 2000 Run
  59 Ashby, Owen               M0 Bates                 15:38.21   31             
  60 Gautam, Aayush            M1 Lowe                  15:46.22                  
  61 Hennessey, Liam           M0 Great                 16:01.63                  
- 62 Fromm, Joshua             M0 Eastern               17:04.81   32             
+ 62 Fromm, Joshua             M0 East Running Club               17:04.81   32             
  63 Wagoner, George           M0 Linco                 17:06.16                  
  64 Steele, Lincoln           M1 Hite                  17:24.90                  
  65 Bowden, Carter            M0 Bates                 17:30.00   33             
- 66 Miller, Henry             M0 Eastern               21:09.52                  
+ 66 Miller, Henry             M0 East Running Club               21:09.52                  
                                                                                  
                                    Team Scores                                   
 =================================================================================
@@ -2035,7 +1199,7 @@ Results - Men 2000 Run
    3 Lowe                         61    5    9   11   16   20   23   26          
       Total Time:    54:59.51                                                    
          Average:    10:59.91                                                    
-   4 Eastern                      86   12   13   17   19   25   28   32          
+   4 East Running Club                      86   12   13   17   19   25   28   32          
       Total Time:    57:08.73                                                    
          Average:    11:25.75                                                    
    5 Bates                       106   10   15   22   29   30   31   33          
@@ -2051,7 +1215,7 @@ Results - Women 2000 Run
    3 Highl                        74    2   10   12   20   30   42               
       Total Time:    59:20.76                                                    
          Average:    11:52.16                                                    
-   4 Eastern                      82    4    6   19   22   31                    
+   4 East Running Club                      82    4    6   19   22   31                    
       Total Time:  1:00:09.75                                                    
          Average:    12:01.95                                                    
    5 Lowe                        122   16   21   23   28   34   36   46          
@@ -2063,14 +1227,14 @@ Results - Women 2000 Run
    7 Wilde                       163   26   27   35   37   38   43   45          
       Total Time:  1:08:53.43                                                    
          Average:    13:46.69                                                    
-</PRE>
-</BODY>
-</HTML>
+
+
+
  
-<HTML>
-<BODY>
-<P>
-<PRE>
+
+
+
+
  DC Timing LLC  - Contractor License                        HY-TEK's Meet Manager
                Rumble through the Jungle XC Elementary - 9/10/2021               
                                   Creasey-Mahan                                  
@@ -2102,7 +1266,7 @@ Event 2  Boys 2000 Meter Run CC Elem Championships
  20 Minter, Isiah              5 Chris                  8:21.56   18             
  21 Gardner, Carson            4 Linco                  8:28.21   19             
  22 Nelson, Silas              5 Chris                  8:29.13   20             
- 23 Miles, Sawyer              4 Eastern                8:30.58   21             
+ 23 Miles, Sawyer              4 East Running Club                8:30.58   21             
  24 Willison, Brady            5 Chris                  8:33.68   22             
  25 Harmon, Owen               5 Cky H                  8:35.59   23             
  26 Fletcher, Caleb            4 Highl                  8:36.12   24             
@@ -2126,19 +1290,19 @@ Event 2  Boys 2000 Meter Run CC Elem Championships
  44 Moore, Mason               4 Highl                  8:51.45                  
  45 Sornat, Beauen             4 Harmo                  8:51.70                  
  46 Moulder, Andrew            5 Portl                  8:52.53   38             
- 47 Mooney, Luke               5 Eastern                8:55.56   39             
+ 47 Mooney, Luke               5 East Running Club                8:55.56   39             
  48 Johnson, William           3 Linco                  8:55.80   40             
- 49 Qualls, Preston            3 Eastern                8:56.17   41             
+ 49 Qualls, Preston            3 East Running Club                8:56.17   41             
  50 Philips, Isaac             4 Portl                  8:56.40   42             
  51 Conner, Lochlan            2 Harmo                  8:56.40                  
  52 Skees, Nolan               2 Harmo                  8:56.41                  
  53 Learn, Henry               3 Bloom                  8:58.85   43             
  54 Quinlan, Andrew            3 Bates                  9:02.46   44             
- 55 Walls, Nolan               2 Eastern                9:07.31   45             
+ 55 Walls, Nolan               2 East Running Club                9:07.31   45             
  56 Jones, Cambell             4 Linco                  9:08.17   46             
  57 Anderson, Boone            5 Lowe                   9:10.18   47             
- 58 Ennenbach, John Robert     3 Eastern                9:12.31   48             
- 59 Jaggers, Channing          2 Eastern                9:12.98   49             
+ 58 Ennenbach, John Robert     3 East Running Club                9:12.31   48             
+ 59 Jaggers, Channing          2 East Running Club                9:12.98   49             
  60 Massey, Landon             4 Linco                  9:17.35   50             
  61 Walls, Brayden             4 Bates                  9:18.11   51             
  62 Sanders, Jayden            4 Linco                  9:32.17   52             
@@ -2151,7 +1315,7 @@ Event 2  Boys 2000 Meter Run CC Elem Championships
  69 Satterly, Joseph           2 Wilde                  9:46.15   58             
  70 Sanders, Jackson           3 Wilde                  9:47.70   59             
  71 Kristo, Marko              5 Lowe                   9:48.73   60             
- 72 Aldridge, Ryan             3 Eastern                9:51.26   61             
+ 72 Aldridge, Ryan             3 East Running Club                9:51.26   61             
  73 Love, Jackson              2 Wilde                  9:52.53   62             
  74 Young, Connor              2 Bates                  9:53.53   63             
  75 Gibson, Brayden            5 Chris                  9:56.09   64             
@@ -2195,7 +1359,7 @@ Rank Team                      Total    1    2    3    4    5   *6   *7   *8   *
    6 Bloom                       160    1   29   33   43   54                    
       Total Time:    43:34.21                                                    
          Average:     8:42.85                                                    
-   7 Eastern                     194   21   39   41   45   48   49   61          
+   7 East Running Club                     194   21   39   41   45   48   49   61          
       Total Time:    44:41.93                                                    
          Average:     8:56.39                                                    
    8 Linco                       207   19   40   46   50   52   69   70          
@@ -2213,167 +1377,8 @@ Rank Team                      Total    1    2    3    4    5   *6   *7   *8   *
   12 Portl                       302   38   42   71   75   76                    
       Total Time:    56:29.48                                                    
          Average:    11:17.90                                                    
-</PRE>
-</BODY>
-</HTML>
+
+
+
 *******************
-</pre>
-    </div>
-
-
-</article>
-
-
-            </div>
-        </div>
-
-        <aside id="side" role="complementary">
-            <div>
-                
-
-
-
-<a href="/join?ref=meet-420062-tab-results&next=https%3A%2F%2Fky.milesplit.com%2Fmeets%2F420062-rumble-through-the-jungle-2021%2Fresults%2F761414%2Fraw&" class="joinPro">
-    <div>
-        <header>
-            MileSplit PRO
-        </header>
-        <p>
-            To get the full depth of our meet coverage, become PRO!
-        </p>
-        <div class="button callToAction">
-            Join Now
-        </div>
-    </div>
-</a>
-
-
-
-<div id="rectangle_btf_mobile"  class="mobileAd" data-name="rectangle btf mobile"></div>
-<div id="rectangle_atf" class="rectangleSideAd"></div>
-
-<section class="widget twitter">
-    <a class="twitter-timeline" data-width="300" data-height="425" data-tweet-limit="1" href="https://twitter.com/kytrackxc">Tweets by kytrackxc</a>
-</section>
-
-
-<div id="rectangle_btf" class="rectangleSideAd"></div>
-
-
-            </div>
-        </aside>
-
-    </main>
-
-    <div id="interstitial"></div>
-    <!--div class="leaderboard btf" id="leaderboard_btf" data-name="leaderboard btf"></div-->
-
-    <footer id="footer" role="contentinfo">
-        <div>
-            <p class="copyright">
-                &copy; 2021 <a href="/support/copyright">Copyright</a>
-                <a href="https://www.flosports.tv" target="_blank">FloSports, Inc.</a>
-            </p>
-                        <p class="editor">
-                MileSplit Kentucky Editor:
-                Chris Hawboldt, <a href="mailto:"></a>
-            </p>
-                        <p class="links">
-                <a href="/support/contact">Contact Us</a>
-                <a href="https://www.flosports.tv/privacy-policy/">Privacy Policy</a>
-                <a href="https://www.flosports.tv/terms-of-service/">Terms of Use</a>
-            </p>
-            <p class="speed" data-cacheKey="meets:420062:/meets/420062-rumble-through-the-jungle-2021/results/761414/raw:::ky" data-environment="Production">
-                Generated by 10.1.2.145                from cache (2952)                in 27 milliseconds
-            </p>
-        </div>
-    </footer>
-
-</div>
-
-
-<script type="text/javascript">
-    var disableCopy = 1;
-    /* Disable copy
-    $(document).on("keydown", function(e) {
-        if (disableCopy && e.keyCode == 67 && (e.ctrlKey || e.metaKey)) {
-            e.preventDefault();
-            return false;
-        }
-    });
-    // Disable context menu
-    window.oncontextmenu = function () {
-        if (disableCopy) {
-            return false;
-        }
-    };*/
-    // set clipboard data with plain text (no tabs or newlines)
-    if (disableCopy) {
-        document.addEventListener('copy', function(e) {
-            e.preventDefault();
-            // table html is converted to tabs and newlines
-            var text = window.getSelection()
-                .toString();
-            // remove all tabs and newlines with spaces
-            while (text.match(/\t|[ ]{2,}/)) {
-                text = text.replace(/\t|[ ]{2,}/, ' ');
-            }
-            // set clipboard data with plain text
-            e.clipboardData.setData('text/plain', text);
-        });
-    }
-</script>
-
-
-<script src="https://js.sp.milesplit.com/drivefaze/common-ms05.js?build=20210911173452"></script>
-
-<script type="text/javascript">
-    segmentNavTopLevelCategories    = $('#navbar .menu > ul > li > a');
-    segmentNavSubCategories         = $('#navbar .menu > ul > li > ul > li > a');
-    segmentNavTopLevelCategories.on('click', function(e){
-        segmentNavTrack('Go To ' + $(this).text());
-    });
-    segmentNavSubCategories.on('click', function(e){
-        segmentNavTrack('SubNav ' + $(this).text());
-    });
-    var segmentNavTrack = function(event_fired) {
-        segment.track({
-            event_fired: event_fired,
-            url: window.location.href
-        },{
-            integrations: {
-                'All': true,
-                'Google Analytics': false
-            }
-        });
-    }
-</script>
-
-<script type="text/javascript">
-    new Drivefaze.Cointoss('mspt_3577_logged_out_upgrade_pill_v2', {
-        variationId: "0",
-        toggleVariation: false
-    });
-</script>
-
-<script type="text/javascript">
-        (function () {
-        window.advBidxc = window.advBidxc || {};
-        window.advBidxc.customerId = "8CUC4I31X"; //Customer ID
-        window.advBidxc.domain = window.location.hostname; //Domain Name
-        function loadScript(tagSrc) {
-            var scriptTag = document.createElement('script'),
-                placeTag = document.getElementsByTagName("script")[0];
-            scriptTag.type = 'text/javascript';
-            scriptTag.async = true;
-            scriptTag.src = tagSrc;
-            placeTag.parentNode.insertBefore(scriptTag, placeTag);
-        }
-        var mnSrc = 'https://hbx.media.net/bxl.js?cid=' + window.advBidxc.customerId + '&dn=' + window.advBidxc.domain ;
-        loadScript(mnSrc);
-    })();
-</script>
-
-</body>
-</html>
 

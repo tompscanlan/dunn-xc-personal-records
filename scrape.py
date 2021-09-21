@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 import errno
 
-import requests
+import requests_cache
+from functools import lru_cache
 from bs4 import BeautifulSoup
 import re
 import csv
@@ -14,6 +15,7 @@ from email.mime.multipart import MIMEMultipart
 from pretty_html_table import build_table
 import dotenv
 import os
+import hashlib
 
 dotenv.load_dotenv(verbose=True)
 # email setup
@@ -26,11 +28,15 @@ print ("to {}, from {}, pass '{}'".format(receiver_email, sender_email, password
 # Create a secure SSL context
 context = ssl.create_default_context()
 
+requests_session = requests_cache.CachedSession('dunnxc_cache', backend='filesystem', serializer='yaml', expire_after=None)
 
 RACE_SEASON = 2021
-SEASON_PATH = "./{}_season_data".format(RACE_SEASON)
+SEASON_PATH = "{}_season_data".format(RACE_SEASON)
 BESTTIMES_FILE = "{}/besttimes".format(SEASON_PATH)
-HTML_CACHE = "./data/html"
+CACHE_PATH = "./{}".format(SEASON_PATH)
+CSV_CACHE = "{}/csv".format(CACHE_PATH)
+HTML_CACHE = "{}/html".format(CACHE_PATH)
+TEXT_CACHE = "{}/text".format(CACHE_PATH)
 
 DB_FILE = 'DXC-milesplit-data.db'
 KM_PER_MILE = 1.609344
@@ -117,60 +123,18 @@ def get_meet_details(page) -> dict:
     return details
 
 
-def parse_url(url) -> str:
-    page = requests.get(url)
-    return page.text
+# this is cached behind the scenes
+def parse_url(url: str) -> str:
+    r = requests_session.get(url)
+    return r.text
 
 
-def get_raw_results(page):
-    soup = BeautifulSoup(page, "html.parser")
+@lru_cache(maxsize=32)
+def get_raw_results(url: str):
+    page_contents = parse_url(url)
+    soup = BeautifulSoup(page_contents, "html.parser")
     results = soup.find(id="meetResultsBody")
     return results.text
-
-
-def rename_key(d: dict, frm: str, to: str) -> dict:
-    if frm in d:
-        if d[frm] is not None:
-            d[to] = d[frm]
-
-        d.pop(frm, None)
-
-    return d
-
-
-def get_runners(s: str) -> [dict]:
-    runners: [dict] = []
-    lines = re.split("\n|\r\n", s)
-
-    for line in lines:
-        match = runner_regexp.match(line)
-        if match is not None:
-            details = match.groupdict()
-            details = rename_key(details, 'athlete', 'name')
-            details = rename_key(details, 'yr', 'year')
-            details = rename_key(details, 'num', 'bibnumber')
-            details = rename_key(details, 'team', 'school')
-            details = rename_key(details, 'tm', 'time')
-
-            details = rename_key(details, 'pts', 'points')
-
-            details = rename_key(details, 'name_pdf', 'name')
-            details = rename_key(details, 'year_pdf', 'year')
-            details = rename_key(details, 'team_pdf', 'school')
-            details = rename_key(details, 'time_pdf', 'time')
-
-            if details['name'] is None or str(details['name']).lower() == 'unknown':
-                print("failed to capture runner because of a bad name:" + details['name'])
-                continue
-
-            runners.append(details)
-            # print(line)
-
-        # for debugging failed matches
-        # else:
-        #     print(line)
-
-    return runners
 
 
 def get_event_name(s: str) -> str:
@@ -188,7 +152,7 @@ def get_event_name(s: str) -> str:
                 return details
 
 
-def get_race_from_url_or_html_file(url: str, file: str) -> str:
+def get_html_from_url_or_cache(url: str, file: str) -> str:
     page = ""
 
     # create dirs for the cache, if needed
@@ -205,7 +169,7 @@ def get_race_from_url_or_html_file(url: str, file: str) -> str:
         with open(file, "w") as f:
             f.write(page)
 
-    # otherwise, reade from cache
+    # otherwise, read from cache
     else:
         with open(file, "r") as f:
             page = f.read()
@@ -219,8 +183,10 @@ def race_time_to_timedelta(d: pd.DataFrame, timecol: str, deltacol: str) -> (dic
                   pd.to_timedelta(splittimes[2] * 10, unit='ms')
     return d
 
+
 def get_runners_dataframe(url: str, html_file: str) -> (dict, pd.DataFrame):
-    page = get_race_from_url_or_html_file(url, html_file)
+
+    page = get_html_from_url_or_cache(url, html_file)
     details = get_meet_details(page)
     results = get_raw_results(page)
     # print(results)
@@ -247,6 +213,38 @@ def get_runners_dataframe(url: str, html_file: str) -> (dict, pd.DataFrame):
 
     return details, runners
 
+
+def runners_df(url: str, cache_name: str) -> (dict, pd.DataFrame):
+
+    if cache_name is None:
+        cache_name = hashlib.sha256(url)
+
+    page = get_html_from_url_or_cache(url, cache_name)
+    details = get_meet_details(page)
+    results = get_raw_results(page)
+    # print(results)
+    runners = pd.DataFrame(data=get_runners(results))
+
+    # keep track of Dunn runners only
+    runners = runners[runners['school'].astype('str').str.contains('Dunn')]
+    # runners['year'] = pd.to_numeric(runners['year']).astype('int')
+
+    # turn string times into a time delta for use in comparisons
+    runners = race_time_to_timedelta(runners, 'time', 'delta')
+
+    # if this race has names formatted as "last, first" change it to 'first last'
+    mixed_name = runners[runners['name'].str.match(r"\S+\s*,\s*\S+")]
+    names = mixed_name['name'].str.split(r"\s*,\s*")
+    mixed_name['name'] = [' '.join([i[1], i[0]]) for i in names]
+    runners.update(mixed_name['name'])
+
+    runners['name'] = runners['name'].str.lower()
+    runners = runners.set_index(keys=['name']).sort_index()
+
+    # drop unneeded cols
+    runners = runners.drop(columns=['index', 'bibnumber', 'points', 'school', 'time'])
+
+    return details, runners
 
 
 
