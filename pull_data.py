@@ -8,47 +8,9 @@ from dotenv import load_dotenv
 from functools import lru_cache
 import requests_cache
 from bs4 import BeautifulSoup
+from scrape import RACES
 
 load_dotenv(verbose=True)  # take environment variables from .env.
-RACES = [
-    {
-        "url": None,  # original data is in a pdf
-        "path": "reservoir-park-invitational",
-        "meet_name": "Reservoir Park Invitational 2021",
-        "venue_name": 'Louisville, KY',
-        "date": "Aug 14, 2021",
-        "event_name": "Event 1 Girls 1 Mile Run CC K-1",
-        "runners": 298,
-        "dunn_runners": 298,
-    },
-    {
-        "url": 'https://ky.milesplit.com/meets/436537-tully-invitational-2021/results/757560/raw',
-        "meet_name": "Tully Invitational  2021",
-        "venue_name": 'Charlie Vettiner Park',
-        "date": "Aug 28, 2021",
-        "path": "tully-invitational",
-        "event_name": "Event 1 Girls 1 Mile Run CC K-1",
-        "runners": 749
-    },
-    {
-        "url": 'https://ky.milesplit.com/meets/436421-bluegrass-cross-country-invitational-2021/results/759967/raw',
-        "meet_name": "Bluegrass Cross Country Invitational 2021",
-        "venue_name": 'Masterson Station UK',
-        "date": "Sep 4, 2021",
-        "path": "bluegrass-cross-country-invitational",
-        "event_name": None,
-        "runners": 1420
-    },
-    {
-        "url": 'https://ky.milesplit.com/meets/420062-rumble-through-the-jungle-2021/results/761414/raw',
-        "path": "rumble-through-the-jungle",
-        "meet_name": "Rumble Through the Jungle 2021",
-        "venue_name": 'Creasey Mahan Nature Preserve',
-        "date": "Sep 10, 2021                            Sep 11, 2021",
-        "event_name": None,
-        "runners": 867
-    },
-]
 
 requests_session = requests_cache.CachedSession('dunnxc_cache', backend='filesystem', expire_after=None)
 
@@ -138,19 +100,49 @@ def get_runners_dataframe(race: dict) -> (dict, pd.DataFrame):
     mixed_name['athlete'] = [' '.join([i[1], i[0]]) for i in athletes]
     runners.update(mixed_name['athlete'])
 
-    runners['athlete'] = runners['athlete'].str.lower()
-    runners = runners.set_index(keys=['athlete']).sort_index()
 
     # Alterations, after original data creation
     if race['meet_name'] == "Reservoir Park Invitational 2021":
         # fix missed runner error:
-        runners.loc['declan peek', 'time'] = '8:39.06'
+        declan = runners.loc[runners['athlete'] == 'Declan Peek']
+        declan['time'] = '8:39.06'
+        runners.update(declan)
+
+        seb = runners.loc[runners['athlete'] == 'Sebastiano Bianconcin']
+        seb['athlete'] = 'Sebastiano Bianconcini'
+        runners.update(seb)
+
+        # everyone ran a mile
+        runners['miles'] = 1
+        # except those under year 2 ran a half mile
+        halfmile = runners.copy()
+        halfmile = halfmile[halfmile['year'].astype(int) < 2]
+        halfmile['miles'] = 0.5
+        runners.update(halfmile)
+
+    elif race['meet_name'] == "Tully Invitational  2021":
+        # Tully race everyone ran 1 mile
+        runners['miles'] = 1
+
+    elif race['meet_name'] == "Bluegrass Cross Country Invitational 2021":
+        runners['miles'] = 2 * scrape.MILE_PER_KM
+    elif race['meet_name'] == "Rumble Through the Jungle 2021":
+        runners['miles'] = 2 * scrape.MILE_PER_KM
+    elif race['meet_name'] == "Gatorland 2021":
+        runners['miles'] = 2 * scrape.MILE_PER_KM
+
+    # Keep runners than mile runners
+    # runners = runners[runners['miles'] >= 1]
 
     # turn string times into a time delta for use in comparisons
     runners = scrape.race_time_to_timedelta(runners, 'time', 'delta')
+    runners['mile_pace'] = runners['delta'] / runners['miles']
+
+    runners['athlete'] = runners['athlete'].str.lower()
+    runners = runners.set_index(keys=['athlete']).sort_index()
 
     # drop unneeded cols
-    runners = runners.drop(columns=['school', 'time'])
+    runners = runners.drop(columns=['school', 'time', 'delta'])
 
     return runners
 
@@ -168,11 +160,11 @@ def pull_data(races: [dict]):
                 if exc.errno != errno.EEXIST:
                     raise
 
-        # If the cache doesn't exist, pull the web page and cache it
+        # If the csv cache doesn't exist, pull the web page and cache it
         if not os.path.isfile(filename):
-            runners = get_milesplit_data(race['url'], race['meet_name'])
-            x = get_runners(runners)
-            assert len(x) == race['runners']
+            # runners = get_milesplit_data(race['url'], race['meet_name'])
+            # x = get_runners(runners)
+            # assert len(x) == race['runners'], "{} is not {}, as expected".format(len(x), race['runners'])
 
             df = get_runners_dataframe(race)
             df.to_csv(filename)  # loses data types

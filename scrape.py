@@ -42,7 +42,62 @@ DB_FILE = 'DXC-milesplit-data.db'
 KM_PER_MILE = 1.609344
 MILE_PER_KM = 1/KM_PER_MILE
 
-csv_columns = ['index', 'bibnumber', 'name', 'year', 'school', 'time', 'points']
+
+RACES = [
+    {
+        # this race needed to fix declan peek's 'time' to '8:39.06'
+        # also fix Orla's name to "Dunne Gillies, Orla"
+        "url": None,  # original data is in a pdf
+        "path": "reservoir-park-invitational",
+        "meet_name": "Reservoir Park Invitational 2021",
+        "venue_name": 'Louisville, KY',
+        "date": "Aug 14, 2021",
+        "event_name": "Event 1 Girls 1 Mile Run CC K-1",
+        "runners": 298,
+        "dunn_runners": 64,
+
+    },
+    {
+        "url": 'https://ky.milesplit.com/meets/436537-tully-invitational-2021/results/757560/raw',
+        "meet_name": "Tully Invitational  2021",
+        "venue_name": 'Charlie Vettiner Park',
+        "date": "Aug 28, 2021",
+        "path": "tully-invitational",
+        "event_name": "Event 1 Girls 1 Mile Run CC K-1",
+        "runners": 749,
+        "dunn_runners": 45,
+    },
+    {
+        "url": 'https://ky.milesplit.com/meets/436421-bluegrass-cross-country-invitational-2021/results/759967/raw',
+        "meet_name": "Bluegrass Cross Country Invitational 2021",
+        "venue_name": 'Masterson Station UK',
+        "date": "Sep 4, 2021",
+        "path": "bluegrass-cross-country-invitational",
+        "event_name": None,
+        "runners": 1420,
+        "dunn_runners": 30,
+    },
+    {
+        "url": 'https://ky.milesplit.com/meets/420062-rumble-through-the-jungle-2021/results/761414/raw',
+        "path": "rumble-through-the-jungle",
+        "meet_name": "Rumble Through the Jungle 2021",
+        "venue_name": 'Creasey Mahan Nature Preserve',
+        "date": "Sep 10, 2021                            Sep 11, 2021",
+        "event_name": None,
+        "runners": 867,
+        "dunn_runners": 54,
+    },
+    {
+        "url": None,  # original data is split across two urls
+        "path": "gatorland",
+        "meet_name": "Gatorland 2021",
+        "venue_name": 'Bowling Green, KY',
+        "date": "Sep 17, 2021",
+        "runners": 215,
+        "dunn_runners": 27,
+    },
+
+]
 
 # debug regex https://regex101.com/r/eq8UqK/1
 patternA = re.compile(r"""
@@ -107,11 +162,29 @@ def pandas_set_big_print():
     pd.set_option('display.max_rows', None)
     pd.set_option('display.width', 200)
 
+# Store latest best times
+def store_best_times(df: pd.DataFrame):
+        x = df.reset_index()
+        x.to_pickle("{}.p".format(BESTTIMES_FILE))
+        x.to_csv("{}.csv".format(BESTTIMES_FILE))
 
 def load_best_times() -> pd.DataFrame:
-    # Load current best times for all known runners
-    best_times = pd.read_pickle("%s.p" % BESTTIMES_FILE)
-    best_times.sort_index(inplace=True)
+    filename = "{}.p".format(BESTTIMES_FILE)
+
+    # If it exists, load current best times for all known runners
+    if os.path.isfile(filename):
+        best_times = pd.read_pickle("{}.p".format(BESTTIMES_FILE))
+        best_times.sort_index(inplace=True)
+    else:
+        best_times = pd.DataFrame()
+        best_times['athlete'] = None
+        best_times['year'] = None
+        best_times['miles'] = None
+        best_times['mile_pace'] = None
+
+
+    best_times['athlete'] = best_times['athlete'].str.lower()
+    best_times = best_times.set_index(keys=['athlete']).sort_index()
     return best_times
 
 
@@ -273,7 +346,7 @@ PRs for {} on {}:
 Best overall mile times:
 {}
 """.format(details['meet_name'], details['date'], build_table(
-        df[['name', 'year', 'mile_pace_prior', 'mile_pace', 'improvement']], 'red_light'),
+        df[['athlete', 'year', 'mile_pace_prior', 'mile_pace', 'improvement']], 'red_light'),
            build_table(
                best, 'red_light')
            ))
@@ -283,25 +356,88 @@ Best overall mile times:
         server.send_message(msg)
 
 
+def find_prs(races: [dict]):
+
+    for i, race in enumerate(races):
+        best = load_best_times()
+
+        print("Checking PRs for race #{} for {}".format(i, race['meet_name'], race['url']))
+        filename = "{}/{}.csv".format(CSV_CACHE, race['meet_name'])
+        prs_filename = "{}/{}-prs.csv".format(CACHE_PATH, race['meet_name'])
+
+
+        # If the cache doesn't exist, there's a problem, should have run pull_data
+        assert True == os.path.isfile(filename)
+
+        # read in race data, and make mile pace a time delta
+        runners = pd.read_csv(filename, parse_dates=True)
+        runners['athlete'] = runners['athlete'].str.lower()
+        runners = runners.set_index(keys=['athlete']).sort_index()
+        runners['mile_pace'] = pd.to_timedelta(runners['mile_pace'])
+
+        # should be a fixed number of runners for each specific race
+        assert len(runners) == race['dunn_runners'], "runners len: {} is not {}".format(len(runners), race['dunn_runners'])
+
+        # consolidate all best times and current race
+        # left_only means they missed this race but have run before
+        all_runners = best.merge(runners, on='athlete', how='outer', indicator=True, suffixes=('_best', '_current'))
+
+        # capture new runners that don't have an existing best time
+        # and add this pace to the best times.
+        # right_only means this is their first race
+        new_runners = pd.DataFrame()
+        new_runners = all_runners[ all_runners['_merge'] == "right_only"]
+        new_runners = new_runners.drop(columns=['miles_best', 'mile_pace_best', '_merge', 'year_best', 'groups-of-8', 'groups-of-12'], errors='ignore')
+        new_runners = new_runners.rename(columns={'miles_current': 'miles',
+                                                  'mile_pace_current': 'mile_pace',
+                                                  'year_current': 'year'})
+
+        # --------------
+        prs = pd.DataFrame()
+
+        # runners that were in besttimes and in current race
+        # where current race time is less than prior best time, aka PRs.
+        # both means they ran before and in this race may have a PR
+        prs = all_runners[ (all_runners['_merge'] == 'both')
+                           & (all_runners['mile_pace_best'] > all_runners['mile_pace_current'])]
+        prs['improvement'] = prs['mile_pace_best' ] - prs['mile_pace_current']
+
+        # clean up columns created in the merge
+        prs = prs.drop(columns=['year_best', '_merge', 'groups-of-8', 'groups-of-12'], errors='ignore')
+        prs = prs.rename(columns={'miles_current': 'miles',
+                                  'miles_best': 'miles_prior',
+                                  'mile_pace_best': 'mile_pace_prior',
+                                  'mile_pace_current': 'mile_pace',
+                                  'year_current': 'year'})
+        # prs['year'] = pd.to_numeric(prs['year']).astype('int')
+
+
+        prs.sort_values(by='improvement', inplace=True)
+        prs = prs.loc[ prs['miles'] >= 1 ]
+        # Store PRs for this race
+
+
+        new_best = pd.DataFrame()
+        new_best = best.append(new_runners)
+        new_best.update(prs)
+        # make 9 and 6 groups of runners based on mile pace
+        new_best['groups-of-8'] = pd.qcut(new_best['mile_pace'], q=9, labels=False)
+        new_best['groups-of-12'] = pd.qcut(new_best['mile_pace'], q=6, labels=False)
+        # don't store best times below a mile race
+        new_best = new_best.loc[ new_best['miles'] >= 1 ]
+
+        # Store latest best times, and PRs
+        store_best_times(new_best)
+        prs = prs.reset_index()
+        prs.to_csv(prs_filename)
+
+        # --------------
+
+    new_best = new_best.reset_index()
+    new_best.sort_values(by='mile_pace', inplace=True)
+    send_pr_email(race, prs, new_best)
+
+
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("must pass a url like "
-              "'https://ky.milesplit.com/meets/364782-ktccca-meet-of-champions-2019/results/676374/raw'")
-        exit(1)
 
-    url = sys.argv[1]
-    page = parse_url(url)
-    raw_results = get_raw_results(page)
-    runners = get_runners(raw_results)
-    event_name = get_event_name(raw_results)
-    meet_details = get_meet_details(page)
-
-    for r in runners:
-        r.update(meet_details)
-        r.update(event_name)
-
-    df = pd.DataFrame(data=runners)
-    df['date'] = pd.to_datetime(df['date'])
-    df['year'] = pd.to_numeric(df['year']).astype('int')
-
-    df.to_csv("./data/" + meet_details['meet_name'] + '.csv', index=False)
+    find_prs(RACES)
