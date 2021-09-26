@@ -1,2 +1,2 @@
-,athlete,miles_prior,mile_pace_prior,year,miles,mile_pace,improvement
-0,drew barron,1.242742384474668,0 days 00:11:39.292154880,2.0,1.242742384474668,0 days 00:10:14.801594880,0 days 00:01:24.490560
+,athlete,miles_prior,mile_pace_prior,time_prior,year,time_current,miles,mile_pace,improvement
+0,drew barron,1.242742384474668,0 days 00:11:39.292154880,14:29.4,2.0,12:44.4,1.242742384474668,0 days 00:10:14.801594880,0 days 00:01:24.490560
