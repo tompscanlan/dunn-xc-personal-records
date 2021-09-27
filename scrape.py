@@ -96,9 +96,21 @@ RACES = [
         "runners": 215,
         "dunn_runners": 27,
     },
+    {
+        # "url": 'https://in.milesplit.com/meets/438018-8th-annual-sic-invitational-2021/results/raw',  # original data doesn't have an easy way to identify group distances
+        "url": None, # or it will over write our curated version
+        # https://in.milesplit.com/meets/438018-8th-annual-sic-invitational-2021/results/raw
+        "path": "sic-invitational",
+        "meet_name": "8th Annual S.I.C Invitational 2021",
+        "venue_name": 'Silver Creek Primary School Sellersburg, IN',
+        "date": "Sep 25, 2021",
+        "runners": 215,
+        "dunn_runners": 41,
+    },
 
 ]
 
+# patternDistanceA = re.compile(r"(Boys|Girls)\s+(?P<distance>4k).*s")
 # debug regex https://regex101.com/r/eq8UqK/1
 patternA = re.compile(r"""
 ^\s*
@@ -152,7 +164,32 @@ patternC = re.compile(r"""
 (?P<time>\d+:\d+.\d+)
 """, re.VERBOSE)
 
-PATTERNS = [patternA, patternB, patternC]
+# SIC race has see time and no year
+patternD = re.compile(r"""
+^\s*
+(?:\d+)
+\s+
+(?P<athlete>[\w.\s',-]+?(?<!\s))
+\s+
+(?P<year>\d+)?
+\s+
+(?P<school>[^\d]+(?<!\s))
+\s+
+(?:
+(?:\d+:\d+.\d+)
+\s+
+)?
+(?P<time>\d+:\d+.\d+)
+\s*
+([-\s\d.:]+)$
+""", re.VERBOSE)
+
+PATTERNS = [
+    patternD,
+    patternA,
+    patternB,
+    patternC
+]
 
 event_name_regexp = re.compile(r"^(?P<eventname>Event.*$)")
 
@@ -298,6 +335,57 @@ def get_runners_dataframe(url: str, html_file: str) -> (dict, pd.DataFrame):
     return details, runners
 
 
+def lines_matching(pat: re.Pattern, s: str) -> int:
+    lines = re.split("\n|\r\n", s)
+    m = 0
+    for l in lines:
+        if pat.match(l):
+            m=m+1
+    return m
+
+# return single first match of any pattern in this line
+def parse_runner_line(line: str, distance = 0) -> dict:
+    # for all data format patterns, check each line for a match
+    for p, pattern in enumerate(PATTERNS):
+        match = pattern.match(line)
+        if match is not None:
+            group = match.groupdict()
+
+            if group['athlete'] is None or str(group['athlete']).lower() == 'unknown':
+                print("failed to capture runner because of a bad name:" + group['athlete'])
+                return None
+
+            # group['pattern'] = pattern
+            # group['patternN'] = p
+            # group['d'] = distance
+    # for debugging failed matches
+    # else:
+    #     print(line)
+
+            return group
+
+def get_runners(s: str) -> [dict]:
+    runners: [dict] = []
+    lines = re.split("\n|\r\n", s)
+    currentDistance = 0
+
+    for i, line in enumerate(lines):
+        # catch distance at the top of a block and carry it as current distance
+        # match = distancePattern.match(line)
+        # if match is not None:
+        #     in_a_race_block = True
+        #     group = match.groupdict()
+        #     if 'distanceK' in group and group['distanceK'] is not None:
+        #         currentDistance = int(group['distanceK']) * MILE_PER_KM
+        #         print("hit {}k, as miles {}".format(group['distanceK'], currentDistance))
+        #
+        runner = parse_runner_line(line, currentDistance)
+        if runner is not None:
+            runners.append(runner)
+
+    return runners
+
+
 def runners_df(url: str, cache_name: str) -> (dict, pd.DataFrame):
 
     if cache_name is None:
@@ -387,8 +475,9 @@ def find_prs(races: [dict]):
         # right_only means this is their first race
         new_runners = pd.DataFrame()
         new_runners = all_runners[ all_runners['_merge'] == "right_only"]
-        new_runners = new_runners.drop(columns=['miles_best', 'mile_pace_best', '_merge', 'year_best', 'groups-of-8', 'groups-of-12'], errors='ignore')
+        new_runners = new_runners.drop(columns=['miles_best', 'time_best', 'mile_pace_best', '_merge', 'year_best', 'groups-of-8', 'groups-of-12'], errors='ignore')
         new_runners = new_runners.rename(columns={'miles_current': 'miles',
+                                                  'time_current': 'time',
                                                   'mile_pace_current': 'mile_pace',
                                                   'year_current': 'year'})
 
@@ -406,6 +495,7 @@ def find_prs(races: [dict]):
         prs = prs.drop(columns=['year_best', '_merge', 'groups-of-8', 'groups-of-12'], errors='ignore')
         prs = prs.rename(columns={'miles_current': 'miles',
                                   'miles_best': 'miles_prior',
+                                  'time_best': 'time_prior',
                                   'mile_pace_best': 'mile_pace_prior',
                                   'mile_pace_current': 'mile_pace',
                                   'year_current': 'year'})

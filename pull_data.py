@@ -54,39 +54,6 @@ def rename_key(d: dict, frm: str, to: str) -> dict:
 
     return d
 
-
-# def get_runners(s: str) -> [dict]:
-#     runners: [dict] = []
-#     lines = re.split("\n|\r\n", s)
-#
-# # for all data format patterns, check each line for a match
-#     for pattern in scrape.PATTERNS:
-#         for i, line in enumerate(lines):
-#             match = pattern.match(line)
-#             if match is not None:
-#                 group = match.groupdict()
-#
-#                 if group['athlete'] is None or str(group['athlete']).lower() == 'unknown':
-#                     print("failed to capture runner because of a bad name:" + group['athlete'])
-#                     continue
-#
-#                 runners.append(group)
-#
-#             # for debugging failed matches
-#             # else:
-#             #     print(line)
-#
-#             # if this is the last line, and we've matched at least once
-#             # then skip the next matchers
-#             if i == (len(lines)-1) and len(runners) > 0:
-#                 break
-#         else:
-#             continue  # if loop didn't break, try next matcher
-#         break  # if inner did break, then skip remaining matchers
-#
-#     return runners
-
-
 def get_runners_dataframe(race: dict) -> (dict, pd.DataFrame):
     runners = get_milesplit_data(race['url'], race['meet_name'])
     runners = pd.DataFrame(data=scrape.get_runners(runners))
@@ -131,10 +98,8 @@ def get_runners_dataframe(race: dict) -> (dict, pd.DataFrame):
     elif race['meet_name'] == "Gatorland 2021":
         runners['miles'] = 2 * scrape.MILE_PER_KM
     elif race['meet_name'] == "8th Annual S.I.C Invitational 2021":
-        # most are 3k,
-        runners['miles'] = 3 * scrape.MILE_PER_KM
-    # Keep runners than mile runners
-    # runners = runners[runners['miles'] >= 1]
+        # Use year to signify K distance
+        runners['miles'] = runners['year'].astype('int') * scrape.MILE_PER_KM
 
     # turn string times into a time delta for use in comparisons
     runners = scrape.race_time_to_timedelta(runners, 'time', 'delta')
