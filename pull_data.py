@@ -134,7 +134,7 @@ def pull_data(races: [dict]):
             # assert len(x) == race['runners'], "{} is not {}, as expected".format(len(x), race['runners'])
 
             df = get_runners_dataframe(race)
-            df.to_csv(filename)  # loses data types
+            df.to_csv(filename)
 
 
 if __name__ == "__main__":

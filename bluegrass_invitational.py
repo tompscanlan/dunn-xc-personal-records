@@ -14,9 +14,9 @@ pd.set_option('display.width', 200)
 best_times = scrape.load_best_times()
 
 # parse new race data into a list of runners/times
-# page = scrape.get_race_from_url_or_html_file(URL, HTML_FILE)
+# page = scrape.get_html_from_url_or_cache(URL, HTML_FILE)
 # meet_details = scrape.get_meet_details(page)
-# raw_results = scrape.get_raw_results(page)
+# raw_results = scrape.get_milesplit_data(page)
 
 # parse new race data from the web or a cache into a dataframe of runners and times
 meet_details, bluegrass = scrape.get_runners_dataframe(URL, HTML_FILE)

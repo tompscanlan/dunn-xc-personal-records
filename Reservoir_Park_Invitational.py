@@ -12,7 +12,7 @@ pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', None)
 pd.set_option('display.width', 200)
 
-page = scrape.get_race_from_url_or_html_file(URL, HTML_FILE)
+page = scrape.get_html_from_url_or_cache(URL, HTML_FILE)
 raw_results = scrape.get_raw_results(page)
 runners = scrape.get_runners(raw_results)
 
