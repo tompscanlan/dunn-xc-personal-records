@@ -1,14 +1,11 @@
 import errno
 import os
-import re
-
-import scrape
 import pandas as pd
 from dotenv import load_dotenv
 from functools import lru_cache
 import requests_cache
 from bs4 import BeautifulSoup
-from scrape import RACES
+import scrape
 
 load_dotenv(verbose=True)  # take environment variables from .env.
 
@@ -27,10 +24,24 @@ def parse_url(url: str) -> str:
 def get_milesplit_data(url: str, file: str) -> str:
     filename = "{}/{}.txt".format(scrape.TEXT_CACHE, file)
 
+    # try cache first
+    if os.path.isfile(filename):
+        print("Cache hit for {}".format(filename))
+        with open(filename, "r") as f:
+            return f.read()
+
+    # otherwise
     if url is None:
+        if not os.path.isfile(filename):
+            print("Cache file {} doesn't exist, and we have no URL to pull from")
+            exit(5)
+
+        print("Cache hit for manually created data file {}".format(filename))
+
         with open(filename, "r") as f:
             return f.read()
     else:
+        print("Creating cache for {}")
         page_contents = parse_url(url)
         soup = BeautifulSoup(page_contents, "html.parser")
         results = soup.find(id="meetResultsBody")
@@ -54,10 +65,14 @@ def rename_key(d: dict, frm: str, to: str) -> dict:
 
     return d
 
-def get_runners_dataframe(race: dict) -> (dict, pd.DataFrame):
-    runners = get_milesplit_data(race['url'], race['meet_name'])
-    runners = pd.DataFrame(data=scrape.get_runners(runners))
 
+def get_runners_dataframe(race: dict) -> (dict, pd.DataFrame):
+    runners_text = get_milesplit_data(race['url'], race['meet_name'])
+    runners = pd.DataFrame(data=scrape.get_runners(runners_text, race['pattern']))
+
+    assert len(runners.index) == race['runners'], "{}: {} is not {}, as expected".format(race['meet_name'],
+                                                                                         len(runners.index),
+                                                                                         race['runners'])
     # keep track of Dunn runners only
     runners = runners[runners['school'].astype('str').str.contains('Dunn')]
     # runners['year'] = pd.to_numeric(runners['year']).astype('int')
@@ -130,12 +145,14 @@ def pull_data(races: [dict]):
         # If the csv cache doesn't exist, pull the web page and cache it
         if not os.path.isfile(filename):
             # runners = get_milesplit_data(race['url'], race['meet_name'])
-            # x = get_runners(runners)
+            # x = scrape.get_runners(runners)
             # assert len(x) == race['runners'], "{} is not {}, as expected".format(len(x), race['runners'])
 
             df = get_runners_dataframe(race)
+            assert len(df.index) == race['dunn_runners'], "{}: {} is not {}, as expected".format(
+                race['meet_name'], len(df.index), race['dunn_runners'])
             df.to_csv(filename)
 
 
 if __name__ == "__main__":
-    pull_data(RACES)
+    pull_data(scrape.RACES)

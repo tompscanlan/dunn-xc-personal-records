@@ -1,5 +1,7 @@
 # this race, some are 4k, some 3k and some are 2k. We don't have years to go by.
-#Will manually calculate who does which and store in CSV
+# Will manually calculate who does which and store in CSV
+# don't delete the CSV :)
+
 HY-TEK's Meet Manager 9/25/2021 01:27 PM
                   8th Annual S.I.C. Invitational - 9/25/2021
                           Silver Creek Primary School
