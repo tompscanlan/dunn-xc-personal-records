@@ -27,7 +27,7 @@ def calculate_best_times(races: [dict], func) -> [pd.DataFrame]:
     for i, race in enumerate(races):
         print("Calculating race #{} for {}".format(i, race['meet_name'], race['url']))
         cvs_cache_file = "{}/{}.csv".format(scrape.CSV_CACHE, race['meet_name'])
-        pr_file = "{}/{}.csv".format(scrape.PRS_CACHE, race['meet_name'])
+        pr_file = "{}/{}-prs.csv".format(scrape.PRS_CACHE, race['meet_name'])
 
         # If the csv cache doesn't exist, fail
         if not os.path.isfile(cvs_cache_file):
@@ -90,7 +90,7 @@ def calculate_best_times(races: [dict], func) -> [pd.DataFrame]:
 
 
 if __name__ == "__main__":
-    # df1 = calculate_best_times(scrape.RACES, keep_above_one_mile)
-    df2 = calculate_best_times(scrape.RACES, keep_only_2k)
+    df1 = calculate_best_times(scrape.RACES, keep_above_one_mile)
+    # df2 = calculate_best_times(scrape.RACES, keep_only_2k)
 
     exit(0)

@@ -57,6 +57,20 @@ pattern_rumble = re.compile(r"""
 (?P<time>\d+:\d+.\d+)
 (.*)$""", re.VERBOSE)
 
+pattern_bates = re.compile(r"""
+^\s*
+(\d+)
+\s+
+(?P<athlete>[\w.\s',-]+?(?<!\s))
+\s+
+(?P<year>(?:\d+|SO|FR|JR|SR|--|(?:M)\d*|(?:W)\d*)(?=\s))?
+\s+
+(?P<school>[\w.\s',-]+?(?<!\s))
+\s+
+(?P<time>\d+:\d+.\d+)
+(.*?)$
+""", re.VERBOSE)
+
 # patternDistanceA = re.compile(r"(Boys|Girls)\s+(?P<distance>4k).*s")
 # debug regex https://regex101.com/r/eq8UqK/1
 patternA = re.compile(r"""
@@ -232,6 +246,16 @@ RACES = [
         "pattern": patternD,
     },
     {
+        "url": None,
+        "path": "bates",
+        "meet_name": "Bates 2021",
+        "venue_name": "Bates Elementary",
+        "date": "Oct 7, 2021",
+        "runners": 224,
+        "dunn_runners": 57,
+        "pattern": pattern_bates,
+    },
+    {
         "url": 'https://ky.milesplit.com/meets/420583-haunted-woods-classic-2021/results/772559',
         "path": "haunted-woods",
         "meet_name": "Haunted Woods Classic 2021",
@@ -259,7 +283,7 @@ def df_to_csv(df: pd.DataFrame, filename: str):
             if exc.errno != errno.EEXIST:
                 raise
 
-    df.to_csv("{}.csv".format(filename))
+    df.to_csv("{}".format(filename))
 
 
 # Store latest best times

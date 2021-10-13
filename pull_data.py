@@ -115,8 +115,18 @@ def get_runners_dataframe(race: dict) -> (dict, pd.DataFrame):
     elif race['meet_name'] == "8th Annual S.I.C Invitational 2021":
         # Use year to signify K distance
         runners['miles'] = runners['year'].astype('int') * scrape.MILE_PER_KM
+    elif race['meet_name'] == 'Bates 2021':
+        runners['miles'] = 1
+
     elif race['meet_name'] == 'Haunted Woods Classic 2021':
+        # Set everyone as a 3k
         runners['miles'] = 3 * scrape.MILE_PER_KM
+
+        # younger kids did a 2k
+        younger = runners[runners['year'].astype(int) < 4]
+        younger['miles'] = 2 * scrape.MILE_PER_KM
+        runners.update(younger)
+
 
     # turn string times into a time delta for use in comparisons
     runners = scrape.race_time_to_timedelta(runners, 'time', 'delta')
