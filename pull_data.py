@@ -127,6 +127,17 @@ def get_runners_dataframe(race: dict) -> (dict, pd.DataFrame):
         younger['miles'] = 2 * scrape.MILE_PER_KM
         runners.update(younger)
 
+    elif race['meet_name'] == 'KTCCCA Meet of Champions 2021':
+        # Set everyone as a 3k
+        runners['miles'] = 3 * scrape.MILE_PER_KM
+
+        # younger kids did a 2k
+        younger = runners[runners['year'].astype(int) <= 4]
+        younger['miles'] = 2 * scrape.MILE_PER_KM
+        runners.update(younger)
+
+
+
 
     # turn string times into a time delta for use in comparisons
     runners = scrape.race_time_to_timedelta(runners, 'time', 'delta')

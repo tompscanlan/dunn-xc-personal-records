@@ -264,6 +264,16 @@ RACES = [
         "runners": 1182,
         "dunn_runners": 56,
         "pattern": patternA
+    },
+    {
+        "url": 'https://ky.milesplit.com/meets/436799-ktccca-meet-of-champions-2021/results/775358?type=raw',
+        "path": "meet-of-champions",
+        "meet_name": "KTCCCA Meet of Champions 2021",
+        "venue_name": "Bourbon County Park Paris, KY",
+        "date": " Oct 16, 2021",
+        "runners": 3898,
+        "dunn_runners": 39,
+        "pattern": patternA
     }
 ]
 
