@@ -91,6 +91,6 @@ def calculate_best_times(races: [dict], func) -> [pd.DataFrame]:
 
 if __name__ == "__main__":
     df1 = calculate_best_times(scrape.RACES, keep_above_one_mile)
-    # df2 = calculate_best_times(scrape.RACES, keep_only_2k)
+    # df2 = gather_all_times(scrape.RACES, keep_only_2k)
 
     exit(0)

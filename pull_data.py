@@ -78,7 +78,7 @@ def get_runners_dataframe(race: dict) -> (dict, pd.DataFrame):
     # runners['year'] = pd.to_numeric(runners['year']).astype('int')
 
     # if this race has names formatted as "last, first" change it to 'first last'
-    mixed_name = runners[runners['athlete'].str.match(r"\S+\s*,\s*\S+")]
+    mixed_name = runners[runners['athlete'].str.match(r"\S+\s*,\s*\S+")].copy()
     athletes = mixed_name['athlete'].str.split(r"\s*,\s*")
     mixed_name['athlete'] = [' '.join([i[1], i[0]]) for i in athletes]
     runners.update(mixed_name['athlete'])
@@ -136,8 +136,11 @@ def get_runners_dataframe(race: dict) -> (dict, pd.DataFrame):
         younger['miles'] = 2 * scrape.MILE_PER_KM
         runners.update(younger)
 
+    elif race['meet_name'] == '2nd Annual STXXC Halloween Hustle 2021':
+        runners['year'] = runners['year'].astype('int')
 
-
+        # manually added distance in K as as 'year' field in the text file
+        runners['miles'] = runners['year'] * scrape.MILE_PER_KM
 
     # turn string times into a time delta for use in comparisons
     runners = scrape.race_time_to_timedelta(runners, 'time', 'delta')

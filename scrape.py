@@ -274,6 +274,16 @@ RACES = [
         "runners": 3898,
         "dunn_runners": 39,
         "pattern": patternA
+    },
+    {
+        "url": None,
+        "path": "halloween-hustle",
+        "meet_name": "2nd Annual STXXC Halloween Hustle 2021",
+        "venue_name": "Louisville Champions Park, Louisville, KY",
+        "date": " Oct 24, 2021",
+        "runners": 262,
+        "dunn_runners": 50,
+        "pattern": pattern_bates
     }
 ]
 
@@ -411,34 +421,17 @@ def race_time_to_timedelta(d: pd.DataFrame, timecol: str, deltacol: str) -> (dic
     return d
 
 
-# def get_runners_dataframe(url: str, html_file: str) -> (dict, pd.DataFrame):
-#
-#     page = get_html_from_url_or_cache(url, html_file)
-#     details = get_meet_details(page)
-#     results = get_raw_results(page)
-#     # print(results)
-#     runners = pd.DataFrame(data=get_runners(results))
-#
-#     # keep track of Dunn runners only
-#     runners = runners[runners['school'].astype('str').str.contains('Dunn')]
-#     # runners['year'] = pd.to_numeric(runners['year']).astype('int')
-#
-#     # turn string times into a time delta for use in comparisons
-#     runners = race_time_to_timedelta(runners, 'time', 'delta')
-#
-#     # if this race has names formatted as "last, first" change it to 'first last'
-#     mixed_name = runners[runners['name'].str.match(r"\S+\s*,\s*\S+")]
-#     names = mixed_name['name'].str.split(r"\s*,\s*")
-#     mixed_name['name'] = [' '.join([i[1], i[0]]) for i in names]
-#     runners.update(mixed_name['name'])
-#
-#     runners['name'] = runners['name'].str.lower()
-#     runners = runners.set_index(keys=['name']).sort_index()
-#
-#     # drop unneeded cols
-#     runners = runners.drop(columns=['index', 'bibnumber', 'points', 'school', 'time'])
-#
-#     return details, runners
+def strfdelta(tdelta):
+    # fmt = "{minutes}:{seconds}.{milliseconds}"
+    fmt = "{minutes}:{seconds}"
+    d = {"days": tdelta.days}
+    h,  rem = divmod(tdelta.seconds, 3600)
+    m, s = divmod(rem, 60)
+    mm = tdelta.components.milliseconds
+    d['minutes'] = '{:02d}'.format(m)
+    d['seconds'] = '{:02d}'.format(s)
+    # d['milliseconds'] = '{:03d}'.format(mm)
+    return fmt.format(**d)
 
 
 def lines_matching(pat: re.Pattern, s: str) -> int:
@@ -623,66 +616,6 @@ def find_prs(races: [dict]):
     new_best = new_best.reset_index()
     new_best.sort_values(by='mile_pace', inplace=True)
     send_pr_email(race, prs, new_best)
-
-
-# def get_runners_dataframe(race: dict) -> pd.DataFrame:
-#     # pull plain data, or expect a text file to have been created
-#     runners_text = pull_data.get_milesplit_data(race['url'], race['meet_name'])
-#     runners = pd.DataFrame(data=get_runners(runners_text))
-#
-#     # keep track of Dunn runners only
-#     runners = runners[runners['school'].astype('str').str.contains('Dunn')]
-#
-#     # if this race has names formatted as "last, first" change it to 'first last'
-#     mixed_name = runners[runners['athlete'].str.match(r"\S+\s*,\s*\S+")]
-#     athletes = mixed_name['athlete'].str.split(r"\s*,\s*")
-#     mixed_name['athlete'] = [' '.join([i[1], i[0]]) for i in athletes]
-#     runners.update(mixed_name['athlete'])
-#
-#     # Alterations, after original data creation
-#     if race['meet_name'] == "Reservoir Park Invitational 2021":
-#         # fix missed runner error:
-#         declan = runners.loc[runners['athlete'] == 'Declan Peek']
-#         declan['time'] = '8:39.06'
-#         runners.update(declan)
-#
-#         seb = runners.loc[runners['athlete'] == 'Sebastiano Bianconcin']
-#         seb['athlete'] = 'Sebastiano Bianconcini'
-#         runners.update(seb)
-#
-#         # everyone ran a mile
-#         runners['miles'] = 1
-#         # except those under year 2 ran a half mile
-#         halfmile = runners.copy()
-#         halfmile = halfmile[halfmile['year'].astype(int) < 2]
-#         halfmile['miles'] = 0.5
-#         runners.update(halfmile)
-#
-#     elif race['meet_name'] == "Tully Invitational  2021":
-#         # Tully race everyone ran 1 mile
-#         runners['miles'] = 1
-#
-#     elif race['meet_name'] == "Bluegrass Cross Country Invitational 2021":
-#         runners['miles'] = 2 * MILE_PER_KM
-#     elif race['meet_name'] == "Rumble Through the Jungle 2021":
-#         runners['miles'] = 2 * MILE_PER_KM
-#     elif race['meet_name'] == "Gatorland 2021":
-#         runners['miles'] = 2 * MILE_PER_KM
-#     elif race['meet_name'] == "8th Annual S.I.C Invitational 2021":
-#         # Use year to signify K distance
-#         runners['miles'] = runners['year'].astype('int') * MILE_PER_KM
-#
-#     # turn string times into a time delta for use in comparisons
-#     runners = race_time_to_timedelta(runners, 'time', 'delta')
-#     runners['mile_pace'] = runners['delta'] / runners['miles']
-#
-#     runners['athlete'] = runners['athlete'].str.lower()
-#     runners = runners.set_index(keys=['athlete']).sort_index()
-#
-#     # drop unneeded cols
-#     runners = runners.drop(columns=['school', 'delta'])
-#
-#     return runners
 
 
 if __name__ == "__main__":
