@@ -35,7 +35,7 @@ Event 3  Boys 1 Mile Run CC Grades 2-3
  31  Benns, Sebastian       Dunn Elementary        8:37.43
  32  Slocum, Ryder          Wilder Eleme           8:37.86
  33  Peek, Declan           Dunn Elementary        8:39.68
- 34  Weisenbarger, Clar     Dunn Elementary        8:40.24
+ 34  Weisenbarger, Clark     Dunn Elementary        8:40.24
  35  Reed, Greyson          Dunn Elementary        8:47.84
  36  Bolling, Jaxon         Greenwood El           8:49.17   25
  37  Durso, John Mark       Dunn Elementary        8:51.48

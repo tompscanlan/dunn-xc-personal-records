@@ -142,7 +142,7 @@ patternD = re.compile(r"""
 )?
 (?P<time>\d+:\d+.\d+)
 \s*
-([-\s\d.:]+)$
+([-\s\d.:]*)$
 """, re.VERBOSE)
 
 pattern_bluegrass_invitational = re.compile((r"""
@@ -235,14 +235,14 @@ RACES = [
     },
     {
         # "url": 'https://in.milesplit.com/meets/438018-8th-annual-sic-invitational-2021/results/raw',  # original data doesn't have an easy way to identify group distances
-        "url": None, # or it will over write our curated version
+        "url": None,  # or it will over write our curated version
         # https://in.milesplit.com/meets/438018-8th-annual-sic-invitational-2021/results/raw
         "path": "sic-invitational",
         "meet_name": "8th Annual S.I.C Invitational 2021",
         "venue_name": 'Silver Creek Primary School Sellersburg, IN',
         "date": "Sep 25, 2021",
         "runners": 405,
-        "dunn_runners": 42,
+        "dunn_runners": 41,
         "pattern": patternD,
     },
     {
