@@ -38,6 +38,7 @@ def gather_all_times(races: [dict]) -> [pd.DataFrame]:
         # current_race = current_race.set_index(keys=['athlete']).sort_index()
         cr = current_race[['athlete', 'miles', 'mile_pace', 'time']].copy()
         cr['mile_pace'] = pd.to_timedelta(cr['mile_pace'])
+        cr['mile_pace'] = cr['mile_pace'].apply(scrape.strfdelta)
         # cr['mile_time'] = cr['mile_time'].apply(scrape.strfdelta)
         cr['race'] = race['meet_name']
         runners = runners.append(cr)
@@ -48,6 +49,10 @@ def gather_all_times(races: [dict]) -> [pd.DataFrame]:
 if __name__ == "__main__":
     runners = gather_all_times(scrape.RACES)
     # df2 = gather_all_times(scrape.RACES, keep_only_2k)
-    p = runners.pivot(index=['athlete'], columns=['race'], values=['miles', 'mile_pace', 'time'])
+    p = runners.pivot(index=['athlete'], columns=['race'], values=['miles',
+                                                                   'mile_pace',
+                                                                   # 'mile_pace_reformat',
+                                                                   'time'
+                                                                   ])
     p.to_csv('all.csv')
     exit(0)

@@ -422,15 +422,15 @@ def race_time_to_timedelta(d: pd.DataFrame, timecol: str, deltacol: str) -> (dic
 
 
 def strfdelta(tdelta):
-    # fmt = "{minutes}:{seconds}.{milliseconds}"
-    fmt = "{minutes}:{seconds}"
+    fmt = "{minutes}:{seconds}.{milliseconds}"
+    # fmt = "{minutes}:{seconds}"
     d = {"days": tdelta.days}
     h,  rem = divmod(tdelta.seconds, 3600)
     m, s = divmod(rem, 60)
-    mm = tdelta.components.milliseconds
+    mm = tdelta.components.milliseconds/10
     d['minutes'] = '{:02d}'.format(m)
     d['seconds'] = '{:02d}'.format(s)
-    # d['milliseconds'] = '{:03d}'.format(mm)
+    d['milliseconds'] = '{:02.0f}'.format(mm)
     return fmt.format(**d)
 
 
